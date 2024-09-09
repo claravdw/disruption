@@ -110,7 +110,7 @@ print(top_outlet_weights)
 
 #if we had a 100 articles, how many would come from each source?
 top_outlet_weights <- top_outlet_weights/sum(top_outlet_weights) #weights sum to 1
-#round(outlet_weights*100) 
+round(top_outlet_weights*100) 
 
 #list of outlets from Ofcom report
 # our_outlets <- c("Daily Mail Mail on Sunday",
