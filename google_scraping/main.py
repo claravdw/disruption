@@ -51,8 +51,7 @@ def main(paper_url, query_list, start_date, end_date, browser, search_name):
 if __name__ == '__main__':
 
     #list of newspaper websites to search, one at a time
-    paper_urls = ["bbc.com", "theguardian.com", "dailymail.co.uk", "news.sky.com",
-                  "thesun.co.uk", "telegraph.co.uk", "thetimes.com", "mirror.co.uk",
+    paper_urls = [#"bbc.com", "theguardian.com", "dailymail.co.uk", "news.sky.com", "thesun.co.uk", "telegraph.co.uk", "thetimes.com", "mirror.co.uk", 
                   "itv.com/news", "express.co.uk"]
 
     #list of lists search terms to use, one list at a time
