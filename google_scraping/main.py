@@ -51,8 +51,8 @@ def main(paper_url, query_list, start_date, end_date, browser, search_name):
 if __name__ == '__main__':
 
     #list of newspaper websites to search, one at a time
-    paper_urls = [#"bbc.com", "theguardian.com", "dailymail.co.uk", "news.sky.com", "thesun.co.uk", "telegraph.co.uk", "thetimes.com", "mirror.co.uk", 
-                  "itv.com/news", "express.co.uk"]
+    paper_urls = ["bbc.com", "theguardian.com", "dailymail.co.uk", "news.sky.com", "thesun.co.uk",
+                  "telegraph.co.uk", "thetimes.com", "mirror.co.uk", "itv.com/news", "express.co.uk"]
 
     #list of lists search terms to use, one list at a time
     search_terms = {"XR_JSO": ["Extinction Rebellion","Just Stop Oil"], #one of these
@@ -65,4 +65,4 @@ if __name__ == '__main__':
         for search_name, search_term in search_terms.items():
     
             print("scraping from", paper_url, "for terms", search_term)
-            main(paper_url=paper_url, query_list=search_term, start_date="2024-07-01", end_date="2024-08-31", browser=browser, search_name=search_name)
+            main(paper_url=paper_url, query_list=search_term, start_date="2022-07-01", end_date="2022-08-31", browser=browser, search_name=search_name)
