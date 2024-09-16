@@ -1,0 +1,14 @@
+pandas
+requests
+beautifulsoup4
+importlib
+selenium
+webdriver_manager
+chromedriver_autoinstaller
+
+#part of standard python:
+os
+sys
+time
+logging
+pickle
