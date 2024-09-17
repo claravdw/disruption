@@ -1,23 +1,6 @@
 import bs4
 
-def extract_text_from_html(html_content):
 
-    page = bs4.BeautifulSoup(html_content, "lxml")
-    
-    if "text" in 
-    paragraphs_html = page.findAll("p",{'class':'responsive__Paragraph-sc-1pktst5-0 gaEeqC'})
-
-    if paragraphs_html !=[]:
-        # Extract text from paragraphs
-        text = []
-        for paragraph in paragraphs_html:
-            if paragraph != None:
-                text.append(paragraph.text.strip())
-    
-        return(text)
-    else:
-        return 'None'
-    
 def remove_duplicates(lst):
     """
     Removes duplicates from a list while preserving the original order.
@@ -37,42 +20,54 @@ def remove_duplicates(lst):
     return new_list
 
 
-def extract_image_from_html(html_content):
+def extract(html_content, parsed_attr):
+
     page = bs4.BeautifulSoup(html_content, "lxml")
-    div_article=page.find('div',{'class':"responsive__ArticleWrapper-sc-15gvuj2-7 fPnGaB"})
-    div_head=page.find('div',{'class':"tc-view__TcView-nuazoi-0 responsive__HeaderContainer-sc-15gvuj2-2 hUvwaq"})
-    image_html = div_article.findAll("img")
-    image_html.append(div_head.find('img'))
-    if image_html !=[]:
-        image_caption=[]
+    
+    #dictionary to store attributes
+    atrr_dict = {: None}
+    atrr_dict = dict.fromkeys(parsed_attr)
+    
+    if "text" in parsed_attr:
+    
+        paragraphs_html = page.findAll("p",{'class':'responsive__Paragraph-sc-1pktst5-0 gaEeqC'})
+        text = []
+        for paragraph in paragraphs_html:
+            if paragraph:
+                text.append(paragraph.text.strip())
+        if len(text) > 0: atrr_dict["text"] =  text
+                
+    if "image" in parsed_attr:
+    
+        div_article=page.find('div',{'class':"responsive__ArticleWrapper-sc-15gvuj2-7 fPnGaB"})
+        div_head=page.find('div',{'class':"tc-view__TcView-nuazoi-0 responsive__HeaderContainer-sc-15gvuj2-2 hUvwaq"})
+        image_html = div_article.findAll("img")
+        image_html.append(div_head.find('img'))
+        image_caption = []
         for image in image_html:
-            if image !=None:
+            if image:
                 image_caption.append([image.get('alt'),image.get('src')])
-        return image_caption
-    else:
-        return 'None'
+        if len(image_caption) > 0: atrr_dict["image"] =  image_caption
     
-
-def extract_author_from_html(html_content):
-    page = bs4.BeautifulSoup(html_content, "lxml")
-    author_html = page.findAll("a",{'class':"tc-text-link__TcTextLink-sc-1voa8bp-0 text-link__LinkTextObj-xyehx2-0 vSslN"})
-    # Extract text from paragraphs
-    if author_html !=[]:
-        authors=[]
-        for author in author_html:
-            if author != None:
-                authors.append(author.text)
-        authors=remove_duplicates(authors)
-        return(authors)
-    else:
-        return 'None'
-
-def extract_date_from_html(html_content):
-    page = bs4.BeautifulSoup(html_content, "lxml")
-    data_div=page.find('div', {'class':'tc-view__TcView-nuazoi-0 fPjBcr'})
-    date_html = page.find("time")
+    if "author" in parsed_attr:
     
-    if date_html !=None:
-        return date_html.get('datetime')
-    else:
-        return "None"
+        author_html = page.findAll("a",{'class':"tc-text-link__TcTextLink-sc-1voa8bp-0 text-link__LinkTextObj-xyehx2-0 vSslN"})
+        authors = []
+        if author_html !=[]:
+            for author in author_html:
+                if author:
+                    authors.append(author.text)
+            authors=remove_duplicates(authors)
+        if len(authors) > 0: atrr_dict["authors"] =  authors
+        
+            
+    if "date" in parsed_attr:
+
+        data_div=page.find('div', {'class':'tc-view__TcView-nuazoi-0 fPjBcr'})
+        date_html = page.find("time")
+        date = None
+    
+        if date_html:
+            date = date_html.get('datetime')
+            
+    return 

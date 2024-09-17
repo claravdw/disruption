@@ -6,8 +6,11 @@ import dateutil.parser as parser
 import pytz
 import csv
 import logging
+import json
 
 csv.field_size_limit(10000000)
+
+logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def from_file_to_url_list(file_path, name_url_column="url"):
 
@@ -17,21 +20,29 @@ def from_file_to_url_list(file_path, name_url_column="url"):
         return URLs_list
     except FileNotFoundError:
         # If the file does not exist return and empty list
-        logging.info("No url file found at", file_path, ", returning empty list")
+        #logging.info("No url file found at", file_path, ", returning empty list")
         return []
 
-def from_file_to_dict(file_path, name_url_column="url", name_content_columns="html_content"):
+
+def from_file_to_dict(file_path, name_index_column="url", name_value_columns=None):
+
+    """This function reads in a csv with an index column and returns a dictionary with
+    the index column as keys and the columns as values"""
 
     try:
-        content_df = pd.read_csv(file_path, index_col=name_url_column) #from csv to df
-        if isinstance(name_content_column, str) #if we only need one column
-            content_dict = content_df[name_content_columns].to_dict() #from df to series to dict
-        else: #if we need multiple columns
-            content_dict = content_df.to_dict() #from df straight to dict
+        # Opening JSON file
+        with open(file_path) as json_file:
+            content_dict = json.load(json_file)
         return content_dict
+        
     except FileNotFoundError:
         # If the file does not exist return and empty dict
-        logging.info("No file found at", file_path, ", returning empty dict")
+        logging.info(f"No file found at {file_path}, returning empty dict")
+        return dict()
+        
+    except json.decoder.JSONDecodeError:
+        # If the file does not exist return and empty dict
+        logging.info("JSON decoding error at {file_path}, returning empty dict")
         return dict()
         
 
@@ -46,14 +57,12 @@ def date_converter_obj(date_text):
     dt=parser.parse(date,tzinfos=tzinfos)
     print(type(dt))
     return dt
-  
+
+
 def add_row_to_csv(file_name, new_line, header=None):
 
     """This function adds one row to a csv file, creating it and adding headers to it if need be.
     new_line and header argument format is list."""
-    
-    print("writing new line to file", file_name)
-    print(new_line)
     
     #create folder if it does not exist yet
     folder = os.path.dirname(file_name)
