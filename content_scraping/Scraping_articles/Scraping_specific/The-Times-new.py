@@ -1,7 +1,10 @@
 import bs4
 
 def extract_text_from_html(html_content):
+
     page = bs4.BeautifulSoup(html_content, "lxml")
+    
+    if "text" in 
     paragraphs_html = page.findAll("p",{'class':'responsive__Paragraph-sc-1pktst5-0 gaEeqC'})
 
     if paragraphs_html !=[]:
