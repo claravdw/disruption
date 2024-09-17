@@ -109,18 +109,13 @@ def main_scrape_html(url_file, html_file, redo=False):
     #loop over the article urls
     for url in urls_list:  
             
-        #if the URL is not already in the html content dict, scrape it
+        #if the URL is not already in the html content dict, scrape and add it
         if url not in html_content_dict:
         
             logging.info(f"Scraping url: {url}")
             html_content = fetch_url(url=url, s=s)
-            #add to url-to-HTML-content dict
             html_content_dict[url] = html_content
             
-        else:
-        
-            logging.info(f"The URL: {url} has already been scraped")
-    
     #write to json file
     with open(html_file, 'w') as fp:
         json.dump(html_content_dict, fp)
@@ -157,11 +152,7 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, parsed_attr, 
             logging.info(f"Parsing url: {url}")
             content_scraped = newspaper.extract(html_content, parsed_attr)
             parsed_content_dict[url] = content_scraped
-        
-        else:
-        
-            logging.info(f"The URL: {url} has already been parsed")
-            
+
     #write to json file
     with open(parsed_file, 'w') as fp:
         json.dump(parsed_content_dict, fp)

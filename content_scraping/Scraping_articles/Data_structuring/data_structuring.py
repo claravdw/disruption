@@ -12,6 +12,7 @@ csv.field_size_limit(10000000)
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+
 def from_file_to_url_list(file_path, name_url_column="url"):
 
     try:
@@ -57,25 +58,4 @@ def date_converter_obj(date_text):
     dt=parser.parse(date,tzinfos=tzinfos)
     print(type(dt))
     return dt
-
-
-def add_row_to_csv(file_name, new_line, header=None):
-
-    """This function adds one row to a csv file, creating it and adding headers to it if need be.
-    new_line and header argument format is list."""
-    
-    #create folder if it does not exist yet
-    folder = os.path.dirname(file_name)
-    if not os.path.isdir(folder):
-        print("directory", folder, "did not exist yet, creating it now")
-        os.makedirs(folder)
-
-    with open(file_name, 'a', newline='') as file:
-        writer = csv.writer(file)
-        file_empty = os.stat(file_name).st_size == 0
-        #if file is empty, create the header
-        if file_empty:
-            writer.writerow(header)
-        # Write the new line
-        writer.writerow(new_line)
 
