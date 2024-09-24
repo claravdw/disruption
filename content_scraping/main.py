@@ -20,14 +20,14 @@ def main(newspaper: str, url_file, html_file, parsed_file, parsed_attr):
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file)
     
     #parsing the html content of all scraped urls
-    scrap.main_parse_content(newspaper, html_content_dict, parsed_file, parsed_attr, redo=True)
+    scrap.main_parse_content(newspaper, html_content_dict, parsed_file, parsed_attr)
 
 if __name__ == '__main__':
 
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspaper = "BBC"
+    newspaper = "Mirror"
 
     #get relative paths of the files containing the URLs for this paper
     url_folder = f"../google_scraping/article_urls/{newspaper}"

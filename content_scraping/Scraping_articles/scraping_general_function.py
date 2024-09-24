@@ -19,23 +19,37 @@ import data_structuring as ds
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-def fetch_url(url: str, s = None, retries: int = 3, sleep_time: int = 5):
+def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
     """
     This function returns the HTML content of the URL passed in entry for a website that needs a subscription.
     It also logs the URL currently being scraped.
     
     Parameters:
     url (str): The URL to fetch.
-    s (requests.Session): The selenium or requests session to use. If None, a new session will be created.
     retries (int): Number of retry attempts in case of failure. Default is 3.
     sleep_time (int): Time to sleep between retries in seconds. Default is 5.
     
     Returns:
     str: The HTML content of the URL, or None if the fetch failed.
     """
+        
+    #if BBC, we need selenium due to javascript elements; set up a selenium session
+    if newspaper == "BBC":
     
-    if s is None:
-        s = requests.Session()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--incognito')
+        options.add_argument('--headless=new')
+        s = webdriver.Chrome(options=options)
+    
+    #otherwise, use requests package, and retrieve session if possible
+    #TO DO: consider trying to run the script if no session is found
+    else:
+        try:
+            with open(f'Scripts/session_{newspaper}.pickle', 'rb') as f:
+                s = pickle.load(f)
+        except:
+            s = requests.Session()
 
     for attempt in range(retries):
     
@@ -101,25 +115,6 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     
     #try to get the list of URLs from file (created by google_scraping module)
     urls_list = ds.from_csv_to_list(url_file, name_column="url")
-    
-    #if BBC, we need selenium due to javascrip elements; set up a selenium session
-    if newspaper == "BBC":
-    
-        options = webdriver.ChromeOptions()
-        options.add_argument('--ignore-certificate-errors')
-        options.add_argument('--incognito')
-        options.add_argument('--headless=new')
-        s = webdriver.Chrome(options=options)
-    
-    #otherwise, use requests package, and retrieve session if possible
-    #TO DO: consider trying to run the script if no session is found
-    else:
-        print("scraping with requests")
-        try:
-            with open(f'Scripts/session_{News_paper}.pickle', 'rb') as f:
-                s = pickle.load(f)
-        except:
-            s = requests.Session()
 
     #try to get any already-parsed urls from the html content file (unless re-doing all of them)
     if redo:
@@ -136,7 +131,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
         if url not in html_content_dict:
         
             logging.info(f"Scraping url: {url}")
-            html_content = fetch_url(url=url, s=s)
+            html_content = fetch_url(newspaper=newspaper, url=url)
             html_content_dict[url] = html_content
             
             #break #FOR DEBUGGING

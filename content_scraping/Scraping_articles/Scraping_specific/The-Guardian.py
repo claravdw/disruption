@@ -71,11 +71,9 @@ def extract(html_content, parsed_attr):
             k = 1
             while True:
                 div_image = page.find("div", {"id": f"img-{k}"})
-                #print(f"image {k} is {div_image}")
                 if div_image is None:
                     break
                 image = div_image.find("img")
-                print(f"image {k} is {image}")
                 image_caption.append((image.get('src'), image.get('alt')))
                 k += 1
             if len(image_caption) > 0: attr_dict["image"] = image_caption
@@ -102,9 +100,9 @@ def extract(html_content, parsed_attr):
         try:
             div_detail = page.find("details")
             date_html = div_detail.find("span")
-            date = date_html.text
+            date = date_html.text.strip()
             if date:
-                attr_dict["date"] =  date
+                attr_dict["date"] =  date_converter_obj(date)
             
         except Exception as e:
             logging.info(f"date parsing unsuccessful due to {e}")            

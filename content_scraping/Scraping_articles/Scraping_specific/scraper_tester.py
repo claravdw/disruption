@@ -4,7 +4,7 @@ import pprint
 
 #paper name; module with this name will be tested on a html file
 #of the same name in the test_files folder
-paper_name = "BBC"
+paper_name = "Metro"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 module_path = os.path.join(current_dir, f"{paper_name}.py")
@@ -24,7 +24,7 @@ with open(f'test_files/{paper_name}.html', 'r') as file:
     
 # Get the article attributes
 attr = newspaper_module.extract(test_html, parsed_attr=["title", "subtitle"
-                                                        #,"text"
+                                                        ,"text"
                                                         ,"image", "author", "date" 
                                                        ])
 

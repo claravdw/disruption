@@ -15,7 +15,7 @@ def make_query(url, query_list, start_date, end_date):
             query_str += '+OR+'
         query_str += f'"{query}"'
     
-    final_query = base_url + date_filter + '+' + query_str
+    final_query = base_url + date_filter + '+' + query_str + '&hl={en}'
     return final_query
 
 def add_time(start_date, months=0, days=0):

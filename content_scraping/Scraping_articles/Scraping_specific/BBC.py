@@ -57,6 +57,9 @@ def extract(html_content, parsed_attr):
     
         #strings present in non-photo alt texts
         badcaps = ["presentational grey line", "white line", "bbc bbc"]
+        #names of non-photo image links
+        badsrc = ["https://ichef.bbci.co.uk/news/480/cpsprodpb/1FCD/production/_105914180_line976-nc.png.webp",
+                  "/bbcx/grey-placeholder.png"]
     
         try:
             #list of two-item lists containing captions and links
@@ -72,7 +75,8 @@ def extract(html_content, parsed_attr):
                 
                     img_src = img.get('src')
                     
-                    if img_src == "/bbcx/grey-placeholder.png":
+                    #skip non-photos
+                    if img_src in badsrc:
                         continue
                     
                     #get caption    
@@ -111,7 +115,7 @@ def extract(html_content, parsed_attr):
     if "date" in parsed_attr:
 
         try:
-            time = page.find("time").text
+            time = page.find("time").text.strip()
     
             if time:
                 date = date_converter_obj(time)

@@ -12,7 +12,6 @@ logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(ascti
 
 def date_converter_obj(date_string):
     # Define the format that matches the input string
-    print("")
     if date_string==None:
         return None
     try:
@@ -98,7 +97,8 @@ def extract(html_content, parsed_attr):
             authors_a = authors_p.findAll("a")
             for author in authors_a:
                author = author.text
-               authors.append(author)
+               if author != "":
+                   authors.append(author)
             if len(authors) > 0: attr_dict["author"] =  authors
         
         except Exception as e:
