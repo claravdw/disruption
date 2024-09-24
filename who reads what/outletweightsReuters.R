@@ -64,7 +64,7 @@ mixsources <- c("Guardian online", "Guardian Observer",
                 "Mirror online","Daily Mirror Sunday Mirror",
                 "Metro free paper","Metro online",
                 "Express online","The Express Sunday Express",
-                "Financial Times online","Financial Times"
+                "Financial Times online","Financial Times" #,
                 #"GB News online", "GB News 24 hour news",
                 #"Sky News 24 hour news", "Sky News online",
                 #"Al Jazeera", "Al Jazeera online",
@@ -94,14 +94,17 @@ leftout <- c(
   #mainly video/audio news
   "BBC Radio News", "BBC TV News", "Channel 4 News", "Channel 5 News", "Sky News 24 hour news",
   "ITV News", "GB News 24 hour news", "Al Jazeera",
-  #mainly non-political news
-  "GB News online", "Metro", "MSN News", "Yahoo News", "The Lad Bible news", "JOE co uk",
+  #mainly non-political news (FT has political news but not enough XR/JSO/GP reporting to qualify)
+  "GB News online", "The Lad Bible news", "JOE co uk", "FinancialTimes",
+  #mainly links to other news
+  "MSN News", "Yahoo News", 
   #general answer categories
   "Commercial radio news", "Commercial radio news online e g LBC TalkRadio",
   "Other regional or local newspaper website",
-  "Regional or local newspaper", "Other online sites from outside country text",
-  #not UK
-  "AlJazeera","HuffPost")
+  "Regional or local newspaper", "Other online sites from outside country text" #,
+  #not UK - unclear if this criterion is needed but these would not have made the top 10 either way
+  #"Al Jazeera online","HuffPost"
+)
 outlet_weights <- outlet_weights[!names(outlet_weights) %in% leftout]
 
 #get top-10 outlets
@@ -110,7 +113,8 @@ print(top_outlet_weights)
 
 #if we had a 100 articles, how many would come from each source?
 top_outlet_weights <- top_outlet_weights/sum(top_outlet_weights) #weights sum to 1
-round(top_outlet_weights*100) 
+round(top_outlet_weights*100)
+#100 articles is n=20 per article if total n=2500 and treatment group allocation is 80%
 
 #list of outlets from Ofcom report
 # our_outlets <- c("Daily Mail Mail on Sunday",

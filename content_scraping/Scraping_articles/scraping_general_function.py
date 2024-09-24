@@ -10,6 +10,7 @@ import Scraping_specific
 import pandas as pd
 import csv
 import json
+from selenium import webdriver
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
@@ -18,29 +19,39 @@ import data_structuring as ds
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-def fetch_url(url: str, s: requests.Session = None, retries: int = 3, sleep_time: int = 5):
+def fetch_url(url: str, s = None, retries: int = 3, sleep_time: int = 5):
     """
     This function returns the HTML content of the URL passed in entry for a website that needs a subscription.
     It also logs the URL currently being scraped.
     
     Parameters:
     url (str): The URL to fetch.
-    s (requests.Session): The requests session to use. If None, a new session will be created.
+    s (requests.Session): The selenium or requests session to use. If None, a new session will be created.
     retries (int): Number of retry attempts in case of failure. Default is 3.
     sleep_time (int): Time to sleep between retries in seconds. Default is 5.
     
     Returns:
     str: The HTML content of the URL, or None if the fetch failed.
     """
+    
     if s is None:
         s = requests.Session()
 
     for attempt in range(retries):
+    
         try:
             logging.info(f"Fetching URL: {url}")
-            response = s.get(url)
-            return response.text
-        except RequestException as e:
+            
+            #get the html text, depending on type of scraper session
+            if type(s) == requests.sessions.Session:
+                response = s.get(url)
+                text = response.text
+            else:
+                s.get(url) #load the page
+                text = s.page_source
+            return text
+            
+        except Exception as e:
             logging.warning(f"Attempt {attempt + 1} failed: {e}")
             time.sleep(sleep_time)
     
@@ -80,23 +91,35 @@ def choose_extract(News_paper):
     return None
 
 
-def main_scrape_html(url_file, html_file, redo=False):
+def main_scrape_html(newspaper, url_file, html_file, redo=False):
     """
     This function scrapes the content of the urls in the url_file. If redo is set to true, we also re-scrape already-scraped files.
     """
     
-    #TO DO: see if we need to avoid using html_content_dict because it will be very big
+    #TO DO: see if we need to avoid using html_content_dict because it can be very big
     logging.info(f"scraping urls from file: {url_file}")
     
     #try to get the list of URLs from file (created by google_scraping module)
-    urls_list = ds.from_file_to_url_list(url_file)
+    urls_list = ds.from_csv_to_list(url_file, name_column="url")
     
-    #retrieve requests session if possible (note: don't currently have these; created by Samuel)
-    try:
-        with open(f'Scraping_articles/sessions/scraping.pickle', 'rb') as f:
-            s = pickle.load(f)
-    except:
-        s = requests.Session()
+    #if BBC, we need selenium due to javascrip elements; set up a selenium session
+    if newspaper == "BBC":
+    
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+        options.add_argument('--incognito')
+        options.add_argument('--headless=new')
+        s = webdriver.Chrome(options=options)
+    
+    #otherwise, use requests package, and retrieve session if possible
+    #TO DO: consider trying to run the script if no session is found
+    else:
+        print("scraping with requests")
+        try:
+            with open(f'Scripts/session_{News_paper}.pickle', 'rb') as f:
+                s = pickle.load(f)
+        except:
+            s = requests.Session()
 
     #try to get any already-parsed urls from the html content file (unless re-doing all of them)
     if redo:
@@ -116,9 +139,10 @@ def main_scrape_html(url_file, html_file, redo=False):
             html_content = fetch_url(url=url, s=s)
             html_content_dict[url] = html_content
             
+            #break #FOR DEBUGGING
+            
     #write to json file
-    with open(html_file, 'w') as fp:
-        json.dump(html_content_dict, fp)
+    ds.from_dict_to_file(html_content_dict, html_file)
                 
     return html_content_dict
         
@@ -140,9 +164,15 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, parsed_attr, 
     if redo:
         parsed_content_dict = dict()
     else:
-        parsed_content_dict = ds.from_file_to_dict(parsed_file, name_index_column="url")
+        parsed_content_dict = ds.from_file_to_dict(parsed_file)
 
     if parsed_content_dict: print(f"re-using some already-parsed urls from file: {parsed_file}")
+    
+    #set-up for findign search terms in article text
+    # Converting None to empty string
+    conv = lambda i : i or ''
+    text_elements = ["title", "subtitle", "text"]
+    searchterms = ["Extinction Rebellion", "Just Stop Oil", "Greenpeace"]  
     
     #loop over the scraped urls in the html content dict
     for url, html_content in html_content_dict.items():
@@ -151,10 +181,42 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, parsed_attr, 
     
             logging.info(f"Parsing url: {url}")
             content_scraped = newspaper.extract(html_content, parsed_attr)
-            parsed_content_dict[url] = content_scraped
+            
+            #turn dates into formatted strings
+            try:
+                content_scraped["date"] = content_scraped["date"].strftime("%Y-%m-%d")
+            except Exception as e:
+                logging.info(f"date to string conversion for json unsuccessful due to {e}")
+                
+            #join article texts with newline separator; if None, do not include article
+            if isinstance(content_scraped["text"], list):
+                content_scraped["text"] = "\\n".join(content_scraped["text"])
+            else:
+                logging.info(f"article dropped, no body text found: {content_scraped['title']}, {url}")
+                continue
+            
+            #keep only texts that contain XR, JSO or Greenpeace in title, subtitle or body
+            alltext = [ conv(content_scraped[el]) for el in text_elements ]
+            #print(alltext)
+            alltext = " ". join(alltext)
+            if any(term in alltext for term in searchterms):
+                parsed_content_dict[url] = content_scraped
+            else:
+                logging.info(f"article dropped, search terms not present: {content_scraped['title']}, {url}")
+                continue
 
     #write to json file
-    with open(parsed_file, 'w') as fp:
-        json.dump(parsed_content_dict, fp)
+    ds.from_dict_to_file(parsed_content_dict, parsed_file)
         
-
+        
+def remove_duplicates(lst):
+    """
+    Removes duplicates from a list while preserving the original order. Used by the newspaper-specific scraping scripts.
+    """
+    seen = set()
+    new_list = []
+    for element in lst:
+        if element not in seen:
+            seen.add(element)
+            new_list.append(element)
+    return new_list
