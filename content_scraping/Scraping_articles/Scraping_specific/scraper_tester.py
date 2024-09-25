@@ -4,7 +4,7 @@ import pprint
 
 #paper name; module with this name will be tested on a html file
 #of the same name in the test_files folder
-paper_name = "Metro"
+paper_name = "ITV"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 module_path = os.path.join(current_dir, f"{paper_name}.py")

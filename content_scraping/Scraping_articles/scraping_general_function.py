@@ -34,7 +34,7 @@ def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
     """
         
     #if BBC, we need selenium due to javascript elements; set up a selenium session
-    if newspaper == "BBC":
+    if newspaper in ["BBC", "ITV"]:
     
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
@@ -134,7 +134,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
             html_content = fetch_url(newspaper=newspaper, url=url)
             html_content_dict[url] = html_content
             
-            #break #FOR DEBUGGING
+            break #FOR DEBUGGING
             
     #write to json file
     ds.from_dict_to_file(html_content_dict, html_file)

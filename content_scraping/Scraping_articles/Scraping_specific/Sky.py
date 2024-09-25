@@ -52,7 +52,14 @@ def extract(html_content, parsed_attr):
     if "text" in parsed_attr:
     
         try:
-            body_div = page.find("div",{'class':'sdc-article-body sdc-article-body--story sdc-article-body--lead'})
+            body_div = page.find("div",{'class':'sdc-article-body'})
+            
+            #remove any "related stories" boxes
+            related_divs = body_div.findAll("div",{'class':'sdc-article-related-stories'})
+            for div in related_divs:
+                #print(div)
+                div.extract() #cf. pop()
+            
             paragraphs = body_div.findAll("p")
             text = []
             for paragraph in paragraphs:
