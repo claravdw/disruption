@@ -28,7 +28,11 @@ def extract(html_content, parsed_attr):
     #dictionary to store attributes
     attr_dict = dict.fromkeys(parsed_attr)
 
-    page = bs4.BeautifulSoup(html_content, "lxml")
+    try:
+        page = bs4.BeautifulSoup(html_content, "lxml")
+    except Exception as e:
+        logging.info(f"entire page parsing unsuccessful due to {e}")
+        return attr_dict #all values None
     
     if "title" in parsed_attr:
     
@@ -62,18 +66,21 @@ def extract(html_content, parsed_attr):
         try:
             figures = page.findAll("figure")
             image_caption = []
-            print(len(figures), "figures found")
+            #print(len(figures), "figures found")
             for fig in figures:
                 image = fig.find("img")
                 caption = fig.find("figcaption")
                 print(fig, "\n\n")
-                if caption:
-                    caption_text = caption.text.strip()
-                else:
-                    caption_text = None
-                image_caption.append((caption_text, image.get('src')))
+                if image.has_attr("src"): #sometimes javascript does not execute in time
+                    if caption:
+                        caption_text = caption.text.strip()
+                    else:
+                        caption_text = None
+                    image_caption.append({"caption": caption_text, "url":  image.get('src')})
+                    
             #image_caption = remove_duplicates(image_caption)
             if len(image_caption) > 0: attr_dict["image"] = image_caption
+            
             
         except Exception as e:
             logging.info(f"image parsing unsuccessful due to {e}")

@@ -92,7 +92,7 @@ def extract(html_content, parsed_attr):
                     #in absence of alt text, have None caption
                     else:
                          caption_text = None
-                    images.append((caption_text, img_src))
+                    images.append({"caption": caption_text, "url": img_src})
                     
             if len(images) > 0: attr_dict["image"] = images
             

@@ -80,7 +80,8 @@ def extract(html_content, parsed_attr):
             image_caption = []
             for figure in figures:
                 image = figure.find("img")
-                image_caption.append((image.get('alt'), image.get('src')))
+                image_caption.append({"caption": image.get('alt'), "url": image.get('src')})
+                
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             
         except Exception as e:

@@ -7,6 +7,9 @@ import pytz
 import csv
 import logging
 import json
+import requests
+import mimetypes
+from urllib.parse import urlparse
 
 csv.field_size_limit(10000000)
 
@@ -63,4 +66,45 @@ def from_dict_to_file(mydict, file_path):
     
     except Exception as e:
         logging.info("JSON file writing error at {file_path} due to {e} \n did not output file")
+        
+        
+def download_file(url, file_name, folder_path):
+    """
+    This function downloads a file from a url. Arguments:
+    url: the url to download the file from
+    file_name: the name of the file to store it in, *without the extension*, which it guesses
+    automatically from the file
+    folder_path: the path to the folder to store it in
+    """
+
+    try:
+    
+        #create folder if it does not exist yet
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+    
+        #get the file
+        response = requests.get(url)
+        
+        #guess the appropriate extension from the header
+        content_type = response.headers['content-type']
+        extension = mimetypes.guess_extension(content_type)
+        
+        #if that didn't work, get it from the url
+        if not extension:
+            url_path = urlparse(url).path
+            extension = os.path.splitext(url_path)[1]
+        
+        #create the file name and path
+        full_name = file_name + extension
+        full_path = folder_path + "/" + full_name
+        
+        with open(full_path, 'wb') as file:
+            file.write(response.content)
+            
+        return full_name
+            
+    except Exception as e:
+        logging.error(f"Could not download file at {url} due to {e}")
+        return None
     

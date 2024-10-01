@@ -55,8 +55,6 @@ def extract(html_content, parsed_attr):
         except Exception as e:
             logging.info(f"subtitle parsing unsuccessful due to {e}")
     
-    
-    #TO DO: update from here
     if "text" in parsed_attr:
     
         try:
@@ -73,18 +71,28 @@ def extract(html_content, parsed_attr):
     if "image" in parsed_attr:
     
         try:
-            figures = page.findAll("figure", {"class": "article-body-image section"})
+
+            #in-text images
+            figures = page.findAll("div", {"class": "image-container"})
+            
+            #add lead image to beginning
+            lead_div = page.find("div", {"class": "lead-content__lead-element--image"})
+            if lead_div:
+                figures.insert(0, lead_div)
+            
             image_caption = []
             for figure in figures:
                 image = figure.find("img")
-                caption_span = figure.find("span", {"data-test": "caption"})
-                if caption_span:
-                    caption = caption_span.text.strip()
+                if not image:
+                    image = figure.find("amp-img")
+                caption_el = figure.find("figcaption")
+                if caption_el:
+                    caption = caption_el.text.strip()
                 elif image.has_attr('alt'):
                     caption = image.get('alt')
                 else:
                     caption = None
-                image_caption.append((caption, "www.telegraph.co.uk" + image.get('src')))
+                image_caption.append({"caption": caption, "url": image.get('src')})
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             
         except Exception as e:

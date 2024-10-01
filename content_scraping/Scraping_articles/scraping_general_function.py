@@ -10,13 +10,64 @@ import Scraping_specific
 import pandas as pd
 import csv
 import json
-from selenium import webdriver
+from seleniumwire import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
 
 #set up logging
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+##Web scraping functionality
+
+#set up headers for scraping; imitate Mozilla on Windows
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Cache-Control": "max-age=0",
+}
+
+# define the request interceptor to configure custom headers
+def interceptor(request):
+
+    # add the missing headers
+    request.headers["Accept-Language"] = "en-US,en;q=0.9"
+    request.headers["Referer"] = "https://www.google.com/"
+
+    # delete the existing misconfigured default headers values
+    del request.headers["User-Agent"]
+    del request.headers["Sec-Ch-Ua"]
+    del request.headers["Sec-Fetch-Site"]
+    del request.headers["Accept-Encoding"]
+    
+    # replace the deleted headers with edited values
+    request.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+    request.headers["Sec-Ch-Ua"] = "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
+    request.headers["Sec-Fetch-Site"] = "cross-site"
+    request.headers["Accept-Encoding"] = "gzip, deflate, br, zstd"
+
+
+#set up options for scraping with Chrome webdriver
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--incognito')
+options.add_argument('--headless=new')
+
+
+# Function to check if all images are loaded
+def all_images_loaded(driver):
+    return driver.execute_script("""
+        return Array.from(document.images).every(img => img.complete && (img.naturalHeight !== 0));
+    """)
 
 
 def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
@@ -34,13 +85,13 @@ def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
     """
         
     #if BBC, we need selenium due to javascript elements; set up a selenium session
-    if newspaper in ["BBC", "ITV"]:
+    if newspaper in ["BBC"]:#, "ITV"]:
     
-        options = webdriver.ChromeOptions()
-        options.add_argument('--ignore-certificate-errors')
-        options.add_argument('--incognito')
-        options.add_argument('--headless=new')
         s = webdriver.Chrome(options=options)
+        s.request_interceptor = interceptor
+        #should give each page 5 seconds to load, hopefully getting all the images
+        #s.implicitly_wait(5)
+        #does not work
     
     #otherwise, use requests package, and retrieve session if possible
     #TO DO: consider trying to run the script if no session is found
@@ -50,6 +101,7 @@ def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
                 s = pickle.load(f)
         except:
             s = requests.Session()
+        s.headers.update(headers)
 
     for attempt in range(retries):
     
@@ -62,6 +114,11 @@ def fetch_url(newspaper: str, url: str, retries: int = 3, sleep_time: int = 5):
                 text = response.text
             else:
                 s.get(url) #load the page
+                # Wait until all images on the page are fully loaded
+                #WebDriverWait(s, 10).until(all_images_loaded)
+                # Wait until the page is fully loaded, max 10 s
+                # WebDriverWait(s, 10).until(lambda d: d.execute_script('return document.readyState') == 'complete')
+                # neither works
                 text = s.page_source
             return text
             
@@ -103,6 +160,35 @@ def choose_extract(News_paper):
     except Exception as e:
         print(f"Error importing module {News_paper}: {e}")
     return None
+    
+    
+def format_parsed_content(parsed_content, paper_name):
+    """
+    Function to do formatting on the parsed content of a url.
+    Arguments:
+    parsed_content: a dictionary a datetime object in key date,
+                    a text 
+    """
+          
+    #turn dates into formatted strings
+    try:
+        parsed_content["date"] = parsed_content["date"].strftime("%Y-%m-%d")
+    except Exception as e:
+        logging.info(f"date to string conversion for json unsuccessful due to {e}")
+              
+    #join article texts with newline separator
+    if isinstance(parsed_content["text"], list):
+        parsed_content["text"] = "\n".join(parsed_content["text"])
+
+    #add source
+    parsed_content["source"] = paper_name
+            
+    #generate an id for the article
+    titlewords = parsed_content["title"].strip().split(" ")
+    titlestart = "-".join(titlewords[:3])
+    parsed_content["id"] = "%s_%s_%s" % (paper_name, parsed_content['date'], titlestart)  
+            
+    return parsed_content
 
 
 def main_scrape_html(newspaper, url_file, html_file, redo=False):
@@ -134,7 +220,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
             html_content = fetch_url(newspaper=newspaper, url=url)
             html_content_dict[url] = html_content
             
-            break #FOR DEBUGGING
+            #break #FOR DEBUGGING
             
     #write to json file
     ds.from_dict_to_file(html_content_dict, html_file)
@@ -163,9 +249,8 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, parsed_attr, 
 
     if parsed_content_dict: print(f"re-using some already-parsed urls from file: {parsed_file}")
     
-    #set-up for findign search terms in article text
-    # Converting None to empty string
-    conv = lambda i : i or ''
+    #set-up for finding search terms in article text
+    conv = lambda i : i or '' # Converting None to empty string
     text_elements = ["title", "subtitle", "text"]
     searchterms = ["Extinction Rebellion", "Just Stop Oil", "Greenpeace"]  
     
@@ -175,34 +260,61 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, parsed_attr, 
         if url not in parsed_content_dict:
     
             logging.info(f"Parsing url: {url}")
-            content_scraped = newspaper.extract(html_content, parsed_attr)
+            parsed_content = newspaper.extract(html_content, parsed_attr)
             
-            #turn dates into formatted strings
-            try:
-                content_scraped["date"] = content_scraped["date"].strftime("%Y-%m-%d")
-            except Exception as e:
-                logging.info(f"date to string conversion for json unsuccessful due to {e}")
-                
-            #join article texts with newline separator; if None, do not include article
-            if isinstance(content_scraped["text"], list):
-                content_scraped["text"] = "\\n".join(content_scraped["text"])
-            else:
-                logging.info(f"article dropped, no body text found: {content_scraped['title']}, {url}")
+            #keep only article for which we found a body text
+            if not parsed_content["text"]:
+                logging.info(f"no body text found: {parsed_content['title']}, {url}")
                 continue
+            
+            #format dates, text body, add source and id
+            parsed_content = format_parsed_content(parsed_content, paper_name)
             
             #keep only texts that contain XR, JSO or Greenpeace in title, subtitle or body
-            alltext = [ conv(content_scraped[el]) for el in text_elements ]
-            #print(alltext)
+            alltext = [ conv(parsed_content[el]) for el in text_elements ]
             alltext = " ". join(alltext)
-            if any(term in alltext for term in searchterms):
-                parsed_content_dict[url] = content_scraped
-            else:
-                logging.info(f"article dropped, search terms not present: {content_scraped['title']}, {url}")
+            if not any(term in alltext for term in searchterms):
+                logging.info(f"article dropped, search terms not present: {parsed_content['title']}, {url}")
                 continue
+                
+            parsed_content_dict[url] = parsed_content
 
     #write to json file
     ds.from_dict_to_file(parsed_content_dict, parsed_file)
+    
+    return(parsed_content_dict)
+
+    
+def main_download_pics(parsed_content_dict, parsed_file, image_folder):
+
+    #go over the articles; keys are their urls
+    for url, parsed_content in parsed_content_dict.items():
+    
+        try:
         
+            #get list of article's images, each one is a dict
+            image_dicts = parsed_content["image"]
+            if image_dicts:
+                for i in range(len(image_dicts)):
+          
+                    image_dict = image_dicts[i]
+            
+                    #create local file name (without extension)
+                    img_file_name = f"{parsed_content['id']}_img{i+1}"
+        
+                    #dowload the image file and get full name (with extension)
+                    img_full_name = ds.download_file(image_dict["url"], img_file_name, image_folder)
+                
+                    #add entry with local file name and path
+                    parsed_content["image"][i]["local_name"] = img_full_name
+                    parsed_content["image"][i]["local_path"] = image_folder
+                
+        except Exception as e:
+            logging.error(f"Could not get images from article {url} due to {e}")
+            
+    #write to json file
+    ds.from_dict_to_file(parsed_content_dict, parsed_file)
+
         
 def remove_duplicates(lst):
     """

@@ -69,15 +69,17 @@ if __name__ == '__main__':
 
     #list of newspaper websites to search, one at a time. Keys must match names of newspaper-specific parsing scripts in
     #content_scraping/Parsing_specific folder.
-    paper_urls = {#"BBC":"bbc.com", "The-Guardian":"theguardian.com", "Daily-Mail":"dailymail.co.uk",
-                  #"Sky":"news.sky.com",
-                  #"Metro":"metro.co.uk", "Sun":"thesun.co.uk",
+    paper_urls = {"BBC":"bbc.com", "The-Guardian":"theguardian.com", "Daily-Mail":"dailymail.co.uk",
+                  "Sky":"news.sky.com",
+                  "Metro":"metro.co.uk",
+                  "Sun":"thesun.co.uk",
                   "Telegraph":"telegraph.co.uk", "The-Times":"thetimes.com", "Mirror":"mirror.co.uk",
-                  "ITV":"itv.com/news"}
+                  "ITV":"itv.com/news"
+                  }
 
     #dict of lists of search terms to use, one list at a time
     search_terms = {"XR_JSO": ["Extinction Rebellion","Just Stop Oil"], #one of these
-                    "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration)"]} #one each of these
+                    "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration OR disruption OR blockade)"]} #one each of these
                     
     #set start and end date in format yyyy-mm-dd; end day will be included in the search
     start_date = "2020-09-01"

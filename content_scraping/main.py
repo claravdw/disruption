@@ -7,7 +7,8 @@ import pandas as pd
 import scraping_general_function as scrap
 import data_structuring as ds
 
-def main(newspaper: str, url_file, html_file, parsed_file, parsed_attr):
+
+def main(newspaper: str, url_file, html_file, parsed_file, parsed_attr, image_folder):
     """This function creates csv files containing the html contents of each page, and the parsed contents (text, author etc.) at the locations
     specified in the paramters.
     Parameters:
@@ -20,14 +21,18 @@ def main(newspaper: str, url_file, html_file, parsed_file, parsed_attr):
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file)
     
     #parsing the html content of all scraped urls
-    scrap.main_parse_content(newspaper, html_content_dict, parsed_file, parsed_attr, redo=True)
+    parsed_content_dict = scrap.main_parse_content(newspaper, html_content_dict, parsed_file, parsed_attr, redo=True)
+    
+    #download images from image urls
+    scrap.main_download_pics(parsed_content_dict, parsed_file, image_folder)
+
 
 if __name__ == '__main__':
 
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspaper = "ITV"
+    newspaper = "BBC"
 
     #get relative paths of the files containing the URLs for this paper
     url_folder = f"../google_scraping/article_urls/{newspaper}"
@@ -36,6 +41,7 @@ if __name__ == '__main__':
     #set folder names where raw HTML and parsed contents should be written to
     html_folder = f"../../disruption_data/article_html/{newspaper}" #can't be in the repo; too big
     parsed_folder = f"article_contents/{newspaper}"
+    image_folder = f"article_images/{newspaper}"
 
     for url_file in url_files:
     
@@ -48,6 +54,8 @@ if __name__ == '__main__':
         #add folder path to url_files
         url_file = "%s/%s" % (url_folder, url_file)
     
-        main(newspaper, url_file, html_file, parsed_file, parsed_attr=["title", "subtitle", "text", "image", "author", "date"])
+        main(newspaper, url_file, html_file, parsed_file,
+             parsed_attr=["title", "subtitle", "text", "image", "author", "date"],
+             image_folder=image_folder)
         
-        break #FOR DEBUGGING
+        #break #FOR DEBUGGING

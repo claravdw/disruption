@@ -81,7 +81,7 @@ def extract(html_content, parsed_attr):
             for div in image_divs:
                 images = div.findAll("img")
                 for image in images:
-                    image_caption.append((image.get('alt'),image.get('src')))
+                    image_caption.append({"caption": image.get('alt'), "url": image.get('src')})
             image_caption = remove_duplicates(image_caption)
             if len(image_caption) > 0: attr_dict["image"] = image_caption
             

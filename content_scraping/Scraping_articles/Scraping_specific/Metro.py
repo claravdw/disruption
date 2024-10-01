@@ -86,7 +86,7 @@ def extract(html_content, parsed_attr):
                     caption_text = img.get('alt')
                 else:
                     caption_text = None
-                image_caption.append((caption_text, image.get('src')))
+                image_caption.append({"caption": caption_text, "url": image.get('src')})
             
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             

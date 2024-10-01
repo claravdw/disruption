@@ -1,5 +1,6 @@
 import time
 from selenium.webdriver.common.by import By
+import re
 
 import query as qu
 
@@ -17,7 +18,8 @@ def extract_url_from_page(browser):
 def filter_url(url,href_list):
     urls=[]
     for href in href_list:
-        if href!=None and href.startswith(f'https://www.{url}'):
+        #check if the url starts with the newspaper website url
+        if href!=None and re.match(r'(https?:\/\/)?(www\.)?' + re.escape(url), href):
             urls.append(href)
     return urls
 
@@ -33,7 +35,9 @@ def scraper(url,query_list,start_date,end_date,browser):
         while current_url.startswith("https://www.google.com/sorry/"):
             time.sleep(10)
             current_url = browser.current_url
-        urls.extend(extract_url_from_page(browser))   
+        result_urls = extract_url_from_page(browser)
+        #print("found search_results:", result_urls)
+        urls.extend(result_urls)
         try:
             next_page=browser.find_element(By.XPATH,f'//*[@id="pnnext"]/span[2]')
             time.sleep(2)
@@ -42,5 +46,6 @@ def scraper(url,query_list,start_date,end_date,browser):
             print(f'no next page due to {e}')
             break
     urls=filter_url(url,urls)
+    #print("urls: ", urls)
     
     return urls

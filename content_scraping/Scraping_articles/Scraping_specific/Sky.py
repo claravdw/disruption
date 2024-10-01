@@ -82,7 +82,8 @@ def extract(html_content, parsed_attr):
                     caption = caption_span.text
                 else:
                     caption = None
-                image_caption.append((caption, image.get('src')))
+                image_caption.append({"caption": caption, "url": image.get('src')})
+                
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             
         except Exception as e:
