@@ -7,7 +7,7 @@ import sys
 from os import path
 parentdir = path.dirname(path.dirname(path.abspath(__file__)))
 sys.path.append(parentdir)
-from scraping_general_function import remove_duplicates
+from parsing_general_function import remove_duplicates
 
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -81,10 +81,10 @@ def extract(html_content, parsed_attr):
                 if caption_span:
                     caption = caption_span.text.strip()
                 elif image.has_attr('alt'):
-                    caption = image.get('alt')
+                    caption = image.get('alt').strip()
                 else:
                     caption = None
-                image_caption.append({"caption": caption, "url": "www.telegraph.co.uk" + image.get('src')})
+                image_caption.append({"caption": caption, "url": "https://www.telegraph.co.uk" + image.get('src')})
                 
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             

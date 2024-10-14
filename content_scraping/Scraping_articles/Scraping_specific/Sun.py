@@ -8,7 +8,7 @@ import sys
 from os import path
 parentdir = path.dirname(path.dirname(path.abspath(__file__)))
 sys.path.append(parentdir)
-from scraping_general_function import remove_duplicates
+from parsing_general_function import remove_duplicates
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         
@@ -38,11 +38,15 @@ def extract(html_content, parsed_attr):
     if "title" in parsed_attr:
     
         try:
-            kicker = page.find("span", {"class": "article__kicker t-p-color--dark"}).text.strip()
+            
             title = page.find("h1").text.strip()
+            kicker = page.find("span", {"class": "article__kicker"})
+            
+            if kicker:
+               title = kicker.text.strip() + f" {title}"
             
             if title:
-                attr_dict["title"] = f"{kicker} {title}"
+                attr_dict["title"] = title
             
         except Exception as e:
             logging.info(f"title parsing unsuccessful due to {e}")
@@ -80,7 +84,7 @@ def extract(html_content, parsed_attr):
             image_caption = []
             for figure in figures:
                 image = figure.find("img")
-                image_caption.append({"caption": image.get('alt'), "url": image.get('src')})
+                image_caption.append({"caption": image.get('alt').strip(), "url": image.get('src')})
                 
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             

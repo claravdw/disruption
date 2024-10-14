@@ -2,11 +2,19 @@
 from selenium import webdriver
 import requests
 import pickle
+import time
 
 def save_session(News_paper,logging_url):
     """This function let you loggin on a browser """
+    
+    #launch the browser and navigate to the url
     browser = webdriver.Chrome()
+    #browser.implicitly_wait(10) #trying to make the browser wait for the login
     browser.get(logging_url)
+    time.sleep(30) #trying to make the browser wait for the login
+    print("proceeding to save cookies")
+    
+    #save the cookies from the session
     s = requests.Session()
     # Set correct user agent
     selenium_user_agent = browser.execute_script("return navigator.userAgent;")
@@ -22,7 +30,7 @@ def save_session(News_paper,logging_url):
         
 if __name__ == '__main__':
 
-    newspaper = "Telegraph"
-    url = "https://www.telegraph.co.uk/world-news/2024/09/17/hezbollah-tech-blunder-ended-leabnon-pager-attack-israel/"
+    newspaper = "The-Guardian"
+    url = "https://www.theguardian.com/world/2024/oct/03/wildfires-are-burning-through-humanitys-carbon-budget-study-shows"
     
     save_session(newspaper, url)

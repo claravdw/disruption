@@ -1,11 +1,15 @@
-#script to determine weights of our ten chosen outlets, based on consumption,
-#so that weights sum to one and are proprional to the 
+#script to determine
+#(1) the top ten most consumed news outlets, and
+#(2) the weights of these ten outlets, based on consumption
+
+setwd("~/Documents/disruption/who reads what")
 
 library(foreign) # for read.spss()
 library(data.table)
 library(dplyr)
 library(lme4)
 library(ggplot2)
+
 
 ##data prep
 
@@ -14,25 +18,27 @@ d_all <- read.spss( "Reuters DNR 2024 - UK.sav", to.data.frame=TRUE )
 varLabels <- attr(d_all,"variable.labels")
 varNames <- colnames(d_all)
 
-#get column names of ideology and media columns
+#get column names of media and weight columns
 media_qs <- grep("^Q5[AB]\\d{2}$", varNames)
 weight <- grep("weight", varNames)
+ideology_q <- grep("^Q1F$", varNames)
 # Richard Fletcher: The political leaning variable is Q1F,
 # the offline news use variables start Q5a, online Q5b, and cross platform Q5_Unique
 
 #get nice names for variables
-d_wide <- d_all[, c(1, weight, media_qs)]
+d_wide <- d_all[, c(1, weight, ideology_q, media_qs)]
 medianames <- varLabels[media_qs] #get media outlet names
 medianames <- gsub("[^A-Za-z0-9 ]", " ", medianames) #replace special characters with space
 medianames <- gsub("\\s+", " ", medianames) #eliminate multiple spaces
 medianames <- gsub("\\s$", "", medianames) #eliminate ending spaces
-colnames(d_wide) <- c("id", "weight", medianames)
+colnames(d_wide) <- c("id", "weight", "ideology", medianames)
 d_wide <- d_wide[,!(colnames(d_wide) %in% c("Other1", "Other2", "Don t Know", "Don t know.1", "None of these"))]
 
 #convert variable types
 d_wide <- d_wide %>%
-  mutate_at(vars(-c("id","weight")), funs(recode(.,`Yes` = 1, `No`=0)))
-
+  mutate_at(vars(-c("id","weight","ideology")), funs(recode(.,`Yes` = 1, `No`=0)))
+d_wide$ideology <- as.numeric(d_wide$ideology)
+d_wide$ideology[d_wide$ideology==8] <- NA #Don't knows
 
 ##join top online and offline sources
 
@@ -78,12 +84,7 @@ d_wide <- d_wide[!names(d_wide) %in% mixsources]
 ##find most-consumed sources
 
 #get data from wide to long
-d <- melt(setDT(d_wide), id.vars = c("id","weight"), variable.name = "outlet", value.name = "consumed")
-#d <- d[d$outlet %in% our_outlets,]
-
-#convert variable types
-#d$consumed <- recode(d$consumed, No = 0, Yes = 1)
-#d$outlet <- factor(d$outlet) #drop non-included outlets
+d <- melt(setDT(d_wide), id.vars = c("id","weight","ideology"), variable.name = "outlet", value.name = "consumed")
 
 #get outlet weights
 outlet_weights <- tapply(d$consumed*d$weight, d$outlet, sum, na.rm=T)
@@ -116,14 +117,6 @@ top_outlet_weights <- top_outlet_weights/sum(top_outlet_weights) #weights sum to
 round(top_outlet_weights*100)
 #100 articles is n=20 per article if total n=2500 and treatment group allocation is 80%
 
-#list of outlets from Ofcom report
-# our_outlets <- c("Daily Mail Mail on Sunday",
-#                  "Guardian Observer",
-#                  "Metro free paper",
-#                  "Sun Sun on Sunday",
-#                  "The Times Sunday Times",
-#                  "Daily Telegraph Sunday Telegraph",
-#                  "Daily Mirror Sunday Mirror",
-#                  "The Express Sunday Express",
-#                  "BBC News online",
-#                  "Sky News online")
+#output df with top sources
+d_top <- d[d$outlet %in% names(top_outlet_weights),]
+write.csv(d_top, "Reuters_top_outlets.csv", row.names = FALSE)

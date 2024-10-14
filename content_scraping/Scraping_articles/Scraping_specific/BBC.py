@@ -84,7 +84,7 @@ def extract(html_content, parsed_attr):
                         caption_text = caption.text.strip()
                     #in absence of caption, use alt text (sometimes incomplete)
                     elif img.has_attr('alt'):
-                         caption_text = img.get('alt')
+                         caption_text = img.get('alt').strip()
                          #skip non-photos
                          caplower = caption_text.lower()
                          if any(b in caplower for b in badcaps):

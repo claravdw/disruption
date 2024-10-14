@@ -8,7 +8,7 @@ import sys
 from os import path
 parentdir = path.dirname(path.dirname(path.abspath(__file__)))
 sys.path.append(parentdir)
-from scraping_general_function import remove_duplicates
+from parsing_general_function import remove_duplicates
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         
@@ -73,20 +73,31 @@ def extract(html_content, parsed_attr):
                        
     if "image" in parsed_attr:
     
+        #src in img elements is sometimes this "fallback" link; real link is in data-src
+        bad_src = "https://metro.co.uk/wp-content/client-mu-plugins/metro-branding/images/fallback.png"
+    
         try:
         
             figures = page.findAll("figure", {"class": "img-container shareable-item wp-caption"})
             image_caption = []
             for figure in figures:
+                #get image url
                 image = figure.find("img")
+                img_url = image.get('src')
+                if img_url == bad_src:
+                    if image.has_attr('data-src'):
+                        img_url = image.get('data-src')
+                    else:
+                        img_url = None
+                #get caption
                 caption = figure.find("figcaption")
                 if caption:
                     caption_text = caption.text.strip()
-                elif img.has_attr('alt'):
-                    caption_text = img.get('alt')
+                elif image.has_attr('alt'):
+                    caption_text = image.get('alt').strip()
                 else:
                     caption_text = None
-                image_caption.append({"caption": caption_text, "url": image.get('src')})
+                image_caption.append({"caption": caption_text, "url": img_url})
             
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             

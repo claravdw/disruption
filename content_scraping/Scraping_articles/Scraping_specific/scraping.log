@@ -1,3 +1,8 @@
 2024-10-01 15:45:17,400 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
 2024-10-01 15:46:07,812 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
 2024-10-01 15:46:53,623 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
+2024-10-02 10:14:38,713 - INFO - image parsing unsuccessful due to name 'img' is not defined
+2024-10-02 11:01:31,478 - INFO - title parsing unsuccessful due to 'NoneType' object has no attribute 'text'
+2024-10-02 11:05:44,500 - INFO - title parsing unsuccessful due to 'NoneType' object has no attribute 'text'
+2024-10-02 16:12:49,145 - INFO - image parsing unsuccessful due to unhashable type: 'dict'
+2024-10-02 16:28:02,442 - INFO - image parsing unsuccessful due to unhashable type: 'dict'

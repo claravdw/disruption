@@ -10,10 +10,12 @@ import json
 import requests
 import mimetypes
 from urllib.parse import urlparse
+import glob
+import time
 
 csv.field_size_limit(10000000)
 
-logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+#logging.basicConfig(filename="data_structuring.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def from_csv_to_list(file_path, name_column="url"):
@@ -26,14 +28,14 @@ def from_csv_to_list(file_path, name_column="url"):
         URLs_list = URLs_df[name_column].tolist()
         return URLs_list
     except FileNotFoundError:
-        # If the file does not exist return and empty list
-        #logging.info("No url file found at", file_path, ", returning empty list")
+        # If the file does not exist return, an empty list
+        logging.info("No url file found at", file_path, ", returning empty list")
         return []
 
 
 def from_file_to_dict(file_path):
 
-    """This function reads in a json file nand returns a dictionary"""
+    """This function reads in a json file and returns a dictionary"""
 
     try:
         # Opening JSON file
@@ -65,16 +67,20 @@ def from_dict_to_file(mydict, file_path):
             json.dump(mydict, fp)
     
     except Exception as e:
-        logging.info("JSON file writing error at {file_path} due to {e} \n did not output file")
+        logging.info(f"JSON file writing error at {file_path} due to {e}")
         
         
-def download_file(url, file_name, folder_path):
+def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2, sleep_time: int = 5):
     """
     This function downloads a file from a url. Arguments:
-    url: the url to download the file from
-    file_name: the name of the file to store it in, *without the extension*, which it guesses
+    - url: the url to download the file from
+    - file_name: the name of the file to store it in, *without the extension*, which it guesses
     automatically from the file
-    folder_path: the path to the folder to store it in
+    - folder_path: the path to the folder to store it in
+    - s: a requests session, possibly containing login cookies for the newspaper
+    - redo: whether or not files that have already been stored should be downloaded again
+    - retries (int): Number of retry attempts in case of failure. Default is 2.
+    - sleep_time (int): Time to sleep between retries in seconds. Default is 5.
     """
 
     try:
@@ -82,9 +88,40 @@ def download_file(url, file_name, folder_path):
         #create folder if it does not exist yet
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
+            
+        #find any files that match the planned file name (without extension)
+        file_matches = glob.glob(f"{folder_path}/{file_name}.*")
+                       
+        #if redo is False, do not re-download the file if it is already there
+        if (not redo) and file_matches:
+            logging.info(f"Not re-downloading file at {url}; already present")
+            return file_matches[0] #first match for that file name with some extension
     
-        #get the file
-        response = requests.get(url)
+        logging.info(f"downloading file at {url}")
+    
+        #try a set number of times to get the file
+        response = None
+        for attempt in range(retries):
+        
+            try:
+    
+                #get the file
+                response = s.get(url)
+        
+                #check status
+                status = response.status_code
+                if status < 200 or status >= 300:
+                    raise Exception(f"HTML request was not successful, status was {status}")
+                
+            except Exception as e:
+        
+                logging.warning(f"Attempt {attempt + 1} failed for {url} due to {e}")
+                time.sleep(sleep_time)
+                
+        #if still no valid (200) response, return None
+        if not response:
+            logging.error(f"Ran out of attempts to get file at {url}")
+            return None
         
         #guess the appropriate extension from the header
         content_type = response.headers['content-type']
@@ -101,7 +138,8 @@ def download_file(url, file_name, folder_path):
         
         with open(full_path, 'wb') as file:
             file.write(response.content)
-            
+        #logging.info(f"{url} saved as:\n{full_path}")
+        
         return full_name
             
     except Exception as e:

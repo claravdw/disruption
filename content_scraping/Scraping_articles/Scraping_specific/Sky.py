@@ -51,20 +51,25 @@ def extract(html_content, parsed_attr):
     
     if "text" in parsed_attr:
     
+        #strings that occur in useless paragraphs
+        bad_strings = ["More from Sky News", "Follow latest:", "Read more:", "latest:",
+                       ":: Subscribe to the"]
+    
         try:
             body_div = page.find("div",{'class':'sdc-article-body'})
             
             #remove any "related stories" boxes
             related_divs = body_div.findAll("div",{'class':'sdc-article-related-stories'})
             for div in related_divs:
-                #print(div)
-                div.extract() #cf. pop()
+                div.extract() #pops these elements from body
             
             paragraphs = body_div.findAll("p")
             text = []
             for paragraph in paragraphs:
                 if paragraph:
-                    text.append(paragraph.text.strip())
+                    p_text = paragraph.text.strip()
+                    if not any(bad in p_text for bad in bad_strings):
+                        text.append(p_text)
             if len(text) > 0: attr_dict["text"] = text
             
         except Exception as e:
@@ -79,7 +84,7 @@ def extract(html_content, parsed_attr):
                 image = figure.find("img")
                 caption_span = figure.find("span", {"class": "ui-media-caption__caption-text"})
                 if caption_span:
-                    caption = caption_span.text
+                    caption = caption_span.text.strip()
                 else:
                     caption = None
                 image_caption.append({"caption": caption, "url": image.get('src')})
