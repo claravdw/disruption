@@ -25,7 +25,7 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
 
 
 if __name__ == '__main__':
@@ -33,15 +33,16 @@ if __name__ == '__main__':
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = [#"BBC",
-                  #"The-Guardian",
-                  #"Daily-Mail",
-                  #"Sky", 
-                  #"Metro",
-                  #"Sun",
-                  #"Telegraph",
-                  #"The-Times",
-                  "Mirror"#, "ITV"
+    newspapers = ["BBC",
+                  "The-Guardian",
+                  "Daily-Mail",
+                  "Sky", 
+                  "Metro",
+                  "Sun",
+                  "Telegraph",
+                  "The-Times",
+                  "Mirror",
+                  "ITV"
                   ]
                   
     for newspaper in newspapers:

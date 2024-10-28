@@ -70,7 +70,7 @@ def from_dict_to_file(mydict, file_path):
         logging.info(f"JSON file writing error at {file_path} due to {e}")
         
         
-def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2, sleep_time: int = 5):
+def download_file(url, file_name, folder_path, s = None, redo = False, retries: int = 2, sleep_time: int = 5):
     """
     This function downloads a file from a url. Arguments:
     - url: the url to download the file from
@@ -82,6 +82,10 @@ def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2
     - retries (int): Number of retry attempts in case of failure. Default is 2.
     - sleep_time (int): Time to sleep between retries in seconds. Default is 5.
     """
+    
+    #if no requests session included in call, start a new session
+    if not s:
+        s = requests.Session()
 
     try:
     
@@ -95,7 +99,9 @@ def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2
         #if redo is False, do not re-download the file if it is already there
         if (not redo) and file_matches:
             logging.info(f"Not re-downloading file at {url}; already present")
-            return file_matches[0] #first match for that file name with some extension
+            #first match for that file name with some extension
+            full_name = os.path.basename(file_matches[0])
+            return full_name
     
         logging.info(f"downloading file at {url}")
     
@@ -107,6 +113,7 @@ def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2
     
                 #get the file
                 response = s.get(url)
+                #print(response, "\n\n")
         
                 #check status
                 status = response.status_code
@@ -138,7 +145,7 @@ def download_file(url, file_name, folder_path, s, redo = False, retries: int = 2
         
         with open(full_path, 'wb') as file:
             file.write(response.content)
-        #logging.info(f"{url} saved as:\n{full_path}")
+        #print(f"{url} saved as:\n{full_path}")
         
         return full_name
             

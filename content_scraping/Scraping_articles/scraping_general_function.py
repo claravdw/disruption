@@ -4,6 +4,7 @@ import requests
 import time
 import logging
 import urllib.request
+import urllib.parse
 import pickle
 import os
 from seleniumwire import webdriver
@@ -22,7 +23,7 @@ logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(ascti
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/png,image/jpg,*/*;q=0.8",
-    #image/avif,image/webp seems best not to accept because server will send jps that have content-type webp, resulting in corrupted files
+    #image/avif,image/webp seems best not to accept because server will send jpgs that have content-type webp, resulting in corrupted files
     "Accept-Language": "en-US,en;q=0.5",
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
@@ -33,9 +34,6 @@ headers = {
     "Sec-Fetch-User": "?1",
     "Cache-Control": "max-age=0",
 }
-
-#TO DO: set referer to newspaper website
-#'Referer' : 'http://aussietaste.recipes/vegetables/leek-vegetables/leek-and-sweet-potato-gratin/'
 
 # define the request interceptor to configure custom headers for selenium webdriver
 def interceptor(request):
@@ -71,7 +69,7 @@ def all_images_loaded(driver):
     """)
     
 
-def start_session(newspaper: str):
+def start_session(newspaper: str, url=None):
 
     try:
         with open(f'Scripts/session_{newspaper}.pickle', 'rb') as f:
@@ -79,6 +77,10 @@ def start_session(newspaper: str):
             #print("Successfully retrieved session for", newspaper)
     except:
         s = requests.Session()
+        
+    #update headers to help prevent scraping detection
+    if url:
+        headers["referer"] = url
     s.headers.update(headers)
     
     return s
@@ -181,18 +183,39 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     ds.from_dict_to_file(html_content_dict, html_file)
                 
     return html_content_dict
+    
+    
+def update_url_params(url, params):
+
+    """
+    Function to update some of the parameter values in a url with desired values. Arguments:
+    url: the url to be updated
+    params: dictionary of keys (parameter names) and values to update
+    """
+
+    #get dict of query parameters from the url
+    url_parts = urllib.parse.urlparse(url)
+    query = dict(urllib.parse.parse_qsl(url_parts.query))
+    
+    #update the necessary parameters
+    query.update(params)
+    
+    #put them back into the url
+    url = url_parts._replace(query=urllib.parse.urlencode(query)).geturl()
+    
+    return url
 
     
 def main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False):
     
-    #logging.info(f"downloading images for file {parsed_file}")
+    logging.info(f"downloading images for file {parsed_file}")
 
     #go over the articles; keys are their urls
     for url, parsed_content in parsed_content_dict.items():
     
-        #logging.info(f"downloading images for article {url}")
+        logging.info(f"downloading images for article {url}")
     
-        s = start_session(newspaper)
+        s = start_session(newspaper, url)
     
         try:
         
@@ -206,8 +229,16 @@ def main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder
                     #create local file name (without extension)
                     img_file_name = f"{parsed_content['id']}_img{i+1}"
                     
-                    #get url (without parameters)
-                    img_url = image_dict["url"].split('?')[0]
+                    #get url
+                    img_url = image_dict["url"]
+                    
+                    #drop parameters--except if Guardian, it needs parameters or will give a 401
+                    if newspaper != "The-Guardian":
+                        img_url = img_url.split('?')[0]
+                    #if it is the Guardian, set width to a bigger size (may want this for other sources too)
+                    #else:
+                    #    params = {'width':'500'}
+                    #    img_url = update_url_params(img_url, params)
         
                     #download the image file and get full name (with extension)
                     img_full_name = ds.download_file(img_url, img_file_name, image_folder, s, redo)
