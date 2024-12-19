@@ -16,8 +16,13 @@ import data_structuring as ds
 #set up logging
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+#make seleniumwire logging less verbose by setting level to WARNING
+logger = logging.getLogger('seleniumwire')
+logger.setLevel(logging.WARNING) 
 
-##Web scraping functionality
+
+
+##Web scraping parameter settings
 
 #set up headers for scraping; imitate Mozilla on Windows
 headers = {
@@ -34,6 +39,7 @@ headers = {
     "Sec-Fetch-User": "?1",
     "Cache-Control": "max-age=0",
 }
+
 
 # define the request interceptor to configure custom headers for selenium webdriver
 def interceptor(request):
@@ -54,20 +60,12 @@ def interceptor(request):
     request.headers["Sec-Fetch-Site"] = "cross-site"
     request.headers["Accept-Encoding"] = "gzip, deflate, br, zstd"
 
-
 #set up options for scraping with Chrome webdriver
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless=new')
 
-
-# Function to check if all images are loaded
-def all_images_loaded(driver):
-    return driver.execute_script("""
-        return Array.from(document.images).every(img => img.complete && (img.naturalHeight !== 0));
-    """)
-    
 
 def start_session(newspaper: str, url=None):
 
@@ -84,9 +82,45 @@ def start_session(newspaper: str, url=None):
     s.headers.update(headers)
     
     return s
+    
+    
+    
+##Functions to scrape the html content of newspaper article urls
+
+def accept_cookies(s):
+
+    try:
+        s.implicitly_wait(5) #wait up to five seconds to load elements (incl. accept button)
+        button = s.find_element("id", "cassie_accept_all_pre_banner")
+        button.click()
+        logging.info(f"Successfully accepted cookies")
+    except Exception as e:
+        logging.warning(f"Could not accept cookies due to: {e}")
+        
+    return s
 
 
-def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5):
+def scroll_down(s):
+
+    #scroll down slowly
+
+    #get the position of scroll
+    scroll_pos_init = s.execute_script("return window.pageYOffset;")
+    stepScroll = 600
+
+    #scroll down in steps and wait, until we are at the bottom of the page
+    while True:
+        s.execute_script(f"window.scrollBy(0, {stepScroll});")
+        scroll_pos_end = s.execute_script("return window.pageYOffset;")
+        time.sleep(0.75)
+        if scroll_pos_init >= scroll_pos_end:
+            break
+        scroll_pos_init = scroll_pos_end
+        
+    return s
+
+
+def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5, first_visit: bool = True):
     """
     This function returns the HTML content of the URL passed in entry for a website that needs a subscription.
     It also logs the URL currently being scraped.
@@ -96,6 +130,7 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
     s: requests session or selenium webdriver
     retries (int): Number of retry attempts in case of failure. Default is 3.
     sleep_time (int): Time to sleep between retries in seconds. Default is 5.
+    first_visit (bool): Toggle for first visit to the domain (may require accepting cookies)
     
     Returns:
     str: The HTML content of the URL, or None if the fetch failed.
@@ -108,19 +143,25 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
             
             #get the html text, depending on type of scraper
             if type(s) == requests.sessions.Session: #requests session
+
                 response = s.get(url)
                 text = response.text
                 status = response.status_code
                 if status < 200 or status >= 300:
                     raise Exception(f"HTML request was not successful, status was {status}")
+                    
             else: #selenium webdriver
                 s.get(url) #load the page
-                # Wait until all images on the page are fully loaded
-                #WebDriverWait(s, 10).until(all_images_loaded)
-                # Wait until the page is fully loaded, max 10 s
-                # WebDriverWait(s, 10).until(lambda d: d.execute_script('return document.readyState') == 'complete')
-                # neither works
+                
+                if newspaper == "ITV":
+                    #if visiting the domain for the first time with this driver,
+                    #try to accept cookies
+                    if first_visit:
+                        s = accept_cookies(s)
+                    s = scroll_down(s)
+                
                 text = s.page_source
+                
             return text
             
         except Exception as e:
@@ -138,22 +179,18 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     
     logging.info(f"scraping urls from file: {url_file}")
     
-    
-    #if BBC, we need selenium due to javascript elements; set up a selenium session
-    if newspaper in ["BBC"]:#, "ITV"]:
+    #if BBC, we need selenium due to javascript elements;
+    #if ITV, we need selenium to scroll down slowly and load images;
+    #set up a selenium session
+    if newspaper in ["BBC", "ITV"]:
     
         s = webdriver.Chrome(options=options)
         s.request_interceptor = interceptor
-        #should give each page 5 seconds to load, hopefully getting all the images
-        #s.implicitly_wait(5)
-        #does not work
     
     #otherwise, use requests package, and retrieve session if possible
-    #TO DO: consider trying to run the script if no session is found
     else:
     
         s = start_session(newspaper)
-    
     
     #try to get the list of URLs from file (created by google_scraping module)
     urls_list = ds.from_csv_to_list(url_file, name_column="url")
@@ -168,14 +205,16 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
 
 
     #loop over the article urls
+    first_visit = True
     for url in urls_list:  
             
         #if the URL is not already in the html content dict, scrape and add it
         if url not in html_content_dict:
         
-            logging.info(f"Scraping url: {url}")
-            html_content = fetch_url(newspaper=newspaper, s=s, url=url)
+            #logging.info(f"Scraping url: {url}")
+            html_content = fetch_url(newspaper=newspaper, s=s, url=url, first_visit=first_visit)
             html_content_dict[url] = html_content
+            first_visit = False #no need to look for cookie accept button again
             
             #break #FOR DEBUGGING
             
@@ -185,6 +224,10 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     return html_content_dict
     
     
+    
+##Functions to scrape the content of newspaper image urls
+    
+
 def update_url_params(url, params):
 
     """

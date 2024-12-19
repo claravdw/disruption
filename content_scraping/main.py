@@ -19,13 +19,13 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     - parsed_attr: which article attributes should be parsed"""
     
     #scraping the html content of all urls retrieved from google 
-    html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=False)
+    html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=True)
     
     #parsing the html content of all scraped urls
-    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False)
+    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=True)
 
 
 if __name__ == '__main__':
@@ -33,15 +33,15 @@ if __name__ == '__main__':
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = ["BBC",
-                  "The-Guardian",
-                  "Daily-Mail",
-                  "Sky", 
-                  "Metro",
-                  "Sun",
-                  "Telegraph",
-                  "The-Times",
-                  "Mirror",
+    newspapers = [#"BBC",
+                  #"The-Guardian",
+                  #"Daily-Mail",
+                  #"Sky", 
+                  #"Metro",
+                  #"Sun",
+                  #"Telegraph",
+                  #"The-Times",
+                  #"Mirror",
                   "ITV"
                   ]
                   
