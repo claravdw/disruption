@@ -9,8 +9,7 @@ import query as qu #script to form a URL that is a google.com search query
 import chrome_launch as cl
 import data_structuring as ds
 
-##TO DO: find a way to limit to English searches; try not to add already-found urls again
-##(i.e. do not make separate files fro XR and GP queries)
+##TO DO: find a way to limit to English searches
 
 
 def main(paper_name, paper_url, search_terms, start_date, end_date, browser, url_folder):
@@ -82,8 +81,8 @@ if __name__ == '__main__':
                     "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration OR disruption OR blockade)"]} #one each of these
                     
     #set start and end date in format yyyy-mm-dd; end day will be included in the search
-    start_date = "2020-09-01"
-    end_date = "2022-08-31"
+    start_date = "2022-09-01"
+    end_date = "2024-10-30"
     
     browser = cl.chrome_launch()
 

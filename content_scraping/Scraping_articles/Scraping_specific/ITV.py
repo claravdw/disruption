@@ -31,8 +31,8 @@ def extract(html_content, parsed_attr):
     try:
         page = bs4.BeautifulSoup(html_content, "lxml")
     except Exception as e:
-        logging.info(f"entire page parsing unsuccessful due to {e}")
-        return attr_dict #all values None
+        logging.info(f"page could not be parsed due to {e}")                    
+        return attr_dict
     
     if "title" in parsed_attr:
     

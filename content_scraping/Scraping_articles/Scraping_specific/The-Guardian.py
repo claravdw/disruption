@@ -24,7 +24,11 @@ def extract(html_content, parsed_attr):
     #dictionary to store attributes
     attr_dict = dict.fromkeys(parsed_attr)
 
-    page = bs4.BeautifulSoup(html_content, "lxml")
+    try:
+        page = bs4.BeautifulSoup(html_content, "lxml")
+    except Exception as e:
+        logging.info(f"page could not be parsed due to {e}")                    
+        return attr_dict
     
     if "title" in parsed_attr:
     
