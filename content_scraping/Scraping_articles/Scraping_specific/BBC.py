@@ -72,10 +72,12 @@ def extract(html_content, parsed_attr):
 
             for figure in figures:
             
-                img = figure.find("img")
+                #find all figures; sometimes placeholders
+                #are combined with real images in a figure block
+                imgs = figure.findAll("img")
                 caption = figure.find("figcaption")
                 
-                if img:
+                for img in imgs:
                 
                     img_src = img.get('src')
                     

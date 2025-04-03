@@ -33,13 +33,13 @@ if __name__ == '__main__':
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = [#"BBC",
-                  #"The-Guardian",
-                  #"Daily-Mail",
-                  #"Sky", 
-                  #"Metro",
-                  #"Sun",
-                  #"Telegraph",
+    newspapers = ["BBC",
+                  "The-Guardian",
+                  "Daily-Mail",
+                  "Sky", 
+                  "Metro",
+                  "Sun",
+                  "Telegraph",
                   "The-Times",
                   "Mirror",
                   "ITV"
