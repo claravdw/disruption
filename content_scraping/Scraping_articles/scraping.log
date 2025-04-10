@@ -1,0 +1,43 @@
+2025-04-03 09:16:53,148 - INFO - scraping urls from file: test_files/test_urls
+2025-04-03 09:16:58,569 - INFO - No file found at test_files/test_html, returning empty dict
+2025-04-03 09:16:58,570 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 09:54:52,780 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 09:54:58,262 - INFO - Successfully accepted cookies
+2025-04-03 09:55:51,100 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 09:55:58,958 - INFO - Successfully accepted cookies
+2025-04-03 09:56:08,308 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'has_attr'
+2025-04-03 09:57:02,902 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 09:57:08,631 - INFO - Successfully accepted cookies
+2025-04-03 10:03:33,718 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 10:03:38,120 - INFO - Successfully accepted cookies
+2025-04-03 10:05:45,281 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 10:05:49,700 - INFO - Successfully accepted cookies
+2025-04-03 10:56:52,679 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 10:57:21,017 - INFO - Successfully accepted cookies
+2025-04-03 11:00:45,175 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 11:00:50,481 - INFO - Successfully accepted cookies
+2025-04-03 11:12:48,514 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 11:12:54,105 - INFO - Successfully accepted cookies
+2025-04-03 11:13:01,935 - INFO - image parsing unsuccessful due to name 'extract_largest_image_src' is not defined
+2025-04-03 15:05:04,472 - INFO - Fetching URL: https://www.itv.com/news/2021-05-01/extinction-rebellion-climate-activists-stage-protest-of-one-road-blocks-across-uk
+2025-04-03 15:05:10,976 - INFO - Successfully accepted cookies
+2025-04-03 15:05:59,253 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-03 15:06:04,626 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-03 16:58:07,065 - INFO - Fetching URL: https://www.theguardian.com/environment/2021/aug/19/extinction-rebellion-targets-city-of-london-over-climate-role
+2025-04-04 10:09:33,025 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-04 10:09:37,528 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-09 15:16:54,892 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-09 15:16:58,228 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-09 15:19:31,024 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-09 15:19:33,527 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-09 15:19:33,530 - INFO - JSON file writing error at test_files/test.json due to Object of type datetime is not JSON serializable
+2025-04-09 15:24:23,006 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-09 15:24:25,712 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-09 15:24:46,037 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-09 15:24:48,601 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-09 15:26:05,592 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-09 15:26:07,928 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-10 08:50:47,852 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-10 08:50:48,796 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'findAll'
+2025-04-10 09:15:52,058 - INFO - Fetching URL: https://www.thesun.co.uk/sport/34389788/prince-william-george-villa-champions-league/
+2025-04-10 09:15:52,482 - INFO - text parsing unsuccessful due to 'NoneType' object has no attribute 'findAll'

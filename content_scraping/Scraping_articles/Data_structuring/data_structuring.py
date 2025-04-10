@@ -9,7 +9,7 @@ import logging
 import json
 import requests
 import mimetypes
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 import glob
 import time
 
@@ -135,9 +135,18 @@ def download_file(url, file_name, folder_path, s = None, redo = False, retries: 
         extension = mimetypes.guess_extension(content_type)
         
         #if that didn't work, get it from the url
-        if not extension:
-            url_path = urlparse(url).path
-            extension = os.path.splitext(url_path)[1]
+        parsed_url = urlparse(url)
+        if not extension:    
+            # either from fm parameter...
+            query_params = parse_qs(parsed_url.query)
+            extension = query_params.get('fm', [None])[0]
+            extension = f".{extension}"
+            # e.g., ITV sometimes has extension .jpg but
+            # ?fm=webp, and the file will be .webp format
+            if not extension:
+                # ...or url extension
+                url_path = parsed_url.path
+                extension = os.path.splitext(url_path)[1]
         
         #create the file name and path
         full_name = file_name + extension

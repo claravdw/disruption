@@ -1,8 +1,9 @@
 import sys
 import importlib
 import logging
-import Scraping_specific
+import parsing_specific
 import os
+import re
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
@@ -11,35 +12,35 @@ import data_structuring as ds
 logging.basicConfig(filename="parsing.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     
 
-def choose_extract(News_paper):
+def choose_parser(newspaper):
     """
     Dynamically import a module based on the given string.
 
     Args:
-        News_paper (str): The name of the module to import (without .py extension).
+        newspaper (str): The name of the module to import (without .py extension).
 
     Returns:
         module or None: The imported module, or None if the import fails.
     """
     try:
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        module_path = os.path.join(current_dir, 'Scraping_specific', f"{News_paper}.py")
+        module_path = os.path.join(current_dir, 'parsing_specific', f"{newspaper}.py")
         
         # Check if the module file exists
         if not os.path.isfile(module_path):
-            raise ModuleNotFoundError(f"Newspaper-specific scraping module {News_paper} not found at {module_path}")
+            raise ModuleNotFoundError(f"Newspaper-specific scraping module {newspaper} not found at {module_path}")
         
         # Load the module from file
-        spec = importlib.util.spec_from_file_location(News_paper, module_path)
+        spec = importlib.util.spec_from_file_location(newspaper, module_path)
         newspaper_module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(newspaper_module)
         
         return newspaper_module
         
     except ModuleNotFoundError as e:
-        print(f"Module {News_paper} not found: {e}")
+        print(f"Module {newspaper} not found: {e}")
     except Exception as e:
-        print(f"Error importing module {News_paper}: {e}")
+        print(f"Error importing module {newspaper}: {e}")
     return None
 
     
@@ -93,7 +94,7 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
     
     #import the specific parsing module for this newspaper
     try:
-        newspaper = choose_extract(paper_name)
+        newspaper_module = choose_parser(paper_name)
     except:
         return None
 
@@ -122,7 +123,7 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
         if url not in parsed_content_dict and url not in dropped_content_dict:
     
             logging.info(f"Parsing url: {url}")
-            parsed_content = newspaper.extract(html_content, parsed_attr)
+            parsed_content = newspaper_module.extract(html_content, parsed_attr)
             
             #format dates, text body, add source and id
             try:
@@ -153,27 +154,5 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
     
     return(parsed_content_dict)
 
-        
-def remove_duplicates(lst):
-    """
-    Removes duplicates from a list while preserving the original order. Used by the newspaper-specific scraping scripts.
-    """
-    seen = set()
-    new_list = []
-    for element in lst:
-    
-        #if element is a dictionary, convert it to tuples
-        #before comparing/adding it to the "seen" list
-        if isinstance(element, dict):
-            ele_for_seen = tuple(element.items())
-        else:
-            ele_for_seen = element
-        
-        #if element not seen, append (original) element to list
-        if ele_for_seen not in seen:
-            seen.add(ele_for_seen)
-            new_list.append(element)
-            
-    return new_list
     
     

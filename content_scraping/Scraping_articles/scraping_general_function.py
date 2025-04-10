@@ -216,7 +216,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
             html_content_dict[url] = html_content
             first_visit = False #no need to look for cookie accept button again
             
-            #break #FOR DEBUGGING
+            #break #FOR DEBUGGING, only try first URL
             
     #write to json file
     ds.from_dict_to_file(html_content_dict, html_file)
@@ -278,10 +278,6 @@ def main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder
                     #drop parameters--except if Guardian, it needs parameters or will give a 401
                     if newspaper != "The-Guardian":
                         img_url = img_url.split('?')[0]
-                    #if it is the Guardian, set width to a bigger size (may want this for other sources too)
-                    #else:
-                    #    params = {'width':'500'}
-                    #    img_url = update_url_params(img_url, params)
         
                     #download the image file and get full name (with extension)
                     img_full_name = ds.download_file(img_url, img_file_name, image_folder, s, redo)

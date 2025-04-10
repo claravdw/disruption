@@ -22,10 +22,10 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=False)
     
     #parsing the html content of all scraped urls
-    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False)
+    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=True)
 
 
 if __name__ == '__main__':
@@ -75,4 +75,6 @@ if __name__ == '__main__':
                  parsed_attr=["title", "subtitle", "text", "image", "author", "date"],
                  image_folder=image_folder)
         
-            #break #FOR DEBUGGING
+            #break #FOR DEBUGGING, only try first url file
+        
+        #break #FOR DEBUGGING, only try first newspaper
