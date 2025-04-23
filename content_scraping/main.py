@@ -25,7 +25,7 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=True)
 
 
 if __name__ == '__main__':

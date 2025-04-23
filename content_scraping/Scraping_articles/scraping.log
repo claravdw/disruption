@@ -50,3 +50,55 @@
 2025-04-23 12:08:49,676 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
 2025-04-23 12:08:52,555 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
 2025-04-23 12:08:52,558 - INFO - downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/40C1/production/_106477561_gettyimages-1137497321.jpg.webp
+2025-04-23 12:32:27,502 - INFO - Fetching URL: https://www.bbc.com/sport/football/57488478
+2025-04-23 12:32:29,251 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:50:51,222 - INFO - Fetching URL: https://www.bbc.com/sport/football/57488478
+2025-04-23 22:50:53,766 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 22:50:53,768 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:51:54,885 - INFO - Fetching URL: https://www.bbc.com/news/av/57050259
+2025-04-23 22:51:58,497 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:54:40,256 - INFO - Fetching URL: https://www.bbc.com/news/entertainment-arts-54317603
+2025-04-23 22:54:44,578 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 22:54:44,579 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:56:23,624 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 22:56:29,489 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 22:56:29,491 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:57:12,487 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 22:57:15,771 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 22:57:15,773 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 22:58:17,122 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 22:58:20,623 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 22:58:20,624 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:00:12,261 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:00:17,064 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:00:17,066 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:01:05,124 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:01:08,394 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:01:08,395 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:02:58,019 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:03:01,924 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:03:01,926 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:04:09,602 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:04:13,700 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:04:13,702 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:04:41,057 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:04:44,362 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:04:44,364 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:05:40,387 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:05:44,121 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:05:44,124 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/CE46/production/_116060825_dakar4.jpg.webp; already present
+2025-04-23 23:13:18,436 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:13:22,112 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:13:22,114 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:13:47,684 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:13:51,226 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:13:51,228 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:14:47,231 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:14:50,458 - INFO - image parsing unsuccessful due to name 'remove_duplicates' is not defined
+2025-04-23 23:14:50,460 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:15:47,042 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:15:50,252 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:15:50,255 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/CE46/production/_116060825_dakar4.jpg.webp; already present
+2025-04-23 23:23:00,896 - INFO - Fetching URL: https://www.bbc.com/news/world-africa-55300261
+2025-04-23 23:23:09,331 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 23:23:09,334 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/CE46/production/_116060825_dakar4.jpg.webp; already present

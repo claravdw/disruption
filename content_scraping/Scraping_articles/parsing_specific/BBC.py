@@ -4,7 +4,7 @@ from datetime import datetime
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))  # Add current dir to path
-from parsing_helpers import get_biggest_src_fromimg
+from parsing_helpers import get_biggest_src_fromimg, badcaps_BBC, badsrc_BBC, badphrases_BBC, remove_duplicates
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -62,18 +62,12 @@ def extract(html_content, parsed_attr):
             
                        
     if "image" in parsed_attr:
-    
-        #strings present in non-photo alt texts
-        badcaps = ["presentational grey line", "white line", "bbc bbc", "Around the BBC iPlayer footer",
-                   "Around the BBC iPlayer banner"]
-        #names of non-photo image links
-        badsrc = ["https://ichef.bbci.co.uk/news/480/cpsprodpb/1FCD/production/_105914180_line976-nc.png.webp",
-                  "/bbcx/grey-placeholder.png", "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/86E1/production/_112292543_aroundthebbc-iplayerfulllogo-nc.png", "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/ADF1/production/_112292544_iplayerpinkfooter-nc.png"]
-    
+                  
         try:
             #list of two-item lists containing captions and links
             images = []
             figures = page.findAll("figure")
+
 
             for figure in figures:
             
@@ -88,7 +82,8 @@ def extract(html_content, parsed_attr):
                     img_src = img.get('src')
                     
                     #skip non-photos
-                    if img_src in badsrc:
+                    if img_src in badsrc_BBC:
+                        #logging.info(f"removed image due to bad src: {img_src}")
                         continue
                         
                     #if there is a list of sources (srcset), also get the biggest
@@ -97,13 +92,23 @@ def extract(html_content, parsed_attr):
                     #get caption    
                     if caption:
                         caption_text = caption.text.strip()
+                        
                     #in absence of caption, use alt text (sometimes incomplete)
                     elif img.has_attr('alt'):
                          caption_text = img.get('alt').strip()
-                         #skip non-photos
                          caplower = caption_text.lower()
-                         if any(b in caplower for b in badcaps):
+                         
+                         #skip non-photos whose captions appear in a list of bad captions
+                         if caplower in badcaps_BBC:
+                             #logging.info(f"removed image due to bad caption: {caption_text}")
                              continue
+                             
+                         #skip non-photos whose captions are very short and include red flag words
+                         capwords = caption.lower().split()
+                         if capwords < 5 and any(bw in caplower for bw in badphrases_BBC):
+                             logging.info(f"removed image due to bad phrase in caption: {caption_text}")
+                             continue
+                         
                     #in absence of alt text, have None caption
                     else:
                          caption_text = None
@@ -111,6 +116,8 @@ def extract(html_content, parsed_attr):
                     images.append({"caption": caption_text, "url": img_src,
                                       "url_large": image_src_large
                                   })
+                                  
+            images = remove_duplicates(images)
                     
             if len(images) > 0: attr_dict["image"] = images
             

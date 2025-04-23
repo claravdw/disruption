@@ -9,12 +9,14 @@ from seleniumwire import webdriver
 import json
 import pprint
 
-url = "https://www.bbc.com/news/uk-england-48051776"
+##set up task
+
+url = "https://www.bbc.com/news/world-africa-55300261"
 newspaper = "BBC"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
 
-#import the specific parsing module for this newspaper
-newspaper_module = pars.choose_parser(newspaper)
+
+##prepare scraping and parsing
 
 #set up options for scraping with Chrome webdriver
 options = webdriver.ChromeOptions()
@@ -34,11 +36,16 @@ if newspaper in ["BBC", "ITV"]:
 else:
    s = scrap.start_session(newspaper)
 
+#import the specific parsing module for this newspaper
+newspaper_module = pars.choose_parser(newspaper)
+
+
 ##scrape html content and write to file
 
 html_content = scrap.fetch_url(newspaper=newspaper, s=s, url=url)
 with open("test_files/test.html", "w") as text_file:
     text_file.write(html_content)
+
 
 ##parse html content
 
@@ -49,24 +56,27 @@ parsed_content = pars.format_parsed_content(parsed_content, newspaper)
 pprint.pp(parsed_content)
 ds.from_dict_to_file(parsed_content, "test_files/test.json")
 
+
 ##download first image
 
 image_dicts = parsed_content["image"]
-image_dict = image_dicts[1]
+
+if image_dicts:
+    image_dict = image_dicts[1]
             
-#create local file name (without extension)
-img_file_name = "first_image"
+    #create local file name (without extension)
+    img_file_name = "first_image"
                     
-#get url
-img_url = image_dict["url"]
+    #get url
+    img_url = image_dict["url"]
                     
-#drop parameters--except if Guardian, it needs parameters or will give a 401
-if newspaper != "The-Guardian":
-    img_url = img_url.split('?')[0]
+    #drop parameters--except if Guardian, it needs parameters or will give a 401
+    if newspaper != "The-Guardian":
+        img_url = img_url.split('?')[0]
         
-#download the image file and get full name (with extension)
-img_full_name = ds.download_file(img_url, img_file_name, folder_path="test_files")
-print("stored first image as:", img_full_name)
+    #download the image file and get full name (with extension)
+    img_full_name = ds.download_file(img_url, img_file_name, folder_path="test_files")
+    print("stored first image as:", img_full_name)
     
     
     
