@@ -137,14 +137,17 @@ def download_file(url, file_name, folder_path, s = None, redo = False, retries: 
         #if that didn't work, get it from the url
         parsed_url = urlparse(url)
         if not extension:    
+        
             # either from fm parameter...
             query_params = parse_qs(parsed_url.query)
-            extension = query_params.get('fm', [None])[0]
-            extension = f".{extension}"
+            fm = query_params.get('fm', [None])[0]
+            if fm:
+                extension = f".{fm}"
             # e.g., ITV sometimes has extension .jpg but
             # ?fm=webp, and the file will be .webp format
-            if not extension:
-                # ...or url extension
+            
+            #...or from the url extension
+            else:
                 url_path = parsed_url.path
                 extension = os.path.splitext(url_path)[1]
         

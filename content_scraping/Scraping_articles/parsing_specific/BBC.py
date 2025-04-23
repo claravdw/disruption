@@ -64,10 +64,11 @@ def extract(html_content, parsed_attr):
     if "image" in parsed_attr:
     
         #strings present in non-photo alt texts
-        badcaps = ["presentational grey line", "white line", "bbc bbc"]
+        badcaps = ["presentational grey line", "white line", "bbc bbc", "Around the BBC iPlayer footer",
+                   "Around the BBC iPlayer banner"]
         #names of non-photo image links
         badsrc = ["https://ichef.bbci.co.uk/news/480/cpsprodpb/1FCD/production/_105914180_line976-nc.png.webp",
-                  "/bbcx/grey-placeholder.png"]
+                  "/bbcx/grey-placeholder.png", "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/86E1/production/_112292543_aroundthebbc-iplayerfulllogo-nc.png", "https://ichef.bbci.co.uk/ace/standard/1920/cpsprodpb/ADF1/production/_112292544_iplayerpinkfooter-nc.png"]
     
         try:
             #list of two-item lists containing captions and links

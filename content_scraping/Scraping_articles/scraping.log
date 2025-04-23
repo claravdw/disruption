@@ -41,3 +41,12 @@
 2025-04-10 08:50:48,796 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'findAll'
 2025-04-10 09:15:52,058 - INFO - Fetching URL: https://www.thesun.co.uk/sport/34389788/prince-william-george-villa-champions-league/
 2025-04-10 09:15:52,482 - INFO - text parsing unsuccessful due to 'NoneType' object has no attribute 'findAll'
+2025-04-23 09:51:10,294 - INFO - Fetching URL: https://www.bbc.com/sport/football/51197804
+2025-04-23 09:51:14,490 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 12:06:22,317 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-23 12:06:25,770 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 12:08:06,189 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-23 12:08:08,952 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 12:08:49,676 - INFO - Fetching URL: https://www.bbc.com/news/uk-england-48051776
+2025-04-23 12:08:52,555 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-04-23 12:08:52,558 - INFO - downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/40C1/production/_106477561_gettyimages-1137497321.jpg.webp

@@ -66,8 +66,6 @@ def extract(html_content, parsed_attr):
             figures = page.findAll("figure")
             image_caption = []
             
-            print(len(figures), "figures found")
-            
             for fig in figures:
             
                 #get image url
