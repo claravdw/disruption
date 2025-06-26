@@ -1,0 +1,17 @@
+"characteristic","block","sign_ATE0.15","sign_ATE0.2","sign_ATE0.3","sign_ATE0.4","fdr_sign_ATE0.15","fdr_sign_ATE0.2","fdr_sign_ATE0.3","fdr_sign_ATE0.4"
+"issueBundling",1,0.917,0.978,1,1,0.873,0.963,1,1
+"levelOfDisruption.BusinessDamaging",1,0.55,0.713,0.883,0.95,0.527,0.693,0.856,0.95
+"levelOfDisruption.CultureOrSport",1,0.692,0.779,0.953,1,0.692,0.751,0.953,1
+"levelOfDisruption.GovernmentOrAuthority",1,0.824,0.925,1,1,0.79,0.883,0.988,1
+"levelOfDisruption.PublicEveryday",1,0.648,0.783,0.93,1,0.614,0.768,0.93,1
+"nature.AlteratVandal",1,0.899,0.985,1,1,0.864,0.981,1,1
+"nature.Attached",1,1,1,1,1,1,1,1,1
+"nature.Blockade",1,0.984,1,1,1,0.984,1,1,1
+"numberOfProtesters",1,0.818,0.901,1,1,0.779,0.894,0.988,1
+"general_disruption_words_pics",2,1,1,1,1,1,1,1,1
+"negative_comments_words_pics",2,0.894,0.976,1,1,0.875,0.976,1,1
+"portrayal",2,0.944,0.987,1,1,0.944,0.974,1,1
+"protester_messaging_words_pics",2,1,1,1,1,1,1,1,1
+"disruption",3,0.788,0.8,0.931,1,0.784,0.783,0.931,1
+"ordinary",3,1,1,1,1,1,1,1,1
+"acceptance",4,1,1,1,1,1,1,1,1

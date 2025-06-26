@@ -94,9 +94,10 @@ outlet_weights <- sort(outlet_weights, decreasing=T)
 leftout <- c(
   #mainly video/audio news
   "BBC Radio News", "BBC TV News", "Channel 4 News", "Channel 5 News", "Sky News 24 hour news",
-  "ITV News", "GB News 24 hour news", "Al Jazeera",
+  "ITV News", "GB News 24 hour news", "Al Jazeera", "CNN", "Channel 4 News online C4 News online",
+  "Talk TV",
   #mainly non-political news (FT has political news but not enough XR/JSO/GP reporting to qualify)
-  "GB News online", "The Lad Bible news", "JOE co uk", "FinancialTimes",
+  "GB News online", "The Lad Bible news", "JOE co uk", #"FinancialTimes",
   #mainly links to other news
   "MSN News", "Yahoo News", 
   #general answer categories
@@ -112,10 +113,33 @@ outlet_weights <- outlet_weights[!names(outlet_weights) %in% leftout]
 top_outlet_weights <- head(outlet_weights, 10)
 print(top_outlet_weights)
 
-#if we had a 100 articles, how many would come from each source?
+
+##find out top 10 outlet weights
+
+#function using Largest Remainder Method to scale and
+#round weights, so they are integers and sum to a number n
+round_preserve_sum <- function(weights, total = n) {
+  # Scale weights so they sum to `total`
+  scaled <- weights / sum(weights) * total
+  
+  # Take the floor of each scaled weight
+  floored <- floor(scaled)
+  
+  # Calculate how many units we need to distribute to reach the total
+  remainder <- total - sum(floored)
+  
+  # Distribute the remainder to the weights with the largest decimal parts
+  decimals <- scaled - floored
+  order_decimals <- order(decimals, decreasing = TRUE)
+  floored[order_decimals[1:remainder]] <- floored[order_decimals[1:remainder]] + 1
+  
+  return(floored)
+}
+
+#if we had a n articles, how many would come from each source?
 top_outlet_weights <- top_outlet_weights/sum(top_outlet_weights) #weights sum to 1
-round(top_outlet_weights*100)
-#100 articles is n=20 per article if total n=2500 and treatment group allocation is 80%
+n <- 100
+round_outlet_weights <- round_preserve_sum(top_outlet_weights, n)
 
 #output df with top sources
 d_top <- d[d$outlet %in% names(top_outlet_weights),]
