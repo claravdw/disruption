@@ -54,12 +54,6 @@ simulate_main <- function(d, ATE,
   treat_statuses <- c(rep(1, times=n_treated), rep(0, times=n_control))
   d$Treated_sim <- sample(treat_statuses) #permutation
   
-  #make vector with the right number of each article id and permute it
-  d_sample$Article <- 0
-  n_articles <- length(article_effects)
-  articles <- rep(1:n_articles, length.out=n_treated_sample)
-  d_sample$Article[d_sample$Treated_sim==1] <- sample(articles) #permutation
-  
   ##Step 2: add scenario's treatment effect
   
   d[[outcome_name_addon_w2]] <- d[[outcome_name_nulsim_w2]]
@@ -79,6 +73,13 @@ simulate_main <- function(d, ATE,
   sample_treated <- sample(which(d$Treated_sim==1), size=n_treated_sample, replace=T)
   sample_control <- sample(which(d$Treated_sim==0), size=n_control_sample, replace=T)
   d_sample <- d[c(sample_treated, sample_control),]
+  
+  #assign treated group to article treatments:
+  #make vector with the right number of each article id and permute it
+  d_sample$Article <- 0
+  n_articles <- length(article_effects)
+  articles <- rep(1:n_articles, length.out=n_treated_sample)
+  d_sample$Article[d_sample$Treated_sim==1] <- sample(articles) #permutation
   
   #TO DO: make sure next steps are taken for each outcome,
   #and then BH correction is applied (and not, so we can see
