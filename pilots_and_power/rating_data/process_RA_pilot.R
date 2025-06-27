@@ -135,6 +135,9 @@ apply(d_numeric, 2, table)
 #means for Pilot 2 overview table
 round(apply(d_numeric, 2, mean, na.rm=TRUE), 2)
 
+#median protester count
+median(d_numeric$numberOfProtesters, na.rm=TRUE)
+
 
 ## Write questions we decided to keep to file
 

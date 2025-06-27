@@ -123,31 +123,23 @@ ATE_chars <- c(0, 0, 0, 0, 0, 0, 0, 0, .15, .2, .3, .4)
 simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
   
   
-  ##Step 1: sample with replacement to get as many observations as
-  ##there will be in the study's wave 2 treated group
-  
-  n_treated_sample <- round(n_wave2 * prop_treat)
-  sample_treated <- sample(nrow(d), size=n_treated_sample, replace=T)
-  d_sample <- d[sample_treated,]
-  
-  
-  ##Step 2: randomly assign to articles
+  ##Step 1: randomly assign original sample (of simulated control respondents)
+  ##to articles
   
   #make vector with the right number of each article ids and permute it
-  articles <- rep(sample(ids), length.out=n_treated_sample)
-  d_sample$Article <- sample(articles) #permutation
+  articles <- rep(sample(ids), length.out=nrow(d))
+  d$Article <- sample(articles) #permutation
   
   #merge in article characteristics
-  d_sample <- merge(d_sample, d_ratings, by.x="Article", by.y="id")
+  d <- merge(d, d_ratings, by.x="Article", by.y="id")
   
   
-  ##Step 3: randomly sample ATE scenario per characteristic,
+  ##Step 2: randomly sample ATE scenario per characteristic,
   #and create the article's total ATE from its characteristics
   
   #get an ATE for each characteristic
   characteristics <- names(char_blocks)
   char_ATEs <- sapply(characteristics, function(x) sample(ATE_chars, 1))
-  
   
   #get the total ATE for each article based on its
   #characteristics
@@ -162,78 +154,68 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
   })
   
   
-  ##Step 4: add article's ATE to all its readers
+  ##Step 3: add article's ATE to all its readers
   
   d["outcome_scale_addon_w2"] <- d["outcome_scale_w2"]
   #add article effect
   for(article in ids){
     
     #message("working on article n. ", article)
-    readers <- d_sample$Article == article
-    d_sample[readers, "outcome_scale_addon_w2"] <- 
-      d_sample[readers, "outcome_scale_w2"] + article_effects[article]
+    readers <- d$Article == article
+    d[readers, "outcome_scale_addon_w2"] <- 
+     d[readers, "outcome_scale_w2"] + article_effects[article]
     
   }
+  #TO DO: consider adding some noise to reflect that the individual
+  #TEs might not be this even (causing sampling error to be larger)
   
+  
+  ##Step 4: sample with replacement to get as many observations as
+  ##there will be readers of each article in study 2
+  
+  d_sample <- d[0,]
+  n_treated_sample <- round(n_wave2 * prop_treat)
+  n_per_article <- round(n_treated_sample / length(ids))
+  for(article in ids){
+    readers <- d$Article == article
+    sample_article <- sample(which(readers), size=n_per_article, replace=T)
+    d_sample <- rbind(d_sample, d[sample_article,])
+  }
+
   
   ##Step 5: estimate characteristic treatment effects, adding them block by block
   ##and save the estimates and their significance
   
   outputs <- lapply(1:max(char_blocks), function(block){
-    
+
     #get characteristics in this block
     chars_of_interest <- characteristics[char_blocks == block]
-    
+
     #get characteristics in previous blocks
     covariates <- characteristics[char_blocks < block]
-    
+
     #add characteristics from this and all previous blocks to the model
     IVs <- paste(c(chars_of_interest, covariates), collapse = " + ")
     formula <- as.formula(
       paste("outcome_scale_addon_w2 ~ outcome_scale + ", IVs)
     )
     fit <- lm(formula, data=d_sample)
-    
+
     #clustered SEs
     cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
-    
+
     #get coefs of characteristics in the block
     est <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 1]
     p <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 4]
-    
+
     #add their ATEs in this iteration
     results_of_interest <- data.frame(characteristic = chars_of_interest,
                                       block = block,
                                       ATE = char_ATEs[chars_of_interest],
                                       est, p=p, sign=p<.05)
-    
+
   })
   outputs <- do.call(rbind, outputs)
-  
-  ##alternative Step 5: test each characteristic separately;
-  #this results in much lower power (and is not the paper's approach)
-  
-  # outputs <- lapply(characteristics, function(char){
-  #   
-  #   #add only this characteristic to the model
-  #   formula <- as.formula(paste("outcome_scale_addon_w2 ~ outcome_scale + ", char))
-  #   fit <- lm(formula, data=d_sample)
-  #   
-  #   #clustered SEs
-  #   cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
-  #   
-  #   #get coefs of characteristics in the block
-  #   est <- coeftest(fit, vcov = cluster_se)[char, 1]
-  #   p <- coeftest(fit, vcov = cluster_se)[char, 4]
-  #   
-  #   #add their ATEs in this iteration
-  #   results_of_interest <- data.frame(characteristic = char,
-  #                                     block = 99,
-  #                                     ATE = char_ATEs[char],
-  #                                     est, sign=p<.05)
-  #   
-  # })
-  # outputs <- do.call(rbind, outputs)
   
   #add two-stage FDR-adjusted p-values
   fdr_result <- mt.rawp2adjp(outputs$p, proc="TSBH")
@@ -243,7 +225,7 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
   
   #add significance for those
   outputs$fdr_sign <- outputs$fdr < .05
-  
+
   return(outputs)
   
 }
