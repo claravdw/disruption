@@ -30,8 +30,13 @@ n_wave2 <- round(n_wave1 * retention_est)
 prop_treat <- .8 #proportion of respondents treated
 
 #different treatment effects; only positive because these will be symmetrical
-ATEs <- c(.15, .2, .3, .4)
+ATEs_Cohen <- c(.15, .2, .3, .4)
 outcomes <- c("Concern", "Policy", "Behavior")
+
+#convert these from Cohen's d to the actual scale
+ATEs_raw <- t(sapply(outcomes, function(outcome){
+  ATEs_Cohen * sd(d[[outcome]], na.rm=T)
+}))
 
 #article effects
 n_articles <- 100
@@ -61,9 +66,12 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
   
   for(outcome in outcomes){
     
-    #randomly select an ATE from the options
-    ATE <- sample(ATEs, 1)
-    outputs[outcome,"ATE"] <- ATE #store in outputs df
+    #randomly select a Cohen's d ATE from the options,
+    #and get the corresponding raw effect for this outcome
+    ATE_option <- sample(1:length(ATEs_Cohen), 1)
+    ATE <- ATEs_raw[outcome, ATE_option]
+    outputs[outcome,"ATE"] <- ATEs_Cohen[ATE_option]
+    #store that Cohen's d ATE in the outputs df
     
     #create a new "addon" outcome variable from the simulated null data,
     #and then add to it gradually until we reach the right ATE

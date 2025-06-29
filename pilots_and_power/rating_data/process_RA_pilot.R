@@ -85,9 +85,9 @@ split_to_binary <- function(list_of_splits, all_options){
 }
 
 #apply to nature variable
-nature_splits <- sapply(dF$natureOfDisruption, split_checkbox)
-all_nature_options <- sort(unique(unlist(nature_splits)))
-nature_binary <- split_to_binary(nature_splits, all_nature_options)
+nature_splits <- sapply(dF$natureOfDisruption, split_checkbox) #split lists by comma
+all_nature_options <- sort(unique(unlist(nature_splits))) #get all the options
+nature_binary <- split_to_binary(nature_splits, all_nature_options) #turn split lists into matrix of binaries
 names(nature_binary) <- paste0("nature,",
                                c( "Blockade", "Injunction", "Interrupting", "Attached", "Alterations", "Vandalism"))
                                #rename columns
@@ -96,9 +96,9 @@ names(nature_binary) <- paste0("nature,",
 nature_binary$`nature,AlteratVandal` <- nature_binary$`nature,Vandalism` | nature_binary$`nature,Alterations`
 
 #apply to demographics variable
-demo_splits <- sapply(dF$demographics, split_checkbox)
-all_demo_options <- sort(unique(unlist(demo_splits)))
-demo_binary <- split_to_binary(demo_splits, all_demo_options)
+demo_splits <- sapply(dF$demographics, split_checkbox) #split lists by comma
+all_demo_options <- sort(unique(unlist(demo_splits))) #get all the options
+demo_binary <- split_to_binary(demo_splits, all_demo_options) #turn split lists into matrix of binaries
 names(demo_binary) <-  paste0("demogr,",
                               c("Occupation", "PrivateSchool", "Student", "Unemployed", "VeryOld"))
                               #rename columns. "veryYoung" does not occur as a value.
