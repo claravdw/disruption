@@ -85,13 +85,23 @@ save(fit_ideo, fit_age, fit_gender, fit_edu, fit_age_ideo, fit_gender_ideo, fit_
 
 
 ##analysis
-#NOTE: for Clara to run with the saved fitted models
+
+load("predictors_of_acceptance.Rdata")
 
 r2_ideo <- fit_ideo$r.squared
 r2_age <- fit_age$r.squared
 r2_gender <- fit_gender$r.squared
 r2_edu <- fit_edu$r.squared
 
+#partial R^2 of ideology given the others
 partialr2_age <- fit_age_ideo$r.squared - r2_age
 partialr2_gender <- fit_gender_ideo$r.squared - r2_gender
 partialr2_edu <- fit_edu_ideo$r.squared - r2_edu
+
+#partial R^2 of the others given ideology
+partialr2_age <- fit_age_ideo$r.squared - r2_ideo
+partialr2_gender <- fit_gender_ideo$r.squared - r2_ideo
+partialr2_edu <- fit_edu_ideo$r.squared - r2_ideo
+#problem: the code above did not use three-point ideology in the
+#combined models, so this is also the added R² of going from
+#three to five categories

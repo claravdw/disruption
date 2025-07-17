@@ -148,10 +148,13 @@ dF_kept <- dF[c("id",
                 "levelOfDisruption,GovernmentOrAuthority",
                 "levelOfDisruption,PublicDamaging",
                 "levelOfDisruption,CultureOrSport",
+                "levelOfDisruption,BusinessNon-damaging",
                 "visualAppearanceCostumes",
                 "issueBundling",
                 "nature,Blockade",
                 "nature,Attached",
                 "nature,AlteratVandal",
+                "nature,Interrupting",
+                "demogr,Student",
                 "portrayal")]
 write.csv(dF_kept, "RA_pilot_clean.csv", row.names=F)

@@ -8,6 +8,10 @@ library(tidyr)
 library(psych)
 library(gtools)
 
+#note: for privacy reasons, the survey response .sav files that this
+#script processes are not made available in the disruption GitHub
+#repository
+
 crowd_wide <- read_sav("Crowdsourcing pilot.sav")
 no_of_rounds <- 5 #number of articles seen by each crowdsourcing coder
 

@@ -1,4 +1,3 @@
-setwd("~/GDrive/All the disobedience/pilots and power")
 library(plyr)
 library(dplyr)
 library(pbapply)
@@ -96,15 +95,18 @@ d_ratings <- rbind(d_ratings, d_ratings2)
 ids <- d_ratings$id
 
 #drop characteristics that were found to be too low-powered to include
-dropchars <- c("visualAppearanceCostumes", #"negative_comments_words_pics",
-               "levelOfDisruption.PublicDamaging")
+dropchars <- c("visualAppearanceCostumes", 
+               "levelOfDisruption.PublicDamaging",
+               "levelOfDisruption.BusinessNon.damaging",
+               "demogr.Student")
 d_ratings <- d_ratings[,!names(d_ratings) %in% dropchars]
 
 
 ##set parameters
 
 #group characteristics into blocks
-char_blocks <- c(rep(1, 9), 2, 4, 3, 3, 2, 2, 2)
+#char_blocks <- c(rep(1, 9), 2, 4, 3, 3, 2, 2, 2)
+char_blocks <- c(rep(1, 10), 2, 4, 3, 3, 2, 2, 2)
 names(char_blocks) <- colnames(d_ratings)[-1]
 char_blocks #double check
 
@@ -195,7 +197,8 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
     fit <- lm(formula, data=d_sample)
     
     #clustered SEs
-    cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
+    #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
+    cluster_se <- vcovCL(fit, cluster = d_sample$Article)
     
     #get coefs of characteristics in the block
     est <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 1]
@@ -268,7 +271,7 @@ power_wide <- power_summ[,c("characteristic","block","ATE","sign","fdr_sign")] %
   pivot_wider(
     id_cols = c(characteristic, block),
     names_from = ATE,
-    values_from = c(sign, fdr_sign),
+    values_from = c(fdr_sign),
     names_sep = "_ATE"
   ) %>%
   arrange(block, characteristic)
@@ -280,5 +283,5 @@ power_wide <- power_wide[order(power_wide$block, power_wide$characteristic), ]
 save(power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rdata")
 power_wide_rounded <- power_wide %>%
   mutate(across(where(is.numeric), ~ round(.x, 3)))
-write.csv(power_wide_rounded, "power_characteristics.csv", row.names=F)
+write.csv(power_wide_rounded, "power_characteristics_expanded.csv", row.names=F)
 

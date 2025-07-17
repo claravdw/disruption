@@ -131,7 +131,8 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
               , data=d_sample)
     
     #clustered SEs
-    cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
+    #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
+    cluster_se <- vcovCL(fit, cluster = d_sample$Article)
     est <- coeftest(fit, vcov = cluster_se)["Treated_sim", 1]
     p <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
     
