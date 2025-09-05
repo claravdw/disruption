@@ -3,6 +3,7 @@ library(dplyr)
 library(pbapply)
 library(lmtest)
 library(clubSandwich)
+library(sandwich)
 library(multtest)
 library(tidyr)
 source("power_functions.R")
@@ -41,12 +42,11 @@ ATEs_raw <- t(sapply(outcomes, function(outcome){
 #article effects
 n_articles <- 100
 article_sd <- .1
-article_effects <- rnorm(n_articles, 0, article_sd) #random effects of article
 
 #function to assign observations from the original dataset to treatment, add treatment effects
 #to achieve the desired ATE and estimate the ATE and its significance for one outcome by
 #regressing wave 2 outcome on treatment and wave 1
-simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effects){
+simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
   
   #create (empty) output dataframe
   outputs <- data.frame(matrix(ncol = 4, nrow = length(outcomes)))
@@ -105,6 +105,10 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
   
   ##Step 4: add random effect of article
   
+  #draw a random effects for each article
+  article_effects <- rnorm(n_articles, 0, article_sd)
+  #note: in existing results, this happened *outside* the simulation
+  
   for(outcome in outcomes){
     
     #add article effect
@@ -125,6 +129,7 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
   
   for(outcome in outcomes){
     
+    #estimate treatment effect
     fit <- lm(get(paste0(outcome, "_addon_w2")) ~ Treated_sim + get(outcome)
               #to test controlling for demographics:
               #+ Age + Sex + Ideology
@@ -134,9 +139,10 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
     #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
     cluster_se <- vcovCL(fit, cluster = d_sample$Article)
     est <- coeftest(fit, vcov = cluster_se)["Treated_sim", 1]
+    se <- coeftest(fit, vcov = cluster_se)["Treated_sim", 2]
     p <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
     
-    outputs[outcome,c("est","p","sign")] <- c(est, p, p<.05)
+    outputs[outcome,c("est","se","p","sign","est_alt","se_alt")] <- c(est, p, p<.05)
     
   }
   
@@ -158,8 +164,7 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat, article_effect
 
 #simulate data many times, each time taking the UK sample (with simulated null effects),
 #adding a true ATE to it, drawing with replacement from it, and estimating the ATE
-power_out <- pblapply(1:1000, function(i) simulate_main(d, ATEs, outcomes, n_wave2, prop_treat,
-                                            article_effects))
+power_out <- pblapply(1:1000, function(i) simulate_main(d, ATEs, outcomes, n_wave2, prop_treat))
 df_power_out <- do.call(rbind, power_out)
 
 #get mean treatment effect estimate and significance
