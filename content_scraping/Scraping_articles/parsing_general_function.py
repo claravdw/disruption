@@ -14,7 +14,7 @@ logging.basicConfig(filename="parsing.log", level=logging.INFO, format='%(asctim
 
 def choose_parser(newspaper):
     """
-    Dynamically import a module based on the given string.
+    Dynamically import a newspaper parsing module based on the given string.
 
     Args:
         newspaper (str): The name of the module to import (without .py extension).
@@ -48,8 +48,8 @@ def format_parsed_content(parsed_content, paper_name):
     """
     Function to do formatting on the parsed content of a url.
     Arguments:
-    parsed_content: a dictionary a datetime object in key date,
-                    a text 
+    parsed_content: a dictionary containing the parsed content
+                    (e.g. article date, text)
     """
           
     #turn dates into formatted strings
@@ -78,11 +78,15 @@ def format_parsed_content(parsed_content, paper_name):
     
 
 def add_issue_to_dict(parsed_content, issue_string, log_id=None):
+    """
+    This function adds an "issue" key to the parsed content dictionary,
+    containing an explanation for why this parsed content should be dropped
+    """
 
-     parsed_content["issue"] = issue_string
-     logging.info(f"article dropped, {issue_string}: {log_id}")
+    parsed_content["issue"] = issue_string
+    logging.info(f"article dropped, {issue_string}: {log_id}")
      
-     return parsed_content
+    return parsed_content
 
 
 def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False):

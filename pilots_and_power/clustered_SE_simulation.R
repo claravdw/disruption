@@ -143,3 +143,8 @@ mean(df_result$se_CL)
 mean(df_result$se_CR)
 mean(df_result$se_boot)
 
+# By what factor is the non-corrected SE usually off?
+
+hist(df_result$se / sd(df_result$est))
+mean(df_result$se / sd(df_result$est))
+#very consistently by a factor of ca. 85.5%

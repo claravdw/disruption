@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles'))
+#sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles','Data_structuring'))
 
 import pandas as pd
@@ -34,15 +34,15 @@ if __name__ == '__main__':
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
     newspapers = ["BBC",
-                  #"The-Guardian",
-                  #"Daily-Mail",
-                  #"Sky", 
-                  #"Metro",
-                  #"Sun",
-                  #"Telegraph",
-                  #"The-Times",
-                  #"Mirror",
-                  #"ITV"
+                  "The-Guardian",
+                  "Daily-Mail",
+                  "Sky", 
+                  "Metro",
+                  "Sun",
+                  "Telegraph",
+                  "The-Times",
+                  "Mirror",
+                  "ITV"
                   ]
                   
     for newspaper in newspapers:

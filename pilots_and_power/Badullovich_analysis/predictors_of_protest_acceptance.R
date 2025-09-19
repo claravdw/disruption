@@ -65,13 +65,13 @@ fit_edu <- summary(lm(disruption_appr ~ education, data=d))
 ##fit models with each predictor plus ideology
 
 #age
-fit_age_ideo <- summary(lm(disruption_appr ~ age_3pt + ideology, data=d))
+fit_age_ideo <- summary(lm(disruption_appr ~ age_3pt + ideology_3pt, data=d))
 
 #gender
-fit_gender_ideo <- summary(lm(disruption_appr ~ gender + ideology, data=d))
+fit_gender_ideo <- summary(lm(disruption_appr ~ gender + ideology_3pt, data=d))
 
 #education
-fit_edu_ideo <- summary(lm(disruption_appr ~ education + ideology, data=d))
+fit_edu_ideo <- summary(lm(disruption_appr ~ education + ideology_3pt, data=d))
 
 
 ##fit model with all predictors combined
@@ -93,15 +93,12 @@ r2_age <- fit_age$r.squared
 r2_gender <- fit_gender$r.squared
 r2_edu <- fit_edu$r.squared
 
-#partial R^2 of ideology given the others
-partialr2_age <- fit_age_ideo$r.squared - r2_age
-partialr2_gender <- fit_gender_ideo$r.squared - r2_gender
-partialr2_edu <- fit_edu_ideo$r.squared - r2_edu
-
 #partial R^2 of the others given ideology
 partialr2_age <- fit_age_ideo$r.squared - r2_ideo
 partialr2_gender <- fit_gender_ideo$r.squared - r2_ideo
 partialr2_edu <- fit_edu_ideo$r.squared - r2_ideo
-#problem: the code above did not use three-point ideology in the
-#combined models, so this is also the added R² of going from
-#three to five categories
+
+#partial R^2 of ideology given the others
+partialr2_age <- fit_age_ideo$r.squared - r2_age
+partialr2_gender <- fit_gender_ideo$r.squared - r2_gender
+partialr2_edu <- fit_edu_ideo$r.squared - r2_edu

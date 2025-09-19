@@ -203,8 +203,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
 
     if html_content_dict: print(f"re-using some already-scraped urls from file: {html_file}")
 
-
-    #loop over the article urls
+    #loop over the article urls and fetch their content
     first_visit = True
     for url in urls_list:  
             
