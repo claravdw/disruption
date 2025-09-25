@@ -41,7 +41,11 @@ ATEs_raw <- t(sapply(outcomes, function(outcome){
 
 #article effects
 n_articles <- 100
-article_sd <- .1
+article_sd <- .2
+corr_factor <- 1.131219
+#the factor by which the uncorrected SE must be
+#multiplied in order to get a good estimate of the
+#true SE, according to clustered_SE_simulation.R
 
 #function to assign observations from the original dataset to treatment, add treatment effects
 #to achieve the desired ATE and estimate the ATE and its significance for one outcome by
@@ -98,15 +102,14 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
   #assign treated group to article treatments:
   #make vector with the right number of each article id and permute it
   d_sample$Article <- 0
-  n_articles <- length(article_effects)
   articles <- rep(1:n_articles, length.out=n_treated_sample)
   d_sample$Article[d_sample$Treated_sim==1] <- sample(articles) #permutation
   
   
   ##Step 4: add random effect of article
   
-  #draw a random effects for each article
-  article_effects <- rnorm(n_articles, 0, article_sd)
+  #draw a random effect for each article (in Cohen's d)
+  article_effects_Cohen <- rnorm(n_articles, 0, article_sd)
   #note: in existing results, this happened *outside* the simulation
   
   for(outcome in outcomes){
@@ -114,11 +117,14 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
     #add article effect
     for(article in 1:n_articles){
       
+      #convert from Cohen's d to scale of current outcome
+      article_effect <- article_effects_Cohen[[article]] * sd(d[[outcome]], na.rm=T)
+      
       #message("working on article n. ", article)
       readers <- d_sample$Article == article
       d_sample[[paste0(outcome, "_addon_w2")]][readers] <- add_to_outcome(
         y = d_sample[[paste0(outcome, "_addon_w2")]][readers],
-        addon = article_effects[[article]],
+        addon = article_effect,
         y_min = minmax[1, outcome],
         y_max = minmax[2, outcome],
         stepsize = stepsizes[[outcome]])
@@ -134,13 +140,21 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
               #to test controlling for demographics:
               #+ Age + Sex + Ideology
               , data=d_sample)
+
+    #bootstrapping the SEs here, as in the planned analyses for the paper,
+    #would be computationally infeasible. Instead, we apply a correction to the
+    #SE, based on simulations assuming a standard deviation of .2 across article
+    #treatment effects.    
+    est <- coeftest(fit)["Treated_sim", 1]
+    se <- coeftest(fit)["Treated_sim", 2] * corr_factor
+    df <- summary(fit)$df[2] # residual degrees of freedom
+    t_val <- est / se  # t statistic
+    p <- 2 * pt(-abs(t_val), df = df)
     
-    #clustered SEs
+    #old clustered SE code
     #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
-    cluster_se <- vcovCL(fit, cluster = d_sample$Article)
-    est <- coeftest(fit, vcov = cluster_se)["Treated_sim", 1]
-    se <- coeftest(fit, vcov = cluster_se)["Treated_sim", 2]
-    p <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
+    #cluster_se <- vcovCL(fit, cluster = d_sample$Article)
+    #p <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
     
     outputs[outcome,c("est","se","p","sign","est_alt","se_alt")] <- c(est, p, p<.05)
     

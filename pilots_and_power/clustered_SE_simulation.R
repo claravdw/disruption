@@ -7,8 +7,11 @@ set.seed(123)  # for reproducibility
 
 # Simulate 1000 articles with their own effects
 n_articles <- 1000
-article_effects <- rnorm(n_articles, mean = 0.25, sd = 0.25)
-#so: real average treatment effect of an article is 0.25
+article_sd <- 0.2 #where 1 is the sd of the outcome variable
+article_effects <- rnorm(n_articles, mean = 0.25, sd = article_sd)
+#so: real average treatment effect of an article is 0.25,
+#real s.d. of article effects is 0.2 in Cohen's ds
+#as respondents themselves have effects N(0,1)
 
 # Simulation parameters
 n_sims <- 250
@@ -18,19 +21,6 @@ n_treated <- 2800
 n_articles_per_sim <- 100
 respondents_per_article <- 28
 n_bootstraps <- 250
-
-# Storage lists
-estimates <- vector("list", n_sims)
-SEs_CL <- vector("list", n_sims)
-SEs_CR <- vector("list", n_sims)
-
-# Storage dataframe
-df_result <- data.frame(
-  sim = 1:n_sims,
-  est = NA,
-  se_CL = NA,
-  se_CR =NA
-)
 
 df_result <- pbsapply(1:n_sims, function(i) {
   
@@ -136,15 +126,20 @@ mean(df_result$est_RE)
 # Compare "real" estimate variability across simulations (SE)
 # with average SE estimates for various clustering techniques
 
-sd(df_result$est)
-mean(df_result$se)
-mean(df_result$se_RE)
-mean(df_result$se_CL)
-mean(df_result$se_CR)
-mean(df_result$se_boot)
+sd(df_result$est) #real sd
+mean(df_result$se) #uncorrected SE
+mean(df_result$se_RE) #random effects
+mean(df_result$se_CL) #cluster correction
+mean(df_result$se_CR) #other cluster correction
+mean(df_result$se_boot) #bootstrap
 
 # By what factor is the non-corrected SE usually off?
 
 hist(df_result$se / sd(df_result$est))
 mean(df_result$se / sd(df_result$est))
-#very consistently by a factor of ca. 85.5%
+#when article_effects have sd .2, too small by a factor of ca. 88.4%
+#when article_effects have sd .25, too small by a factor of ca. 85.5%
+#when article_effects have sd .50, too small by a factor of ca. 71%
+
+#correction factor
+sd(df_result$est) / mean(df_result$se)

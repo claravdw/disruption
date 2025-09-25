@@ -68,7 +68,8 @@ if __name__ == '__main__':
 
     #list of newspaper websites to search, one at a time. Keys must match names of newspaper-specific parsing scripts in
     #content_scraping/Parsing_specific folder.
-    paper_urls = {"BBC":"bbc.com", "The-Guardian":"theguardian.com", "Daily-Mail":"dailymail.co.uk",
+    paper_urls = {"BBC":"bbc.com", "The-Guardian":"theguardian.com",
+                  "Daily-Mail":"dailymail.co.uk",
                   "Sky":"news.sky.com",
                   "Metro":"metro.co.uk",
                   "Sun":"thesun.co.uk",
@@ -81,8 +82,8 @@ if __name__ == '__main__':
                     "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration OR disruption OR blockade)"]} #one each of these
                     
     #set start and end date in format yyyy-mm-dd; end day will be included in the search
-    start_date = "2022-09-01"
-    end_date = "2024-10-30"
+    start_date = "2023-10-01"
+    end_date = "2025-09-30"
     
     browser = cl.chrome_launch()
 

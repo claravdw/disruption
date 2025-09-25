@@ -13,7 +13,7 @@ def make_query(url, query_list, start_date, end_date):
             query = f'{query.replace(" ", "+")}'
         if i > 0:
             query_str += '+OR+'
-        query_str += f'"{query}"'
+        query_str += f'{query}'
     
     final_query = base_url + date_filter + '+' + query_str + '&hl={en}'
     return final_query

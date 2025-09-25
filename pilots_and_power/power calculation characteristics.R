@@ -119,6 +119,26 @@ prop_treat <- .8 #proportion of respondents treated
 #different treatment effect scenarios
 ATE_chars <- c(0, 0, 0, 0, 0, 0, 0, 0, .15, .2, .3, .4)
 
+#calculate the typical sd of article effects that we get when
+#randomly sampling the effect of each characteristic from
+#this distribution (to inform other simulations)
+effect_sds <- sapply(1:500, function(x){
+  
+  char_ATEs <- sapply(characteristics, function(x) sample(ATE_chars, 1))
+  article_effects <- sapply(ids, function(article){
+    
+    #look up the characteristic scores of this id
+    id_charscores <- d_ratings[d_ratings$id == article,]
+    
+    #dot product of the characteristics and their ATEs
+    char_ATEs  %*% as.numeric(id_charscores[characteristics])
+    
+  })
+  sd(article_effects)
+  
+})
+mean(effect_sds)
+
 #function to assign observations from the original dataset to treatment, add characteristic effects
 #to calculate the right ATE for each article, and estimate the ATE and its significance for one outcome by
 #regressing wave 2 outcome on characteristics (and wave 1 outcomes) block by block
@@ -149,7 +169,6 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
   #get an ATE for each characteristic
   characteristics <- names(char_blocks)
   char_ATEs <- sapply(characteristics, function(x) sample(ATE_chars, 1))
-  
   
   #get the total ATE for each article based on its
   #characteristics
@@ -284,4 +303,3 @@ save(power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rda
 power_wide_rounded <- power_wide %>%
   mutate(across(where(is.numeric), ~ round(.x, 3)))
 write.csv(power_wide_rounded, "power_characteristics_expanded.csv", row.names=F)
-

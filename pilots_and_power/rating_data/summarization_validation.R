@@ -40,16 +40,17 @@ result <- as.data.frame(t(sapply(common_chars, function(one_char){
   #get difference in means
   x <- df[keep, char_sum]
   y <- df[keep, char_unsum]
-  diff <- mean(x-y)
+  diff <- mean(y-x)
   #perform t-test
   ttest <- ttestBF(x = x,
           y = y,
           rscale = "medium",
           paired = TRUE)
-  c(diff=diff, BF=as.vector(ttest))
+  c(mean_sum=mean(x), mean_unsum=mean(y), diff=diff, BF=as.vector(ttest))
   
 })))
-names(result)[2] <- "BayesFactor"
+names(result)[4] <- "BayesFactor"
+round(result, 3)
 
 #check differences in means for non-summarized articles
 diff_neversum <- sapply(common_chars, function(one_char){
@@ -64,7 +65,7 @@ diff_neversum <- sapply(common_chars, function(one_char){
   #get difference in means
   x <- df[keep, char_sum]
   y <- df[keep, char_unsum]
-  diff <- mean(x-y)
+  diff <- mean(y-x)
   
 })
 
