@@ -2,6 +2,7 @@ library(plyr)
 library(dplyr)
 library(pbapply)
 library(lmtest)
+library(lmerTest)
 library(clubSandwich)
 library(sandwich)
 library(multtest)
@@ -33,6 +34,8 @@ prop_treat <- .8 #proportion of respondents treated
 #different treatment effects; only positive because these will be symmetrical
 ATEs_Cohen <- c(.15, .2, .3, .4)
 outcomes <- c("Concern", "Policy", "Behavior")
+#note: we could make these negative to avoid ceiling effect issues
+#("no more moveable respondents" errors)
 
 #convert these from Cohen's d to the actual scale
 ATEs_raw <- t(sapply(outcomes, function(outcome){
@@ -42,7 +45,7 @@ ATEs_raw <- t(sapply(outcomes, function(outcome){
 #article effects
 n_articles <- 100
 article_sd <- .2
-corr_factor <- 1.131219
+#corr_factor <- 1.131219
 #the factor by which the uncorrected SE must be
 #multiplied in order to get a good estimate of the
 #true SE, according to clustered_SE_simulation.R
@@ -65,6 +68,7 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
   n_control <- nrow(d) - n_treated
   treat_statuses <- c(rep(1, times=n_treated), rep(0, times=n_control))
   d$Treated_sim <- sample(treat_statuses) #permutation
+  
   
   ##Step 2: add scenario's treatment effect
   
@@ -89,6 +93,7 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
       stepsize = stepsizes[[outcome]])
     
   }
+  
   
   ##Step 3: sample with replacement for the treated and control group
   ##to get as many observations as there will be in the study's wave 2
@@ -127,7 +132,8 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
         addon = article_effect,
         y_min = minmax[1, outcome],
         y_max = minmax[2, outcome],
-        stepsize = stepsizes[[outcome]])
+        stepsize = stepsizes[[outcome]]
+      )
     }
   }
   
@@ -136,27 +142,33 @@ simulate_main <- function(d, ATEs, outcomes, n_wave2, prop_treat){
   for(outcome in outcomes){
     
     #estimate treatment effect
-    fit <- lm(get(paste0(outcome, "_addon_w2")) ~ Treated_sim + get(outcome)
+    fit <- lmer(get(paste0(outcome, "_addon_w2")) ~ 1 + Treated_sim + get(outcome) + (-1 + Treated_sim | Article)
               #to test controlling for demographics:
               #+ Age + Sex + Ideology
               , data=d_sample)
+    est <- coef(summary(fit))["Treated_sim", 1]
+    est_Cohen <- est / sd(d[[outcome]], na.rm=T)
+    p <- coef(summary(fit))["Treated_sim", 5]
 
     #bootstrapping the SEs here, as in the planned analyses for the paper,
     #would be computationally infeasible. Instead, we apply a correction to the
     #SE, based on simulations assuming a standard deviation of .2 across article
-    #treatment effects.    
-    est <- coeftest(fit)["Treated_sim", 1]
-    se <- coeftest(fit)["Treated_sim", 2] * corr_factor
-    df <- summary(fit)$df[2] # residual degrees of freedom
-    t_val <- est / se  # t statistic
-    p <- 2 * pt(-abs(t_val), df = df)
+    #treatment effects.
+    #est <- coeftest(fit)["Treated_sim", 1]
+    #se <- coeftest(fit)["Treated_sim", 2] * corr_factor
+    #df <- summary(fit)$df[2] # residual degrees of freedom
+    #t_val <- est / se  # t statistic
+    #p <- 2 * pt(-abs(t_val), df = df)
     
     #old clustered SE code
+    fit <- lm(get(paste0(outcome, "_addon_w2")) ~ 1 + Treated_sim + get(outcome), data=d_sample)
     #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
-    #cluster_se <- vcovCL(fit, cluster = d_sample$Article)
-    #p <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
+    cluster_se <- vcovCL(fit, cluster = d_sample$Article)
+    est_CL <- coeftest(fit, vcov = cluster_se)["Treated_sim", 1]
+    p_CL <- coeftest(fit, vcov = cluster_se)["Treated_sim", 4]
     
-    outputs[outcome,c("est","se","p","sign","est_alt","se_alt")] <- c(est, p, p<.05)
+    outputs[outcome,c("est","est_Cohen","p","sign","est_CL","p_CL","sign_CL")] <- c(est, est_Cohen, p, p<.05,
+                                                                                    est_CL, p_CL, p_CL<.05)
     
   }
   
@@ -187,19 +199,19 @@ power_summ <- df_power_out %>%
   group_by(outcome, ATE) %>%
   summarise(across(everything(), mean, na.rm = TRUE))
 
-#transform to wide and sort by outcome
-power_wide <- power_summ[,c("outcome","ATE","sign","fdr_sign")] %>%
+#transform to wide and sort by outcome, then round off
+power_wide <- power_summ[,c("outcome","ATE","fdr_sign","sign","sign_CL")] %>%
   pivot_wider(
     id_cols = c(outcome),
     names_from = ATE,
-    values_from = c(sign, fdr_sign),
+    values_from = c(fdr_sign, sign, sign_CL),
     names_sep = "_ATE"
   ) %>%
   arrange(outcome)
-
-#write to files
-save(power_wide, n_wave2, prop_treat, ATEs, file="power_pooled.Rdata")
 power_wide_rounded <- power_wide %>%
   mutate(across(where(is.numeric), ~ round(.x, 3)))
+
+#write to files
+save(power_out, power_wide, n_wave2, prop_treat, ATEs_Cohen, file="power_pooled.Rdata")
 write.csv(power_wide_rounded, "power_pooled.csv", row.names=F)
 

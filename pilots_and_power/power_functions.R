@@ -38,6 +38,7 @@ move_by_one_step <- function(y, addon, y_min, y_max, stepsize, n_to_move, verbos
     
   }
   
+  if (length(movable) == 0) stop("Error: no more movable respondents; cannot add ", round(addon, 2))
   if (verbose) message("moved ", length(sample_moveup), " moveable respondents by one step of size ", stepsize)
   
   return(y)
@@ -55,7 +56,8 @@ add_to_outcome <- function(y, addon, y_min, y_max, stepsize, margin=stepsize/(le
   
   addon_achieved <- 0
   addon_left <- addon - addon_achieved
-  while(abs(addon_left) > margin){
+  movable_respondents <- T #are there any movable respondents left?
+  while(abs(addon_left) > margin & movable_respondents){
     
     #check how many respondents need to be moved up or down one more step based on addon
     addon_as_step_pct <- abs(addon_left) / stepsize
@@ -64,9 +66,20 @@ add_to_outcome <- function(y, addon, y_min, y_max, stepsize, margin=stepsize/(le
     #e.g. if addon is .1, which is one-fifth of the step size .5, we need to move
     #one in five respondents up
     
-    #try to move this number (if it is more than the number of moveable respondents,
+    #try to move this number (if it is more than the number of movable respondents,
     #we will move as many as possible)
-    y_new <- move_by_one_step(y, addon_left, y_min, y_max, stepsize, n_to_move)
+    y_new <- tryCatch(
+      move_by_one_step(y, addon_left, y_min, y_max, stepsize, n_to_move, verbose=verbose),
+      #if there are no more movable respondents, print error message and return the original outcome
+      error = function(e) {
+        message(e$message)
+        #message("no more movables")
+        movable_respondents <<- F #set flag to True in outer environment
+        return(y)
+        Sys.sleep(3)
+      }
+    )
+    #y_new <- move_by_one_step(y, addon_left, y_min, y_max, stepsize, n_to_move, verbose=verbose)
     
     #check the amount of addon that was achieved in this step
     addon_this_step <- mean(y_new, na.rm=T) - mean(y,  na.rm=T)
@@ -78,7 +91,7 @@ add_to_outcome <- function(y, addon, y_min, y_max, stepsize, margin=stepsize/(le
     if(verbose) message("managed to add ", round(addon_this_step, 3), " to the mean of y in this step")
     if(verbose) message("in total, added ", round(addon_achieved, 3), " to the mean of y; ", round(addon_left, 3), " left")
     if(verbose) message("\n")
-    if(verbose) Sys.sleep(3)
+    if(verbose) Sys.sleep(.25)
   }
   
   if(verbose) message("succesfully added the required amount to the mean")

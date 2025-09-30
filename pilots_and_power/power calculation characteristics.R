@@ -2,6 +2,8 @@ library(plyr)
 library(dplyr)
 library(pbapply)
 library(lmtest)
+library(lmerTest)
+library(sandwich)
 library(clubSandwich)
 library(corrplot)
 library(tidyr)
@@ -124,6 +126,7 @@ ATE_chars <- c(0, 0, 0, 0, 0, 0, 0, 0, .15, .2, .3, .4)
 #this distribution (to inform other simulations)
 effect_sds <- sapply(1:500, function(x){
   
+  characteristics <- names(char_blocks)
   char_ATEs <- sapply(characteristics, function(x) sample(ATE_chars, 1))
   article_effects <- sapply(ids, function(article){
     
@@ -138,6 +141,9 @@ effect_sds <- sapply(1:500, function(x){
   
 })
 mean(effect_sds)
+
+#sd of article effects not due to characteristics
+article_sd_unexp <- .05
 
 #function to assign observations from the original dataset to treatment, add characteristic effects
 #to calculate the right ATE for each article, and estimate the ATE and its significance for one outcome by
@@ -178,7 +184,10 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
     id_charscores <- d_ratings[d_ratings$id == article,]
     
     #dot product of the characteristics and their ATEs
-    char_ATEs  %*% as.numeric(id_charscores[characteristics])
+    effect <- char_ATEs  %*% as.numeric(id_charscores[characteristics])
+    
+    #plus an additional, unexplained effect
+    effect <- effect + rnorm(1, 0, article_sd_unexp)
     
   })
   
@@ -208,54 +217,39 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
     #get characteristics in previous blocks
     covariates <- characteristics[char_blocks < block]
     
-    #add characteristics from this and all previous blocks to the model
+    #add characteristics from this and all previous blocks to a RE model
     IVs <- paste(c(chars_of_interest, covariates), collapse = " + ")
+    formula <- as.formula(
+      paste("outcome_scale_addon_w2 ~ outcome_scale + ", IVs, " + (1 | Article)")
+    )
+    fit <- lmer(formula, data=d_sample)
+    
+    #get coefs of characteristics in the block
+    est <- coef(summary(fit))[chars_of_interest, 1]
+    p <- coef(summary(fit))[chars_of_interest, 5]
+    #p-values are added due to package lmerTest
+    
+    #add clustered SE approach for comparison
     formula <- as.formula(
       paste("outcome_scale_addon_w2 ~ outcome_scale + ", IVs)
     )
     fit <- lm(formula, data=d_sample)
-    
-    #clustered SEs
-    #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
     cluster_se <- vcovCL(fit, cluster = d_sample$Article)
-    
-    #get coefs of characteristics in the block
-    est <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 1]
-    p <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 4]
+    #alternative:
+    #cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
+    est_CL <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 1]
+    p_CL <- coeftest(fit, vcov = cluster_se)[chars_of_interest, 4]
     
     #add their ATEs in this iteration
     results_of_interest <- data.frame(characteristic = chars_of_interest,
                                       block = block,
                                       ATE = char_ATEs[chars_of_interest],
-                                      est, p=p, sign=p<.05)
+                                      est, p=p, sign=p<.05,
+                                      #keep the clustered SEs for comparison
+                                      est_CL, p_CL, sign_CL=p_CL<.05)
     
   })
   outputs <- do.call(rbind, outputs)
-  
-  ##alternative Step 5: test each characteristic separately;
-  #this results in much lower power (and is not the paper's approach)
-  
-  # outputs <- lapply(characteristics, function(char){
-  #   
-  #   #add only this characteristic to the model
-  #   formula <- as.formula(paste("outcome_scale_addon_w2 ~ outcome_scale + ", char))
-  #   fit <- lm(formula, data=d_sample)
-  #   
-  #   #clustered SEs
-  #   cluster_se <- vcovCR(fit, cluster = d_sample$Article, type = "CR4")
-  #   
-  #   #get coefs of characteristics in the block
-  #   est <- coeftest(fit, vcov = cluster_se)[char, 1]
-  #   p <- coeftest(fit, vcov = cluster_se)[char, 4]
-  #   
-  #   #add their ATEs in this iteration
-  #   results_of_interest <- data.frame(characteristic = char,
-  #                                     block = 99,
-  #                                     ATE = char_ATEs[char],
-  #                                     est, sign=p<.05)
-  #   
-  # })
-  # outputs <- do.call(rbind, outputs)
   
   #add two-stage FDR-adjusted p-values
   fdr_result <- mt.rawp2adjp(outputs$p, proc="TSBH")
@@ -265,6 +259,11 @@ simulate_main <- function(d, ATE_chars, ids, n_wave2, prop_treat){
   
   #add significance for those
   outputs$fdr_sign <- outputs$fdr < .05
+  
+  #do the same for the clustered SE approach
+  fdr_result_CL <- mt.rawp2adjp(outputs$p_CL, proc="TSBH")
+  outputs$fdr_CL <- fdr_result_CL$adjp[order(fdr_result_CL$index), "TSBH_0.05"]
+  outputs$fdr_sign_CL <- outputs$fdr_CL < .05
   
   return(outputs)
   
@@ -285,21 +284,22 @@ power_summ <- df_power_out %>%
 #leave out cases where ATE was set to zero for realism
 power_summ <- power_summ[power_summ$ATE != 0,]
 
-#transform to wide and sort by block, then characteristic
-power_wide <- power_summ[,c("characteristic","block","ATE","sign","fdr_sign")] %>%
+#transform to wide and sort by block, then characteristic,
+#using the RE-based, FDR-corrected p-values (fdr_sign)
+power_wide <- power_summ[,c("characteristic","block","ATE","sign","fdr_sign","sign_CL","fdr_sign_CL")] %>%
   pivot_wider(
     id_cols = c(characteristic, block),
     names_from = ATE,
-    values_from = c(fdr_sign),
+    values_from = c(fdr_sign, fdr_sign_CL),
     names_sep = "_ATE"
   ) %>%
   arrange(block, characteristic)
 
-#sort by block and then name
+#sort by block and then name, round off
 power_wide <- power_wide[order(power_wide$block, power_wide$characteristic), ]
-
-#write to files
-save(power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rdata")
 power_wide_rounded <- power_wide %>%
   mutate(across(where(is.numeric), ~ round(.x, 3)))
+
+#write to files
+save(power_out, power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rdata")
 write.csv(power_wide_rounded, "power_characteristics_expanded.csv", row.names=F)

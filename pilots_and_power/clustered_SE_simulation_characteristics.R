@@ -26,6 +26,8 @@ article_effects <- sapply(1:n_articles, function(article){
     
   })
 sd(article_effects)
+#this creates an article effect s.d. of ca. .20,
+#of which ca. .12 is explained by the characteristics
 
 # Simulation parameters
 n_sims <- 250
@@ -120,7 +122,7 @@ result <- simplify2array(pblapply(1:n_sims, function(i) {
     
   })
   # Step 6–7: bootstrap standard error
-  se_boot <- sd(boot_estimates)
+  se_boot <- apply(boot_estimates, 1, sd)
   
   #store them
   return(cbind(est=est, se=se, est_RE=est_RE, se_RE=se_RE,

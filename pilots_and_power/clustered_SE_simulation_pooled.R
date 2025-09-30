@@ -33,7 +33,7 @@ df_result <- pbsapply(1:n_sims, function(i) {
   # Step c: Randomly draw 100 articles
   sampled_articles <- sample(1:n_articles, n_articles_per_sim)
   
-  # Step d: Assign 28 treated respondents to each article
+  # Step d: Assign treated respondents to each article
   treated_ids <- which(assignment == "treated")
   treated_ids <- sample(treated_ids)  # shuffle
   #for each article, get the list of respondent ids that are assigned to it
@@ -67,7 +67,7 @@ df_result <- pbsapply(1:n_sims, function(i) {
   se <- coeftest(fit)["assignmenttreated", 2]
   
   # get RE estimate of effect size and SE
-  fit_RE <- lmer(outcome ~ assignment + (1 | article_id), data = df)
+  fit_RE <- lmer(outcome ~ 1 + assignment + (- 1 + assignment | article_id), data = df)
   est_RE <- coef(summary(fit_RE))["assignmenttreated", 1]
   se_RE <- coef(summary(fit_RE))["assignmenttreated", 2]
   
@@ -79,35 +79,37 @@ df_result <- pbsapply(1:n_sims, function(i) {
   cluster_CR <- vcovCR(fit, cluster = df$article_id, type = "CR4")
   se_CR <- coeftest(fit, vcov = cluster_CR)["assignmenttreated", 2]
   
-  # get bootstrapped SE estimate
-  boot_estimates <- sapply(1:n_bootstraps, function(b) {
-    
-    # Step 1: sample article_ids with replacement
-    sampled_articles <- sample(unique(df$article_id), 
-                               size = length(unique(df$article_id)), 
-                               replace = TRUE)
-    
-    # Step 2: for each sampled article, sample rows with replacement
-    df_list <- lapply(sampled_articles, function(aid) {
-      rows <- df[df$article_id == aid, ]
-      rows[sample(nrow(rows), size = nrow(rows), replace = TRUE), ]
-    })
-    df_sampled <- do.call(rbind, df_list)
-    
-    # Step 3: also sample control group respondents with replacement
-    rows_ctrl <- df[df$assignment=="control",]
-    df_ctrl <- rows_ctrl[sample(nrow(rows_ctrl), size = nrow(rows_ctrl), replace = TRUE), ]
-    df_sampled <- rbind(df_sampled, df_ctrl)
-    
-    # Step 4: run regression
-    fit <- lm(outcome ~ assignment, data = df_sampled)
-    
-    # Step 5: store coefficient on assignment
-    coef(fit)[["assignmenttreated"]]
-    
-  })
-  # Step 6–7: bootstrap standard error
-  se_boot <- sd(boot_estimates)
+  
+  # # get bootstrapped SE estimate
+  # boot_estimates <- sapply(1:n_bootstraps, function(b) {
+  #   
+  #   # Step 1: sample article_ids with replacement
+  #   sampled_articles <- sample(unique(df$article_id), 
+  #                              size = length(unique(df$article_id)), 
+  #                              replace = TRUE)
+  #   
+  #   # Step 2: for each sampled article, sample rows with replacement
+  #   df_list <- lapply(sampled_articles, function(aid) {
+  #     rows <- df[df$article_id == aid, ]
+  #     rows[sample(nrow(rows), size = nrow(rows), replace = TRUE), ]
+  #   })
+  #   df_sampled <- do.call(rbind, df_list)
+  #   
+  #   # Step 3: also sample control group respondents with replacement
+  #   rows_ctrl <- df[df$assignment=="control",]
+  #   df_ctrl <- rows_ctrl[sample(nrow(rows_ctrl), size = nrow(rows_ctrl), replace = TRUE), ]
+  #   df_sampled <- rbind(df_sampled, df_ctrl)
+  #   
+  #   # Step 4: run regression
+  #   fit <- lm(outcome ~ assignment, data = df_sampled)
+  #   
+  #   # Step 5: store coefficient on assignment
+  #   coef(fit)[["assignmenttreated"]]
+  #   
+  # })
+  # # Step 6–7: bootstrap standard error
+  # se_boot <- sd(boot_estimates)
+  se_boot <- NA
   
   #store them
   return(c(est=est, se=se, est_RE=est_RE, se_RE=se_RE,
@@ -132,6 +134,8 @@ mean(df_result$se_RE) #random effects
 mean(df_result$se_CL) #cluster correction
 mean(df_result$se_CR) #other cluster correction
 mean(df_result$se_boot) #bootstrap
+
+#unclear why RE has non-convergence and huge SEs...
 
 # By what factor is the non-corrected SE usually off?
 
