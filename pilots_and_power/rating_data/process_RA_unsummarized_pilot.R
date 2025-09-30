@@ -31,7 +31,7 @@ for (question in multiple_choice_questions) {
     ordinal_options <- response_options[!grepl("not enough detail|Not enough information", response_options)]
     #in version v4c, the issue bundling question has no follow-up
     if(question=="Issue bundling"){
-      gsub(" \\(skip next question\\)", "", response_options)
+      ordinal_options <- gsub(" \\(skip next question\\)", "", ordinal_options)
     }
     dF[[question]] <- factor(dF[[question]],
                              levels = ordinal_options,
