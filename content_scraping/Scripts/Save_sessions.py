@@ -1,5 +1,5 @@
 
-from selenium import webdriver
+from seleniumwire import webdriver
 import requests
 import pickle
 import time
