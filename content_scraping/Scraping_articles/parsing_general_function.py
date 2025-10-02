@@ -68,10 +68,10 @@ def format_parsed_content(parsed_content, paper_name):
     #add source
     parsed_content["source"] = paper_name
             
-    #generate an id for the article: first 3 words of title
+    #generate an id for the article: first 4 words of title
     title = re.sub('[^A-Za-z0-9 ]+', '', parsed_content["title"]) #remove special chars
     titlewords =  title.strip().split(" ") #split by spaces
-    titlestart = "-".join(titlewords[:3]) #join first three words with dashes
+    titlestart = "-".join(titlewords[:4]) #join first three words with dashes
     parsed_content["id"] = "%s_%s_%s" % (paper_name, parsed_content['date'], titlestart)  
             
     return parsed_content

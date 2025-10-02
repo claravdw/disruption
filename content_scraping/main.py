@@ -1,6 +1,6 @@
 import os
 import sys
-#sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles'))
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles','Data_structuring'))
 
 import pandas as pd
@@ -22,10 +22,10 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=False)
     
     #parsing the html content of all scraped urls
-    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
+    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=True)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
 
 
 if __name__ == '__main__':

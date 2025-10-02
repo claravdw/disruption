@@ -1,14 +1,24 @@
 How to Use the Scraper for Articles That Require a Subscription
 
-First, launch the script called Save\_session.py. This script will open a Chrome browser. Navigate to the website of the newspaper and log in to your account. Ensure that you accept cookies to be saved. Once you are logged in, you can close the Chrome window.
+First, in the Scripts folder, open the script called Save_session.py. Update the script to apply save_session() to the right newspaper and url.
+The newspaper name should match the names in file newspaper_names. These names are used to e.g. to name folders and call the correct parsing scripts.
+
+Launch this script. It will open a Chrome browser. Navigate to the website of the newspaper and log in to your account.
+
+Ensure that you accept cookies to be saved. Once you are logged in, you can close the Chrome window.
+
 The cookies from this session will be stored and used to access the URLs listed in the list of URLs. This allows you to access all the subscribers' content.
+
 You can now proceed to use the code as specified in Part Two. If you find that the scraped content is inaccessible because you are not seemingly logged in, please reconnect to the website accordingly.
+
 
 Using the script on a server
 
-To use the save_session script, you first need to have a Chrome browser and the ability to use a graphical interface. Once you have that set up, you can launch the main program on a headless machine. If you want to run the scraping on a headless server, follow these steps:
+To use the save_session script, you first need to have a Chrome browser and the ability to use a graphical interface. Once you have that set up, you can launch the main program on a headless machine.
 
-Launch the save_session.py script on your personal device.
+If you want to run the scraping on a headless server, follow these steps:
 
-To use the session cookies saved in the Data/Cookies_session folder on the server, sync the local github repo with the server.
+- Launch the save_session.py script on your personal device.
+
+- To use the session cookies saved in the Data/Cookies_session folder on the server, sync the local github repo with the server.
 
