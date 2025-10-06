@@ -4,36 +4,62 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
+import time
 
 from seleniumwire import webdriver
+from selenium_stealth import stealth #to avoid bot detection
+from selenium.webdriver.common.by import By
 import json
 import pprint
 
+
 ##set up task
 
-url = "https://www.bbc.com/news/world-africa-55300261"
-newspaper = "BBC"
+url = "https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/"
+newspaper = "Sun"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
+debug_mode = True
 
 
 ##prepare scraping and parsing
 
 #set up options for scraping with Chrome webdriver
 options = webdriver.ChromeOptions()
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--incognito')
-options.add_argument("window-size=2000,1500") #note: not present in scraping_general_function
-options.add_argument('--headless=new')
-#comment out last line to see what's happening in the driver
+#when in debug mode, we want to see what's happening in the driver
+if not debug_mode:
+    options.add_argument('--headless=new')
 
 #if BBC, we need selenium due to javascript elements;
 #if ITV, we need selenium to scroll down slowly and load images;
 #set up a selenium session
-if newspaper in ["BBC", "ITV"]:
+if newspaper in ["BBC", "ITV","Sun"]:
+
+   print("using selenium browser")
    s = webdriver.Chrome(options=options)
-   s.request_interceptor = scrap.interceptor
+   
+   #s.request_interceptor = scrap.interceptor
+   
+   if debug_mode:
+       print("previewing page")
+       s.get(url) #load the page; for debugging (will do this again in fetch_url)
+       
+       #DEBUGGING COOKIES
+       text = s.page_source
+   
+       time.sleep(15) #for debugging
+       print("writing pre-cookie-accept page to file")
+       with open("test_files/precookie.html", "w") as text_file:
+           text_file.write(text)
+   
+       #try to accept cookies
+       #s = scrap.accept_cookies(s, By.CLASS_NAME, "accept-all")
+   
+       #time.sleep(30) #for debugging
+   
 #otherwise, use requests package, and retrieve session if possible
 else:
+
+   print("using requests")
    s = scrap.start_session(newspaper)
 
 #import the specific parsing module for this newspaper
@@ -42,6 +68,7 @@ newspaper_module = pars.choose_parser(newspaper)
 
 ##scrape html content and write to file
 
+print("fetching url content")
 html_content = scrap.fetch_url(newspaper=newspaper, s=s, url=url)
 with open("test_files/test.html", "w") as text_file:
     text_file.write(html_content)
@@ -50,6 +77,7 @@ with open("test_files/test.html", "w") as text_file:
 ##parse html content
 
 parsed_content = newspaper_module.extract(html_content, parsed_attr=parsed_attr)
+#pprint.pp(parsed_content)
 
 #format, pretty-print and write to file
 parsed_content = pars.format_parsed_content(parsed_content, newspaper)
@@ -62,7 +90,7 @@ ds.from_dict_to_file(parsed_content, "test_files/test.json")
 image_dicts = parsed_content["image"]
 
 if image_dicts:
-    image_dict = image_dicts[1]
+    image_dict = image_dicts[0]
             
     #create local file name (without extension)
     img_file_name = "first_image"

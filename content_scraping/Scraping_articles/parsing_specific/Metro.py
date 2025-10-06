@@ -59,7 +59,7 @@ def extract(html_content, parsed_attr):
         bad_p_classes = ["metro-video-player__read-more", "vjs-no-js", "zopo-title"]
     
         try:
-            body = page.find("div", {"class": "article-body"})
+            body = page.find("div", {"class": ["article-body", "article__content"] })
             paragraphs = body.findAll("p")
             text = []
             for paragraph in paragraphs:

@@ -9,6 +9,7 @@ import pickle
 import os
 from seleniumwire import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
@@ -66,7 +67,6 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
 options.add_argument('--headless=new')
 
-
 def start_session(newspaper: str, url=None):
 
     try:
@@ -87,11 +87,11 @@ def start_session(newspaper: str, url=None):
     
 ##Functions to scrape the html content of newspaper article urls
 
-def accept_cookies(s):
+def accept_cookies(s, button_locator, button_value: str):
 
     try:
-        s.implicitly_wait(5) #wait up to five seconds to load elements (incl. accept button)
-        button = s.find_element("id", "cassie_accept_all_pre_banner")
+        s.implicitly_wait(5) #wait some seconds to load elements (incl. accept button)
+        button = s.find_element(button_locator, button_value)
         button.click()
         logging.info(f"Successfully accepted cookies")
     except Exception as e:
@@ -120,7 +120,7 @@ def scroll_down(s):
     return s
 
 
-def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5, first_visit: bool = True):
+def fetch_url(newspaper: str, s, url: str, restricted_content=None, retries: int = 3, bad_status_sleep: int = 5, access_restricted_sleep: int = 60, polite_sleep: int = 3, first_visit: bool = True):
     """
     This function returns the HTML content of the URL passed in entry for a website that needs a subscription.
     It also logs the URL currently being scraped.
@@ -128,8 +128,11 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
     Parameters:
     url (str): The URL to fetch.
     s: requests session or selenium webdriver
+    restricted_content: a list of strings with html content indicating that a request has been met with an access restriction
     retries (int): Number of retry attempts in case of failure. Default is 3.
-    sleep_time (int): Time to sleep between retries in seconds. Default is 5.
+    bad_status_sleep (int): Time to sleep between retries after bad status in seconds. Default is 5.
+    access_restricted_sleep (int): Time to sleep between retries after restricted access in seconds. Default is 60.
+    polite_sleep (int): Maximum time to sleep after one url in seconds. Default is 3.
     first_visit (bool): Toggle for first visit to the domain (may require accepting cookies)
     
     Returns:
@@ -147,8 +150,15 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
                 response = s.get(url)
                 text = response.text
                 status = response.status_code
+                sleep_time = bad_status_sleep  #reset sleep time to the (shorter) bad_status_sleep
+                
                 if status < 200 or status >= 300:
-                    raise Exception(f"HTML request was not successful, status was {status}")
+                    raise Exception(f"HTML request was not successful, status was {status}, sleeping for {sleep_time} seconds")
+                    
+                #raise an error when the page has content indicating access was restricted
+                if restricted_content and any(rest in text for rest in restricted_content):
+                    sleep_time = access_restricted_sleep
+                    raise Exception(f"Article access was restricted, sleeping for {sleep_time} seconds")
                     
             else: #selenium webdriver
                 s.get(url) #load the page
@@ -157,9 +167,9 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
                     #if visiting the domain for the first time with this driver,
                     #try to accept cookies
                     if first_visit:
-                        s = accept_cookies(s)
+                        s = accept_cookies(s, By.ID, "cassie_accept_all_pre_banner")
                     s = scroll_down(s)
-                
+                                        
                 text = s.page_source
                 
             return text
@@ -167,6 +177,9 @@ def fetch_url(newspaper: str, s, url: str, retries: int = 3, sleep_time: int = 5
         except Exception as e:
             logging.warning(f"Attempt {attempt + 1} failed for {url}: {e}")
             time.sleep(sleep_time)
+    
+    #polite scraping sleep time between urls        
+    time.sleep(polite_sleep)
     
     logging.error(f"Failed to fetch URL {url} after {retries} retries")
     return None
@@ -202,18 +215,36 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
         html_content_dict = ds.from_file_to_dict(html_file)
 
     if html_content_dict: print(f"re-using some already-scraped urls from file: {html_file}")
+    
+    #list of strings with html content indicating that a request has been met with an access restriction
+    restricted_content = ["<title>Access Restricted</title>"]
 
     #loop over the article urls and fetch their content
     first_visit = True
     for url in urls_list:  
             
-        #if the URL is not already in the html content dict, scrape and add it
-        if url not in html_content_dict:
+        #check if there is dict content for that url but it is invalid: None (as in the case of a failed HTML request;
+        #a null entry in the json file), or it contains content suggesting that access was restricted
+        invalid_content = False
+        if url in html_content_dict:        
+            if html_content_dict[url] is None or any(rest in html_content_dict[url] for rest in restricted_content):
+                invalid_content = True
+        
+        #if the URL is not already in the html content dict, or (re-)scrape and add it
+        if url not in html_content_dict or invalid_content:
         
             #logging.info(f"Scraping url: {url}")
-            html_content = fetch_url(newspaper=newspaper, s=s, url=url, first_visit=first_visit)
+            #set longer sleep time if newspaper is Telegraph to avoid getting access restricted
+            polite_sleep = 5 if newspaper == "Telegraph" else 1
+            
+            #fetch the url content
+            html_content = fetch_url(newspaper=newspaper, s=s, url=url, restricted_content=restricted_content, polite_sleep=polite_sleep, first_visit=first_visit)
+            
+            #addd it to the dict
             html_content_dict[url] = html_content
-            first_visit = False #no need to look for cookie accept button again
+            
+            #no need to look for cookie accept button again
+            first_visit = False
             
             #break #FOR DEBUGGING, only try first URL
             

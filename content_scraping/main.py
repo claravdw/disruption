@@ -33,16 +33,16 @@ if __name__ == '__main__':
     #lines to change
     #name of the newspaper; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = ["BBC",
-                  "The-Guardian",
-                  "Daily-Mail",
-                  "Sky", 
-                  "Metro",
-                  "Sun",
-                  "Telegraph",
-                  "The-Times",
-                  "Mirror",
-                  "ITV"
+    newspapers = [#"BBC",
+                  #"The-Guardian",
+                  #"Daily-Mail",
+                  #"Sky", 
+                  #"Metro",
+                  #"Sun",
+                  "Telegraph"#,
+                  #"The-Times",
+                  #"Mirror",
+                  #"ITV"
                   ]
                   
     for newspaper in newspapers:
@@ -56,8 +56,7 @@ if __name__ == '__main__':
         parsed_folder = f"article_contents/{newspaper}"
         image_folder = f"article_images/{newspaper}"
         
-
-        for url_file in url_files:
+        for url_file in reversed(url_files):
     
             print("Scraping and parsing urls in newspaper-month file", url_file)
     
@@ -75,6 +74,6 @@ if __name__ == '__main__':
                  parsed_attr=["title", "subtitle", "text", "image", "author", "date"],
                  image_folder=image_folder)
         
-            #break #FOR DEBUGGING, only try first url file
+            break #FOR DEBUGGING, only try first url file
         
         #break #FOR DEBUGGING, only try first newspaper
