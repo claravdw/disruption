@@ -7,7 +7,6 @@ import pickle
 # create ChromeOptions object
 
 options = webdriver.ChromeOptions()
-#options.add_argument('--headless')
 
 
 def save_session(News_paper,logging_url):

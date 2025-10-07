@@ -15,8 +15,8 @@ import pprint
 
 ##set up task
 
-url = "https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/"
-newspaper = "Sun"
+url = "https://www.thetimes.com/comment/columnists/article/why-trump-visit-protest-israel-ukraine-8n8r0l2sm"
+newspaper = "The-Times"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
 debug_mode = True
 
@@ -42,19 +42,7 @@ if newspaper in ["BBC", "ITV","Sun"]:
    if debug_mode:
        print("previewing page")
        s.get(url) #load the page; for debugging (will do this again in fetch_url)
-       
-       #DEBUGGING COOKIES
-       text = s.page_source
-   
-       time.sleep(15) #for debugging
-       print("writing pre-cookie-accept page to file")
-       with open("test_files/precookie.html", "w") as text_file:
-           text_file.write(text)
-   
-       #try to accept cookies
-       #s = scrap.accept_cookies(s, By.CLASS_NAME, "accept-all")
-   
-       #time.sleep(30) #for debugging
+       time.sleep(30) #take some time to inspect the page
    
 #otherwise, use requests package, and retrieve session if possible
 else:

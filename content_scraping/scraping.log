@@ -14,3 +14,42 @@
 2025-10-02 15:53:13,333 - INFO - scraping urls from file: ../google_scraping/article_urls/Telegraph/telegraph.co.uk_2025-09-01_2025-09-30_urls.csv
 2025-10-02 15:53:13,348 - INFO - Fetching URL: https://www.telegraph.co.uk/business/2025/09/18/why-starmer-will-struggle-to-deliver-nuclear-golden-age/
 2025-10-02 15:53:13,454 - WARNING - Attempt 1 failed for https://www.telegraph.co.uk/business/2025/09/18/why-starmer-will-struggle-to-deliver-nuclear-golden-age/: Article access was restricted, sleeping for 300 seconds
+2025-10-06 22:38:32,828 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-09-01_2025-09-30_urls.csv
+2025-10-06 22:38:32,901 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_dropped.json, returning empty dict
+2025-10-06 22:38:32,901 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json
+2025-10-06 22:40:23,528 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-08-01_2025-08-31_urls.csv
+2025-10-06 22:40:23,604 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_parsed.json
+2025-10-06 22:40:23,604 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-09-01_2025-09-30_urls.csv
+2025-10-06 22:40:23,606 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_dropped.json, returning empty dict
+2025-10-06 22:40:23,606 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json
+2025-10-06 22:41:30,209 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-08-01_2025-08-31_urls.csv
+2025-10-06 22:41:30,212 - INFO - Fetching URL: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:41:30,730 - WARNING - Attempt 1 failed for https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/: Article access was restricted, sleeping for 60 seconds
+2025-10-06 22:42:30,731 - INFO - Fetching URL: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:42:31,132 - WARNING - Attempt 2 failed for https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/: Article access was restricted, sleeping for 60 seconds
+2025-10-06 22:43:31,133 - INFO - Fetching URL: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:43:31,576 - WARNING - Attempt 3 failed for https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/: Article access was restricted, sleeping for 60 seconds
+2025-10-06 22:44:32,576 - ERROR - Failed to fetch URL https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/ after 3 retries
+2025-10-06 22:44:32,635 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_parsed.json
+2025-10-06 22:44:32,635 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-09-01_2025-09-30_urls.csv
+2025-10-06 22:44:32,637 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_dropped.json, returning empty dict
+2025-10-06 22:44:32,638 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json
+2025-10-06 22:46:07,019 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-08-01_2025-08-31_urls.csv
+2025-10-06 22:46:10,674 - INFO - Fetching URL: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:46:15,518 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_parsed.json
+2025-10-06 22:46:15,519 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-09-01_2025-09-30_urls.csv
+2025-10-06 22:46:16,166 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_dropped.json, returning empty dict
+2025-10-06 22:46:16,167 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json
+2025-10-06 22:51:09,268 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-08-01_2025-08-31_urls.csv
+2025-10-06 22:51:12,610 - INFO - No file found at ../../disruption_data/article_html/Sun/thesun.co.uk_2025-08-01_2025-08-31_html.json, returning empty dict
+2025-10-06 22:51:12,610 - INFO - Fetching URL: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:51:19,581 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_parsed.json, returning empty dict
+2025-10-06 22:51:19,581 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_dropped.json, returning empty dict
+2025-10-06 22:51:19,581 - INFO - Parsing url: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:51:19,609 - INFO - article dropped, search terms not present: https://www.thesun.co.uk/news/36215043/trevor-kavanagh-keir-starmer-tories-save-britain/
+2025-10-06 22:51:19,609 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-08-01_2025-08-31_parsed.json
+2025-10-06 22:51:19,609 - INFO - scraping urls from file: ../google_scraping/article_urls/Sun/thesun.co.uk_2025-09-01_2025-09-30_urls.csv
+2025-10-06 22:51:20,285 - INFO - No file found at ../../disruption_data/article_html/Sun/thesun.co.uk_2025-09-01_2025-09-30_html.json, returning empty dict
+2025-10-06 22:51:20,341 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json, returning empty dict
+2025-10-06 22:51:20,341 - INFO - No file found at article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_dropped.json, returning empty dict
+2025-10-06 22:51:20,341 - INFO - downloading images for file article_contents/Sun/thesun.co.uk_2025-09-01_2025-09-30_parsed.json

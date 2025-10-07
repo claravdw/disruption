@@ -10,6 +10,7 @@ import os
 from seleniumwire import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
+from selenium_stealth import stealth #to avoid bot detection
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
@@ -25,7 +26,7 @@ logger.setLevel(logging.WARNING)
 
 ##Web scraping parameter settings
 
-#set up headers for scraping; imitate Mozilla on Windows
+#requests package: set up headers for scraping; imitate Mozilla on Windows
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/png,image/jpg,*/*;q=0.8",
@@ -41,47 +42,38 @@ headers = {
     "Cache-Control": "max-age=0",
 }
 
-
-# define the request interceptor to configure custom headers for selenium webdriver
-def interceptor(request):
-
-    # add the missing headers
-    request.headers["Accept-Language"] = "en-US,en;q=0.9"
-    request.headers["Referer"] = "https://www.google.com/"
-
-    # delete the existing misconfigured default headers values
-    del request.headers["User-Agent"]
-    del request.headers["Sec-Ch-Ua"]
-    del request.headers["Sec-Fetch-Site"]
-    del request.headers["Accept-Encoding"]
-    
-    # replace the deleted headers with edited values
-    request.headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-    request.headers["Sec-Ch-Ua"] = "\"Chromium\";v=\"122\", \"Not(A:Brand\";v=\"24\", \"Google Chrome\";v=\"122\""
-    request.headers["Sec-Fetch-Site"] = "cross-site"
-    request.headers["Accept-Encoding"] = "gzip, deflate, br, zstd"
-
-#set up options for scraping with Chrome webdriver
-options = webdriver.ChromeOptions()
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--incognito')
-options.add_argument('--headless=new')
-
 def start_session(newspaper: str, url=None):
 
+    # Get the directory where this file is located
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Build the path to the data file relative to this script’s location
+    session_file = f"session_{newspaper}.pickle"
+    session_filepath = os.path.join(base_dir, "..", "Scripts", session_file)
+
+    # Try to retrieve the session file
     try:
-        with open(f'Scripts/session_{newspaper}.pickle', 'rb') as f:
+        with open(session_filepath, 'rb') as f:
             s = pickle.load(f)
-            #print("Successfully retrieved session for", newspaper)
-    except:
+            logging.info(f"Successfully retrieved session from {session_file}")
+            
+    # Otherwise just start a new session
+    except Exception as e:
+        logging.warning(f"Could not retrieve {newspaper} due to: {e}")
         s = requests.Session()
         
-    #update headers to help prevent scraping detection
+    # Update headers to help prevent scraping detection
     if url:
         headers["referer"] = url
     s.headers.update(headers)
     
     return s
+
+#selenium package: set up options for scraping with Chrome webdriver
+options = webdriver.ChromeOptions()
+options.add_argument('--ignore-certificate-errors')
+options.add_argument('--incognito')
+#options.add_argument('--headless=new')
     
     
     
@@ -194,11 +186,11 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     
     #if BBC, we need selenium due to javascript elements;
     #if ITV, we need selenium to scroll down slowly and load images;
+    #if Sun, we need selenium-stealh to avoid bot detection
     #set up a selenium session
-    if newspaper in ["BBC", "ITV"]:
+    if newspaper in ["BBC", "ITV", "Sun"]:
     
         s = webdriver.Chrome(options=options)
-        s.request_interceptor = interceptor
     
     #otherwise, use requests package, and retrieve session if possible
     else:
@@ -217,7 +209,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     if html_content_dict: print(f"re-using some already-scraped urls from file: {html_file}")
     
     #list of strings with html content indicating that a request has been met with an access restriction
-    restricted_content = ["<title>Access Restricted</title>"]
+    restricted_content = ["<title>Access Restricted</title>", "Help us verify you as a real visitor"]
 
     #loop over the article urls and fetch their content
     first_visit = True
@@ -230,12 +222,12 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
             if html_content_dict[url] is None or any(rest in html_content_dict[url] for rest in restricted_content):
                 invalid_content = True
         
-        #if the URL is not already in the html content dict, or (re-)scrape and add it
+        #if the URL is not already in the html content dict, or content is invalid, (re-)scrape and add it
         if url not in html_content_dict or invalid_content:
         
             #logging.info(f"Scraping url: {url}")
             #set longer sleep time if newspaper is Telegraph to avoid getting access restricted
-            polite_sleep = 5 if newspaper == "Telegraph" else 1
+            polite_sleep = 5 if newspaper == "Telegraph" else 3
             
             #fetch the url content
             html_content = fetch_url(newspaper=newspaper, s=s, url=url, restricted_content=restricted_content, polite_sleep=polite_sleep, first_visit=first_visit)
