@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     #list of newspaper websites to search, one at a time. Keys must match names of newspaper-specific parsing scripts in
     #content_scraping/Parsing_specific folder.
-    paper_urls = {#"BBC":"bbc.com",
+    paper_urls = {"BBC":"bbc.com",
                   "The-Guardian":"theguardian.com",
                   "Daily-Mail":"dailymail.co.uk",
                   "Sky":"news.sky.com",

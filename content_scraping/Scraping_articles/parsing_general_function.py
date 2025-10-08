@@ -154,7 +154,7 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
 
     #write to json files
     ds.from_dict_to_file(parsed_content_dict, parsed_file)
-    if dropped_content_dict: ds.from_dict_to_file(dropped_content_dict, dropped_file)
+    ds.from_dict_to_file(dropped_content_dict, dropped_file)
     
     return(parsed_content_dict)
 

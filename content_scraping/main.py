@@ -20,9 +20,12 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     
     #scraping the html content of all urls retrieved from google 
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=False)
+    #note: redo=False means we are still download any *new* urls that appeared in the url list
     
     #parsing the html content of all scraped urls
-    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=False)
+    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
+    #note: redo=False means we do not re-parse any urls that have been previously parsed, even if the html has
+    #changed (e.g. content was now succesfully downloaded; url will continue to be dropped)
     
     #download images from image urls
     scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
@@ -30,21 +33,22 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
 
 if __name__ == '__main__':
 
-    #lines to change
-    #name of the newspaper; must match folder names in google_scaping/article_urls folder,
+    #names of the newspapers; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = [#"BBC",
-                  #"The-Guardian",
-                  #"Daily-Mail",
-                  #"Sky", 
-                  #"Metro",
+    newspapers = ["BBC",
+                  "The-Guardian",
+                  "Daily-Mail",
+                  "Sky", 
+                  "Metro",
                   "Sun",
-                  #"Telegraph",
+                  "Telegraph",
                   "The-Times",
-                  #"Mirror",
-                  #"ITV"
+                  "Mirror",
+                  "ITV"
                   ]
-                  
+    #note: Telegraph articles were not scraped successfully with this script; they were scraped
+    #by Iraklis. They will not be re-scraped by main_scrape_html.
+
     for newspaper in newspapers:
 
         #get relative paths of the files containing the URLs for this paper
@@ -56,8 +60,8 @@ if __name__ == '__main__':
         parsed_folder = f"article_contents/{newspaper}"
         image_folder = f"article_images/{newspaper}"
         
-        for url_file in reverse(url_files):
-    
+        for url_file in url_files:
+        
             print("Scraping and parsing urls in newspaper-month file", url_file)
     
             #get relative file paths to write them to (replace "url" with "html" and "parsed" in url file)

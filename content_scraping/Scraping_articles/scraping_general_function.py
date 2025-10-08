@@ -9,6 +9,7 @@ import pickle
 import os
 from seleniumwire import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium_stealth import stealth #to avoid bot detection
 
@@ -73,19 +74,38 @@ def start_session(newspaper: str, url=None):
 options = webdriver.ChromeOptions()
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--incognito')
-#options.add_argument('--headless=new')
+options.add_argument('--headless=new')
     
     
     
 ##Functions to scrape the html content of newspaper article urls
 
-def accept_cookies(s, button_locator, button_value: str):
+def accept_cookies(s, button_locator, button_value: str, newspaper: str):
+    """
+    This function finds the "Accept cookies" button on a page, clicks it, and returns the state of the driver.
+    s: selenium webdriver
+    button_locator: a selenium locator object such as By.CLASS_NAME or By.ID
+    button_value: the value that the attribute decided by the locator should have, e.g. which class the button is
+    """
 
     try:
-        s.implicitly_wait(5) #wait some seconds to load elements (incl. accept button)
-        button = s.find_element(button_locator, button_value)
+       
+        #set max time to wait for elements to be found
+        wait = WebDriverWait(s, 10)
+        
+        #in case of the Sun, button is in an iframe with the title
+        if newspaper == "Sun":
+            wait.until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR, 'iframe[title="Iframe title"]')))
+       
+        button = wait.until(EC.presence_of_element_located((button_locator, button_value)))
         button.click()
+        
+        #switch back out of the iframe
+        if newspaper == "Sun":
+            s.switch_to.default_content()
+        
         logging.info(f"Successfully accepted cookies")
+        
     except Exception as e:
         logging.warning(f"Could not accept cookies due to: {e}")
         
@@ -159,8 +179,15 @@ def fetch_url(newspaper: str, s, url: str, restricted_content=None, retries: int
                     #if visiting the domain for the first time with this driver,
                     #try to accept cookies
                     if first_visit:
-                        s = accept_cookies(s, By.ID, "cassie_accept_all_pre_banner")
+                        s = accept_cookies(s, By.ID, "cassie_accept_all_pre_banner", "ITV")
                     s = scroll_down(s)
+                    
+                if newspaper == "Sun":
+                    if first_visit:
+                        s = accept_cookies(s, By.CLASS_NAME, "accept-all", "Sun")
+                
+                    #print("scrolling down slowly")
+                    #s = scroll_down(s)
                                         
                 text = s.page_source
                 
@@ -186,7 +213,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     
     #if BBC, we need selenium due to javascript elements;
     #if ITV, we need selenium to scroll down slowly and load images;
-    #if Sun, we need selenium-stealh to avoid bot detection
+    #if Sun, we need selenium-stealth to avoid bot detection
     #set up a selenium session
     if newspaper in ["BBC", "ITV", "Sun"]:
     
@@ -213,36 +240,42 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
 
     #loop over the article urls and fetch their content
     first_visit = True
-    for url in urls_list:  
+    
+    if newspaper is not "Telegraph":
+    #we are not re-scraping Telegraph at all; right now we could not do so successfully with this script, plus trying to scrape
+    #new urls (with redo=False) would cause duplicate urls across month files, as Telegraph html was scraped separately by Iraklis
+    #and not necessarily allocated to its original url month file
+        for url in urls_list:  
             
-        #check if there is dict content for that url but it is invalid: None (as in the case of a failed HTML request;
-        #a null entry in the json file), or it contains content suggesting that access was restricted
-        invalid_content = False
-        if url in html_content_dict:        
-            if html_content_dict[url] is None or any(rest in html_content_dict[url] for rest in restricted_content):
-                invalid_content = True
+            #check if there is dict content for that url but it is invalid: None (as in the case of a failed HTML request;
+            #a null entry in the json file), or it contains content suggesting that access was restricted
+            invalid_content = False
+            if url in html_content_dict:        
+                if html_content_dict[url] is None or any(rest in html_content_dict[url] for rest in restricted_content):
+                    invalid_content = True
+                    print(f"re-scraping url {url}; invalid content")
         
-        #if the URL is not already in the html content dict, or content is invalid, (re-)scrape and add it
-        if url not in html_content_dict or invalid_content:
+            #if the URL is not already in the html content dict, or content is invalid, (re-)scrape and add it
+            if url not in html_content_dict or invalid_content:
         
-            #logging.info(f"Scraping url: {url}")
-            #set longer sleep time if newspaper is Telegraph to avoid getting access restricted
-            polite_sleep = 5 if newspaper == "Telegraph" else 3
+                #logging.info(f"Scraping url: {url}")
+                #set longer sleep time if newspaper is Telegraph to avoid getting access restricted
+                polite_sleep = 5 if newspaper == "Telegraph" else 3
             
-            #fetch the url content
-            html_content = fetch_url(newspaper=newspaper, s=s, url=url, restricted_content=restricted_content, polite_sleep=polite_sleep, first_visit=first_visit)
+                #fetch the url content
+                html_content = fetch_url(newspaper=newspaper, s=s, url=url, restricted_content=restricted_content, polite_sleep=polite_sleep, first_visit=first_visit)
             
-            #addd it to the dict
-            html_content_dict[url] = html_content
+                #add it to the dict
+                html_content_dict[url] = html_content
             
-            #no need to look for cookie accept button again
-            first_visit = False
+                #no need to look for cookie accept button again
+                first_visit = False
             
-            #break #FOR DEBUGGING, only try first URL
+                #break #FOR DEBUGGING, only try first URL
             
     #write to json file
     ds.from_dict_to_file(html_content_dict, html_file)
-                
+             
     return html_content_dict
     
     

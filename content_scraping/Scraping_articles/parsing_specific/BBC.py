@@ -49,7 +49,7 @@ def extract(html_content, parsed_attr):
     if "text" in parsed_attr:
     
         try:
-            text_divs = page.findAll("div", {"data-component":"text-block"})
+            text_divs = page.findAll("div", {"data-component":["text-block","layout-block"]})
             text = []
             for div in text_divs:
                 paragraphs = div.findAll("p") #{"class" : "sc-eb7bd5f6-0 fYAfXe"}

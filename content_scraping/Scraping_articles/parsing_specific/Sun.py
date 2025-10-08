@@ -67,7 +67,7 @@ def extract(html_content, parsed_attr):
     if "text" in parsed_attr:
     
         try:
-            body = page.find("article", {"class": "article theme-news"})
+            body = page.find("article")
             paragraphs = body.findAll("p")
             text = []
             for paragraph in paragraphs:

@@ -15,7 +15,7 @@ import time
 
 csv.field_size_limit(10000000)
 
-#logging.basicConfig(filename="data_structuring.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename="data_structuring.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def from_csv_to_list(file_path, name_column="url"):

@@ -59,8 +59,10 @@ def extract(html_content, parsed_attr):
     if "text" in parsed_attr:
     
         try:
-            body_div = page.find("div", {'class':'article-body'})
-            paragraphs = body_div.findAll("p")
+            body = page.find("div", {'class':'article-body'})
+            if body is None:
+                body = page.find("article", {'id':'article-body'})
+            paragraphs = body.findAll("p")
             text = []
             for paragraph in paragraphs:
                 text.append(paragraph.text.strip())

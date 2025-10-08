@@ -15,43 +15,38 @@ import pprint
 
 ##set up task
 
-url = "https://www.thetimes.com/comment/columnists/article/why-trump-visit-protest-israel-ukraine-8n8r0l2sm"
-newspaper = "The-Times"
+url = "https://news.sky.com/video/why-are-just-stop-oil-activists-receiving-such-stiff-sentences-13189609"
+newspaper = "Sky"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
 debug_mode = True
 
 
-##prepare scraping and parsing
+##prepare scraping
 
 #set up options for scraping with Chrome webdriver
 options = webdriver.ChromeOptions()
-#when in debug mode, we want to see what's happening in the driver
-if not debug_mode:
-    options.add_argument('--headless=new')
 
 #if BBC, we need selenium due to javascript elements;
 #if ITV, we need selenium to scroll down slowly and load images;
 #set up a selenium session
-if newspaper in ["BBC", "ITV","Sun"]:
+if newspaper in ["BBC", "ITV","Sun","Sky"]:
 
    print("using selenium browser")
    s = webdriver.Chrome(options=options)
-   
-   #s.request_interceptor = scrap.interceptor
+   #not headless, for testing purposes
    
    if debug_mode:
+   
        print("previewing page")
        s.get(url) #load the page; for debugging (will do this again in fetch_url)
-       time.sleep(30) #take some time to inspect the page
+       time.sleep(5) #take some time to inspect the page
+
    
 #otherwise, use requests package, and retrieve session if possible
 else:
 
    print("using requests")
    s = scrap.start_session(newspaper)
-
-#import the specific parsing module for this newspaper
-newspaper_module = pars.choose_parser(newspaper)
 
 
 ##scrape html content and write to file
@@ -63,6 +58,9 @@ with open("test_files/test.html", "w") as text_file:
 
 
 ##parse html content
+
+#import the specific parsing module for this newspaper
+newspaper_module = pars.choose_parser(newspaper)
 
 parsed_content = newspaper_module.extract(html_content, parsed_attr=parsed_attr)
 #pprint.pp(parsed_content)
@@ -93,6 +91,6 @@ if image_dicts:
     #download the image file and get full name (with extension)
     img_full_name = ds.download_file(img_url, img_file_name, folder_path="test_files")
     print("stored first image as:", img_full_name)
-    
+
     
     
