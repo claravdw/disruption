@@ -10,7 +10,7 @@ dF <- read.delim("Article Characteristics Coding v4c (Responses) - Short column 
                  stringsAsFactors=FALSE, check.names=FALSE, quote = "")
 
 # This is the data that describes the coding form the humans filled in; most needed for the response options
-form_data <- read.delim("protestCharacteristicFormB6.tsv", sep="\t", stringsAsFactors=FALSE,
+form_data <- read.delim("../rating_data/protestCharacteristicFormB6.tsv", sep="\t", stringsAsFactors=FALSE,
                         check.names=FALSE, quote = "")
 
 

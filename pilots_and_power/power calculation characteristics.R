@@ -302,4 +302,4 @@ power_wide_rounded <- power_wide %>%
 
 #write to files
 save(power_out, power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rdata")
-write.csv(power_wide_rounded, "power_characteristics_expanded.csv", row.names=F)
+write.csv(power_wide_rounded, "power_characteristics.csv", row.names=F)
