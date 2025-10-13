@@ -20,16 +20,17 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     
     #scraping the html content of all urls retrieved from google 
     html_content_dict = scrap.main_scrape_html(newspaper, url_file, html_file, redo=False)
-    #note: redo=False means we are still download any *new* urls that appeared in the url list
+    #note: redo=False means we still download any *new* urls that appeared in the url list
     
     #parsing the html content of all scraped urls
     parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True)
     #note: redo=False means we do not re-parse any urls that have been previously parsed, even if the html has
-    #changed (e.g. content was now succesfully downloaded; url will continue to be dropped)
+    #changed (e.g. content was now succesfully downloaded; article will continue to be dropped)
     
     #download images from image urls
     scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
-
+    #note: redo=False means we do not re-download any images that would have the same name (same image
+    #number in an article with the same source-date-title id)
 
 if __name__ == '__main__':
 

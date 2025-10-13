@@ -298,7 +298,7 @@ power_wide <- power_summ[,c("characteristic","block","ATE","sign","fdr_sign","si
 #sort by block and then name, round off
 power_wide <- power_wide[order(power_wide$block, power_wide$characteristic), ]
 power_wide_rounded <- power_wide %>%
-  mutate(across(where(is.numeric), ~ round(.x, 3)))
+  mutate(across(where(is.numeric), ~ sprintf("%.3f", round(., 3))))
 
 #write to files
 save(power_out, power_wide, n_wave2, prop_treat, ATE_chars, file="power_characteristics.Rdata")
