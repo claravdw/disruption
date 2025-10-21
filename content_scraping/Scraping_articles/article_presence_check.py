@@ -4,6 +4,11 @@ import pandas as pd
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Data_structuring'))
 import data_structuring as ds
 
+"""
+This is a quality control script that, after scraping, checks whether the urls retrieved from Google
+ended up as parsed urls (where content was retrieved and keywords found in the body), dropped urls, or neither
+"""
+
 def main(url_folder, url_files, parsed_folder, output_file):
 
         #get results for each month

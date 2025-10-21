@@ -1,58 +1,11 @@
-2025-10-08 11:14:30,911 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2023-10-01_2023-10-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,911 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2023-10-01_2023-10-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,913 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2023-11-01_2023-11-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,913 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2023-11-01_2023-11-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,916 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2023-12-01_2023-12-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,916 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2023-12-01_2023-12-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,917 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-01-01_2024-01-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,917 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-01-01_2024-01-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,919 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-02-01_2024-02-29_parsed.json, returning empty dict
-2025-10-08 11:14:30,919 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-02-01_2024-02-29_dropped.json, returning empty dict
-2025-10-08 11:14:30,920 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-03-01_2024-03-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,920 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-03-01_2024-03-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,923 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-04-01_2024-04-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,923 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-04-01_2024-04-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,925 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-05-01_2024-05-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,925 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-05-01_2024-05-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,926 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-06-01_2024-06-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,926 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-06-01_2024-06-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,928 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-07-01_2024-07-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,928 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-07-01_2024-07-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,929 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-08-01_2024-08-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,929 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-08-01_2024-08-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,931 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-09-01_2024-09-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,931 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-09-01_2024-09-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,932 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-10-01_2024-10-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,932 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-10-01_2024-10-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,934 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-11-01_2024-11-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,934 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-11-01_2024-11-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,936 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2024-12-01_2024-12-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,936 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2024-12-01_2024-12-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,938 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-01-01_2025-01-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,938 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-01-01_2025-01-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,940 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-02-01_2025-02-28_parsed.json, returning empty dict
-2025-10-08 11:14:30,940 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-02-01_2025-02-28_dropped.json, returning empty dict
-2025-10-08 11:14:30,942 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-03-01_2025-03-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,942 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-03-01_2025-03-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,944 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-04-01_2025-04-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,944 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-04-01_2025-04-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,945 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-05-01_2025-05-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,945 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-05-01_2025-05-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,948 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-06-01_2025-06-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,948 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-06-01_2025-06-30_dropped.json, returning empty dict
-2025-10-08 11:14:30,949 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-07-01_2025-07-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,949 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-07-01_2025-07-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,951 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-08-01_2025-08-31_parsed.json, returning empty dict
-2025-10-08 11:14:30,951 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-08-01_2025-08-31_dropped.json, returning empty dict
-2025-10-08 11:14:30,952 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_parsed/BBC/bbc.com_2025-09-01_2025-09-30_parsed.json, returning empty dict
-2025-10-08 11:14:30,952 - INFO - No file found at ../article_contents/BBC/../../google_scraping/article_dropped/BBC/bbc.com_2025-09-01_2025-09-30_dropped.json, returning empty dict
-2025-10-08 11:19:20,369 - INFO - No file found at ../article_contents/Sky/news.sky.com_2024-11-01_2024-11-30_dropped.json, returning empty dict
-2025-10-08 11:19:20,371 - INFO - No file found at ../article_contents/Sky/news.sky.com_2024-12-01_2024-12-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,373 - INFO - No file found at ../article_contents/Sky/news.sky.com_2025-01-01_2025-01-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,375 - INFO - No file found at ../article_contents/Sky/news.sky.com_2025-02-01_2025-02-28_dropped.json, returning empty dict
-2025-10-08 11:19:20,385 - INFO - No file found at ../article_contents/Sky/news.sky.com_2025-08-01_2025-08-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,908 - INFO - No file found at ../article_contents/The-Times/thetimes.com_2024-10-01_2024-10-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,936 - INFO - No file found at ../article_contents/Mirror/mirror.co.uk_2023-10-01_2023-10-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,941 - INFO - No file found at ../article_contents/Mirror/mirror.co.uk_2024-02-01_2024-02-29_dropped.json, returning empty dict
-2025-10-08 11:19:20,967 - INFO - No file found at ../article_contents/Mirror/mirror.co.uk_2025-08-01_2025-08-31_dropped.json, returning empty dict
-2025-10-08 11:19:20,974 - INFO - No file found at ../article_contents/ITV/itv.com-news_2023-12-01_2023-12-31_dropped.json, returning empty dict
+2025-10-21 11:52:55,873 - INFO - Successfully retrieved session from session_Telegraph.pickle
+2025-10-21 11:52:55,873 - INFO - Fetching URL: https://www.telegraph.co.uk/fashion/news/vivienne-westwood-andreas-kronthaler-auction-christies/
+2025-10-21 11:52:56,553 - INFO - Not re-downloading file at https://www.telegraph.co.uk/content/dam/fashion/2024/06/13/TELEMMGLPICT000381580639_17182824771200_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gmyy-GsNrhPQbLesooHneHs.jpeg; already present
+2025-10-21 13:27:22,995 - INFO - Successfully retrieved session from session_Telegraph.pickle
+2025-10-21 13:27:23,162 - INFO - Not re-downloading file at https://www.telegraph.co.uk/https://www.telegraph.co.uk/content/dam/fashion/2024/06/13/TELEMMGLPICT000381580639_17182824771200_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gmyy-GsNrhPQbLesooHneHs.jpeg; already present
+2025-10-21 13:28:28,715 - INFO - Successfully retrieved session from session_Telegraph.pickle
+2025-10-21 13:28:28,875 - INFO - Not re-downloading file at https://www.telegraph.co.uk/https://www.telegraph.co.uk/content/dam/fashion/2024/06/13/TELEMMGLPICT000381580639_17182824771200_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gmyy-GsNrhPQbLesooHneHs.jpeg; already present
+2025-10-21 13:29:48,048 - INFO - Successfully retrieved session from session_Telegraph.pickle
+2025-10-21 13:29:48,193 - INFO - Not re-downloading file at https://www.telegraph.co.uk/https://www.telegraph.co.uk/content/dam/fashion/2024/06/13/TELEMMGLPICT000381580639_17182824771200_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gmyy-GsNrhPQbLesooHneHs.jpeg; already present
+2025-10-21 13:30:13,415 - INFO - Successfully retrieved session from session_Telegraph.pickle
+2025-10-21 13:30:13,570 - INFO - Not re-downloading file at https://www.telegraph.co.uk/content/dam/fashion/2024/06/13/TELEMMGLPICT000381580639_17182824771200_trans_NvBQzQNjv4BqrpfQw2hJyG_yckwxPAr0gmyy-GsNrhPQbLesooHneHs.jpeg; already present

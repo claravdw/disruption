@@ -5,6 +5,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))  # Add current dir to path
 from parsing_helpers import remove_duplicates, get_best_src_fromfig
+import re #for finding image link patterns
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         
@@ -91,9 +92,20 @@ def extract(html_content, parsed_attr):
                     caption = image.get('alt').strip()
                 else:
                     caption = None
-                    
-                image_caption.append({"caption": caption, "url": "https://www.telegraph.co.uk" + image_src,
-                                      "url_large": "https://www.telegraph.co.uk" + image_src_large})
+                
+                #if image source is from Web Archive and starting with preface, delete it
+                webarch_pattern = r"(?:https://web\.archive\.org)?/web/\d+im_/"
+                image_src = re.sub(webarch_pattern, "", image_src)
+                image_src_large = re.sub(webarch_pattern, "", image_src_large)
+                
+                #if image source is from Telegraph's website and missing domain, add it
+                domain = "https://www.telegraph.co.uk"
+                if not image_src.startswith(domain):
+                    image_src = domain + image_src
+                if not image_src_large.startswith(domain):
+                    image_src_large = domain + image_src_large
+                
+                image_caption.append({"caption": caption, "url": image_src, "url_large": image_src_large})
                 
             if len(image_caption) > 0: attr_dict["image"] =  image_caption
             

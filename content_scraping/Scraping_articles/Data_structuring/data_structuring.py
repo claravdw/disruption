@@ -70,7 +70,7 @@ def from_dict_to_file(mydict, file_path):
         logging.info(f"JSON file writing error at {file_path} due to {e}")
         
         
-def download_file(url, file_name, folder_path, s = None, redo = False, retries: int = 2, sleep_time: int = 5):
+def download_file(url, file_name, folder_path, s = None, redo = False, retries: int = 2, sleep_time: int = 1):
     """
     This function downloads a file from a url. Arguments:
     - url: the url to download the file from
@@ -98,9 +98,9 @@ def download_file(url, file_name, folder_path, s = None, redo = False, retries: 
                        
         #if redo is False, do not re-download the file if it is already there
         if (not redo) and file_matches:
-            logging.info(f"Not re-downloading file at {url}; already present")
             #first match for that file name with some extension
             full_name = os.path.basename(file_matches[0])
+            logging.info(f"Not re-downloading file at {url}; already present as {full_name}")
             return full_name
     
         logging.info(f"downloading file at {url}")
@@ -123,7 +123,7 @@ def download_file(url, file_name, folder_path, s = None, redo = False, retries: 
             except Exception as e:
         
                 logging.warning(f"Attempt {attempt + 1} failed for {url} due to {e}")
-                time.sleep(sleep_time)
+                time.sleep(sleep_time * 3) #longer sleep time since previous attempt failed
                 
         #if still no valid (200) response, return None
         if not response:
@@ -158,6 +158,9 @@ def download_file(url, file_name, folder_path, s = None, redo = False, retries: 
         with open(full_path, 'wb') as file:
             file.write(response.content)
         #print(f"{url} saved as:\n{full_path}")
+        
+        #sleep for polite scraping
+        time.sleep(sleep_time)
         
         return full_name
             

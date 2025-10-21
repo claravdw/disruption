@@ -241,7 +241,7 @@ def main_scrape_html(newspaper, url_file, html_file, redo=False):
     #loop over the article urls and fetch their content
     first_visit = True
     
-    if newspaper is not "Telegraph":
+    if newspaper != "Telegraph":
     #we are not re-scraping Telegraph at all; right now we could not do so successfully with this script, plus trying to scrape
     #new urls (with redo=False) would cause duplicate urls across month files, as Telegraph html was scraped separately by Iraklis
     #and not necessarily allocated to its original url month file

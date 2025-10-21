@@ -36,19 +36,19 @@ if __name__ == '__main__':
 
     #names of the newspapers; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = ["BBC",
-                  "The-Guardian",
-                  "Daily-Mail",
-                  "Sky", 
-                  "Metro",
-                  "Sun",
+    newspapers = [#"BBC",
+                  #"The-Guardian",
+                  #"Daily-Mail",
+                  #"Sky", 
+                  #"Metro",
+                  #"Sun",
                   "Telegraph",
-                  "The-Times",
-                  "Mirror",
-                  "ITV"
+                  #"The-Times",
+                  #"Mirror",
+                  #"ITV"
                   ]
     #note: Telegraph articles were not scraped successfully with this script; they were scraped
-    #by Iraklis. They will not be re-scraped by main_scrape_html.
+    #by Iraklis using Web Archive. They will not be re-scraped by main_scrape_html.
 
     for newspaper in newspapers:
 
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         parsed_folder = f"article_contents/{newspaper}"
         image_folder = f"article_images/{newspaper}"
         
-        for url_file in url_files:
+        for url_file in url_files[-24:]:
         
             print("Scraping and parsing urls in newspaper-month file", url_file)
     
