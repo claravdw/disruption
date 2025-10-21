@@ -4,7 +4,7 @@ from dateutil import parser
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))  # Add current dir to path
-from parsing_helpers import remove_duplicates, get_biggest_src_fromimg
+from parsing_helpers import remove_duplicates, get_biggest_src_fromimg, badcaps_Times
 
 logging.basicConfig(filename="scraping.log", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -73,29 +73,37 @@ def extract(html_content, parsed_attr):
     
         try:
         
-            figures = page.findAll("figure")
+            figures = page.findAll(["figure", "picture"])
             image_caption = []
             
             for figure in figures:
             
                 img = figure.find("img")
                 
-                #get img source
-                img_src = img.get('src')
-                #if there is a list of sources (srcset), also get the biggest
-                image_src_large = get_biggest_src_fromimg(img)
+                if img:
+                
+                    #get img source
+                    img_src = img.get('src')
+                    #if there is a list of sources (srcset), also get the biggest
+                    image_src_large = get_biggest_src_fromimg(img)
                     
-                #try to get a caption
-                caption_el = figure.find("figcaption")
-                if caption_el:
-                    caption = caption_el.text.strip()
-                elif img.has_attr("alt"):
-                    caption = img.get('alt').strip()
-                else:
-                    caption = None
+                    #try to get a caption
+                    caption_el = figure.find("figcaption")
+                    if caption_el:
+                        caption = caption_el.text.strip()
+                    elif img.has_attr("alt"):
+                        caption = img.get('alt').strip()
+                    else:
+                        caption = None
+                        
+                    #skip non-photos whose captions appear in a list of bad captions
+                    caplower = caption.lower()
+                    if caplower in badcaps_Times:
+                        logging.info(f"removed image due to bad caption: {caption}")
+                        continue
                     
-                #store image caption and links to its standard and big size files
-                image_caption.append({"caption": caption, "url": img_src,
+                    #store image caption and links to its standard and big size files
+                    image_caption.append({"caption": caption, "url": img_src,
                                       "url_large": image_src_large})
                     
             if len(image_caption) > 0: attr_dict["image"] =  image_caption

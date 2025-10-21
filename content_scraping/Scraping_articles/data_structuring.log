@@ -104,3 +104,29 @@
 2025-10-21 14:38:21,279 - INFO - date parsing unsuccessful due to 'NoneType' object has no attribute 'find'
 2025-10-21 14:38:21,279 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
 2025-10-21 14:38:21,281 - INFO - Not re-downloading file at https://i.guim.co.uk/img/media/fd9ab31d454e06ce2ac944e0407b3288312e4e28/116_0_3471_2084/master/3471.jpg?width=465&dpr=1&s=none&crop=none; already present as first_image.webp
+2025-10-21 16:17:23,239 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:17:23,239 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:17:23,787 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
+2025-10-21 16:24:41,291 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:24:41,291 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:24:42,964 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
+2025-10-21 16:25:23,005 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:25:23,006 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:25:23,504 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'get'
+2025-10-21 16:29:27,727 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:29:27,727 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:29:30,094 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp
+2025-10-21 16:34:17,452 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:34:17,452 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:34:18,971 - INFO - image parsing unsuccessful due to name 'caption_text' is not defined
+2025-10-21 16:34:38,052 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:34:38,052 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:34:38,564 - INFO - image parsing unsuccessful due to name 'caption_text' is not defined
+2025-10-21 16:34:58,533 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:34:58,533 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:34:59,056 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-21 16:34:59,061 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp
+2025-10-21 16:37:34,930 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-21 16:37:34,930 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-21 16:37:36,487 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-21 16:37:36,493 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp

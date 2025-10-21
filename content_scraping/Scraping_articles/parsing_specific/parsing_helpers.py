@@ -138,6 +138,10 @@ def get_biggest_src_fromimg(img_tag):
         return largest_image["url"] 
 
 
+#strings present in non-photo alt texts on Times
+badcaps_Times = ["The Times & The Sunday Times"]
+badcaps_Times = [x.lower() for x in badcaps_Times]
+
 #strings present in non-photo alt texts on BBC
 badcaps_BBC = ["presentational grey line", "white line", "bbc bbc", "Around the BBC iPlayer footer", "green line",
 "Around the BBC iPlayer banner", "Around the BBC footer - Sounds", "More on climate summit top strapline", "line", "YQA logo", "Around the BBC - Sounds", "HM Queen Elizabeth II 640x55", "HM Queen Elizabeth II black line", "Banner Image Reading Around the BBC - Blue", "Banner saying 'Get in touch'","More on Climate Change bottom strapline", "BBC 1px transparent line", "Watch on iPlayer banner", "Watch on iPlayer footer", "News Daily banner", "Across the BBC banner", "Across the BBC footer", "Newsbeat logo", "Red line", "Shadow line", "Promotional image to sign up for the Future Earth newsletter, for the latest climate and environment news, with photograph of a polar bear swimming", "iplayer banner", "Green banner promoting sign up to Future Earth newsletter", "&ldquo;The", "1px transparent line"]
