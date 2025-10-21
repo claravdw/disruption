@@ -15,8 +15,8 @@ import pprint
 
 ##set up task
 
-url = "https://www.telegraph.co.uk/fashion/news/vivienne-westwood-andreas-kronthaler-auction-christies/"
-newspaper = "Telegraph"
+url = "https://www.theguardian.com/tv-and-radio/article/2024/jun/09/on-thin-ice-putin-v-greenpeace-review-a-jaw-droppingly-unforgettable-real-life-tale"
+newspaper = "The-Guardian"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
 debug_mode = True
 

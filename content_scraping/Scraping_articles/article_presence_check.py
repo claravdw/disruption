@@ -25,7 +25,7 @@ def main(url_folder, url_files, parsed_folder, output_file):
             #read url list
             urls_list = ds.from_csv_to_list(url_path, name_column="url")
             n_urls = len(urls_list)
-            print(f"{url_file} contains {n_urls} urls")
+            #print(f"{url_file} contains {n_urls} urls")
             
             #check if urls are present in parsed or dropped content files
             if n_urls != 0:
@@ -48,7 +48,7 @@ def main(url_folder, url_files, parsed_folder, output_file):
 
         #Write to file
         newspaper_df = pd.concat(month_dfs)
-        newspaper_df.to_csv(output_file, index=False)
+        newspaper_df.to_csv(output_file, index=False)   
         
 #note: it is normal for this check not to work for Telegraph, because its parsed contents
 #are not organized by month in the same way that its urls are (but rather sorted afterwards by article
