@@ -2157,3 +2157,1077 @@
 2025-10-21 16:48:30,724 - INFO - downloading images for article https://www.thetimes.com/comment/register/article/corrections-and-clarifications-the-times-x9nbft5tq
 2025-10-21 16:48:30,726 - INFO - Successfully retrieved session from session_The-Times.pickle
 2025-10-21 16:48:30,730 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6c2aac4b-45fc-43a1-b82d-3d3a84d1dfab.jpg
+2025-10-30 14:37:15,802 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2023-10-01_2023-10-31_urls.csv
+2025-10-30 14:37:15,805 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:16,157 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/keir-starmer-speech-labour-glitter-protester-6vwxtlg2m
+2025-10-30 14:37:16,196 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,198 - INFO - Parsing url: https://www.thetimes.com/culture/tv-radio/article/police-drop-chris-packham-goshawk-chick-sniff-complaint-tjrvx3bxl
+2025-10-30 14:37:16,239 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,241 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/jeremy-clarkson-what-do-we-want-a-big-protest-when-do-we-want-it-all-the-time-f087z5cql
+2025-10-30 14:37:16,281 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,283 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-arrested-london-protest-oil-summit-jf50g3jdn
+2025-10-30 14:37:16,356 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,359 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-charged-over-oil-protest-in-london-vhjh93c9j
+2025-10-30 14:37:16,397 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,399 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/labour-party-conference-live-keir-starmer-latest-news-sjdq08m2c
+2025-10-30 14:37:16,454 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,458 - INFO - Parsing url: https://www.thetimes.com/uk/education/article/just-stop-oil-oxford-university-freshers-fair-stall-qlh793pkt
+2025-10-30 14:37:16,499 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,501 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/sarah-edwards-alistair-strathern-labour-new-mps-mid-bedfordshire-tamworth-8n2xq93ml
+2025-10-30 14:37:16,530 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,532 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/britain-joins-nations-calling-for-a-ban-on-deep-sea-mining-f3kxvf70k
+2025-10-30 14:37:16,563 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:16,574 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2023-10-01_2023-10-31_parsed.json
+2025-10-30 14:37:16,574 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/keir-starmer-speech-labour-glitter-protester-6vwxtlg2m
+2025-10-30 14:37:16,575 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:16,578 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Feb173fbe-67a2-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:18,119 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe60b7760-67a2-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:37,613 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2023-10-01_2023-10-31_urls.csv
+2025-10-30 14:37:37,613 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:37,931 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/keir-starmer-speech-labour-glitter-protester-6vwxtlg2m
+2025-10-30 14:37:37,975 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:37,977 - INFO - Parsing url: https://www.thetimes.com/culture/tv-radio/article/police-drop-chris-packham-goshawk-chick-sniff-complaint-tjrvx3bxl
+2025-10-30 14:37:38,015 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,017 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/jeremy-clarkson-what-do-we-want-a-big-protest-when-do-we-want-it-all-the-time-f087z5cql
+2025-10-30 14:37:38,055 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,057 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-arrested-london-protest-oil-summit-jf50g3jdn
+2025-10-30 14:37:38,122 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,124 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-charged-over-oil-protest-in-london-vhjh93c9j
+2025-10-30 14:37:38,159 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,161 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/labour-party-conference-live-keir-starmer-latest-news-sjdq08m2c
+2025-10-30 14:37:38,209 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,213 - INFO - Parsing url: https://www.thetimes.com/uk/education/article/just-stop-oil-oxford-university-freshers-fair-stall-qlh793pkt
+2025-10-30 14:37:38,252 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,254 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/sarah-edwards-alistair-strathern-labour-new-mps-mid-bedfordshire-tamworth-8n2xq93ml
+2025-10-30 14:37:38,281 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,284 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/britain-joins-nations-calling-for-a-ban-on-deep-sea-mining-f3kxvf70k
+2025-10-30 14:37:38,314 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:37:38,317 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2023-10-01_2023-10-31_parsed.json
+2025-10-30 14:37:38,317 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/keir-starmer-speech-labour-glitter-protester-6vwxtlg2m
+2025-10-30 14:37:38,317 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:38,318 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Feb173fbe-67a2-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:39,535 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe60b7760-67a2-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:41,719 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd611fdac-67a2-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:43,582 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1048eaee-67a3-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:44,856 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbb6a68ac-6772-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:46,184 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbbadc0ea-6789-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:37:47,373 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4b3b45a2-5623-11ee-8902-8ae15399642c.jpg
+2025-10-30 14:37:49,172 - INFO - downloading images for article https://www.thetimes.com/culture/tv-radio/article/police-drop-chris-packham-goshawk-chick-sniff-complaint-tjrvx3bxl
+2025-10-30 14:37:49,172 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:49,173 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7b5144b4-7679-11ee-9496-ba645d21d0d9.jpg
+2025-10-30 14:37:50,526 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb6ee3db8-727f-11ee-81be-c4b540065935.jpg
+2025-10-30 14:37:52,556 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F667d331e-5409-11ee-a518-203f78f24415.jpg
+2025-10-30 14:37:54,184 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/jeremy-clarkson-what-do-we-want-a-big-protest-when-do-we-want-it-all-the-time-f087z5cql
+2025-10-30 14:37:54,185 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:37:54,187 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9c328c82-69fa-11ee-94a8-d17d6fd95d36.png
+2025-10-30 14:37:55,669 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F762a2898-69e0-11ee-94a8-d17d6fd95d36.jpg
+2025-10-30 14:37:57,883 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fbe1bef3c-6464-11ee-95ba-ef572a1cc3ed.jpg
+2025-10-30 14:37:59,098 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fe942dcf6-5402-11ee-bc18-cbdd58145dc6.jpg
+2025-10-30 14:38:00,405 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff562825d-4a39-4b71-9772-eb637b077bc5.jpg
+2025-10-30 14:38:01,759 - INFO - downloading images for article https://www.thetimes.com/uk/article/greta-thunberg-arrested-london-protest-oil-summit-jf50g3jdn
+2025-10-30 14:38:01,761 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:38:01,766 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2c933768-6ce9-11ee-b5d7-5487922f056f.jpg
+2025-10-30 14:38:03,136 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F27d141fc-6ce9-11ee-b5d7-5487922f056f.jpg
+2025-10-30 14:38:04,593 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd830682a-6b77-11ee-b0f3-053d83492f27.jpg
+2025-10-30 14:38:05,939 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd0cffe02-32eb-11ee-8150-731113fe4a83.jpg
+2025-10-30 14:38:08,249 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fa619a1d8-2d3a-11ee-b08a-322c75b71cee.jpg
+2025-10-30 14:38:09,914 - INFO - downloading images for article https://www.thetimes.com/uk/article/greta-thunberg-charged-over-oil-protest-in-london-vhjh93c9j
+2025-10-30 14:38:09,916 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:38:09,919 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2cf62964-6da6-11ee-9296-6cf683906956.jpg
+2025-10-30 14:38:11,218 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/labour-party-conference-live-keir-starmer-latest-news-sjdq08m2c
+2025-10-30 14:38:11,220 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:38:11,224 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbb6a68ac-6772-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:12,389 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb001a2f6-6794-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:13,794 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbb33cd9e-6789-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:15,056 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd9195bc8-676e-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:17,036 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F787dc4a6-6765-11ee-a4e7-0fb10af55688.jpg
+2025-10-30 14:38:18,559 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1a79ff32-6760-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:20,151 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fce0b2142-675c-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:21,472 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fca472aa6-675c-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:22,853 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd140fb7a-675c-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:24,633 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F30b9a3ce-675b-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:26,942 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F9e46b2e0-674e-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:30,103 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fddf9b4aa-6753-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:31,816 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1959d8a4-674f-11ee-9cdc-99a8af137628.jpg
+2025-10-30 14:38:34,399 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4a29cdc4-642d-11ee-92b7-341e89720b32.jpg
+2025-10-30 14:38:36,288 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc586fffc-66ec-11ee-a4e7-0fb10af55688.jpg
+2025-10-30 14:38:40,410 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F441d8806-66d2-11ee-853b-c0bf92ce36b1.png
+2025-10-30 14:38:41,811 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F37f7e83a-66c5-11ee-853b-c0bf92ce36b1.jpg
+2025-10-30 14:38:44,295 - INFO - downloading images for article https://www.thetimes.com/uk/education/article/just-stop-oil-oxford-university-freshers-fair-stall-qlh793pkt
+2025-10-30 14:38:44,297 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:38:44,301 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fdfca929e-63ad-11ee-977c-44b3e2b54888.jpg
+2025-10-30 14:38:45,569 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe3b39ae0-63ad-11ee-977c-44b3e2b54888.jpg
+2025-10-30 14:38:47,101 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fdd8b6fc6-63ad-11ee-977c-44b3e2b54888.jpg
+2025-10-30 14:38:48,609 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F15348866-9052-11ed-b04f-b9bf191ef388.jpg
+2025-10-30 14:38:50,933 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F78f9436a-cf08-11ed-9a00-73fd2b90e22e.jpg
+2025-10-30 14:38:52,168 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F667d331e-5409-11ee-a518-203f78f24415.jpg
+2025-10-30 14:38:53,456 - INFO - downloading images for article https://www.thetimes.com/culture/music/article/sarah-edwards-alistair-strathern-labour-new-mps-mid-bedfordshire-tamworth-8n2xq93ml
+2025-10-30 14:38:53,457 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:38:53,462 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2535d62-6f7e-11ee-9296-6cf683906956.jpg
+2025-10-30 14:38:54,833 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4c23fdd6-6f75-11ee-9296-6cf683906956.jpg
+2025-10-30 14:38:56,038 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb6518c92-6f7e-11ee-9296-6cf683906956.jpg
+2025-10-30 14:38:57,886 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0894707a-6f41-11ee-b0f3-053d83492f27.jpg
+2025-10-30 14:38:59,323 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F558af686-6f1b-11ee-b0f3-053d83492f27.jpg
+2025-10-30 14:39:00,639 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F392defac-6f16-11ee-b0f3-053d83492f27.jpg
+2025-10-30 14:39:02,026 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/britain-joins-nations-calling-for-a-ban-on-deep-sea-mining-f3kxvf70k
+2025-10-30 14:39:02,029 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:02,034 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3ef80f7e-7738-11ee-9496-ba645d21d0d9.jpg
+2025-10-30 14:39:03,610 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fed762740-fb0d-11ed-bc7a-1444acf8fa38.jpg
+2025-10-30 14:39:05,123 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0f32eec0-19ba-11ee-8434-240b5ab9f9b1.jpg
+2025-10-30 14:39:06,462 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbe09bb94-11f5-11ee-a92d-cf7c831c99b5.jpg
+2025-10-30 14:39:08,079 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2023-11-01_2023-11-30_urls.csv
+2025-10-30 14:39:08,080 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:08,156 - INFO - Parsing url: https://www.thetimes.com/uk/law/article/climate-protesters-guilty-of-damaging-parliament-9j05h6xjk
+2025-10-30 14:39:08,197 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:08,200 - INFO - Parsing url: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 14:39:08,241 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:08,243 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-court-charged-protest-climate-activist-5mh0nm2jb
+2025-10-30 14:39:08,282 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:08,294 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2023-11-01_2023-11-30_parsed.json
+2025-10-30 14:39:08,294 - INFO - downloading images for article https://www.thetimes.com/uk/law/article/climate-protesters-guilty-of-damaging-parliament-9j05h6xjk
+2025-10-30 14:39:08,295 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:08,298 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd447b764-ca20-45c2-a84d-96a7cce69f8a.jpg
+2025-10-30 14:39:10,024 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5bc581a1-3feb-4105-9666-04dbeaa70abd.jpg
+2025-10-30 14:39:11,245 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fcc5716aa-78bc-11ee-86e8-a42a2179af55.jpg
+2025-10-30 14:39:12,783 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0cfb9aa2-773f-11ee-9496-ba645d21d0d9.jpg
+2025-10-30 14:39:14,198 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd4298b6a-309b-11ee-b04c-88a034803f06.jpg
+2025-10-30 14:39:15,400 - INFO - downloading images for article https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 14:39:15,402 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:15,407 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F41fcdba9-b2e5-4ac4-9a12-72e1f7187a20.jpg
+2025-10-30 14:39:16,793 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbfba71d0-fe91-4fb6-9280-c729ca6ace15.jpg
+2025-10-30 14:39:17,984 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3ab3c838-0051-4c5b-8341-fe77cfcac9c2.jpg
+2025-10-30 14:39:19,161 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe55b665b-1341-46c5-9dce-ddfd12ded233.jpg
+2025-10-30 14:39:20,418 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa10dff68-84ba-11ee-ab78-b8f8e234f1ae.jpg
+2025-10-30 14:39:21,690 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd447b764-ca20-45c2-a84d-96a7cce69f8a.jpg
+2025-10-30 14:39:23,172 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F74dc7334-80cd-11ee-9922-7d1e112e6631.png
+2025-10-30 14:39:24,498 - INFO - downloading images for article https://www.thetimes.com/uk/article/greta-thunberg-court-charged-protest-climate-activist-5mh0nm2jb
+2025-10-30 14:39:24,500 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:24,503 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4f569c36-83b4-11ee-ab78-b8f8e234f1ae.jpg
+2025-10-30 14:39:25,986 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa17de8a0-8398-11ee-ab78-b8f8e234f1ae.jpg
+2025-10-30 14:39:28,699 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe19cc4ea-6e5f-11ee-b5d7-5487922f056f.jpg
+2025-10-30 14:39:31,222 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fee7c42cc-6cec-11ee-b5d7-5487922f056f.jpg
+2025-10-30 14:39:33,122 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fee7c42cc-6cec-11ee-b5d7-5487922f056f.jpg
+2025-10-30 14:39:35,065 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2023-12-01_2023-12-31_urls.csv
+2025-10-30 14:39:35,066 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:35,099 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/feargal-sharkey-the-fight-for-clean-water-clean-it-up-7jq7dnzf0
+2025-10-30 14:39:35,163 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:35,166 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2023-12-01_2023-12-31_parsed.json
+2025-10-30 14:39:35,166 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/feargal-sharkey-the-fight-for-clean-water-clean-it-up-7jq7dnzf0
+2025-10-30 14:39:35,167 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:35,168 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb4c12899-1b73-46c2-9666-8981e48fcd36.jpg
+2025-10-30 14:39:37,628 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0e7dba26-6c15-448d-bc92-beaa029fcee9.jpg
+2025-10-30 14:39:39,163 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb71dd05c-3596-465f-949f-09b25173002f.jpg
+2025-10-30 14:39:40,689 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3907506a-4acf-4192-ad17-3faebb485b18.jpg
+2025-10-30 14:39:42,321 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F512b93b6-ea7d-4a6c-aeed-ee26b7f49d0b.jpg
+2025-10-30 14:39:43,786 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4ca34560-9429-11ec-bcf4-9dde9b8243da.png
+2025-10-30 14:39:45,088 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F011e1384-e657-44e3-ac4f-f86dd5c78d1c.jpg
+2025-10-30 14:39:46,967 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-01-01_2024-01-31_urls.csv
+2025-10-30 14:39:46,969 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:47,054 - INFO - Parsing url: https://www.thetimes.com/comment/register/article/corrections-and-clarifications-the-sunday-times-2021-nkjww83b6
+2025-10-30 14:39:47,093 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:47,095 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/beware-the-wave-of-radical-activist-oaps-jl2nsxhmp
+2025-10-30 14:39:47,144 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:47,146 - INFO - Parsing url: https://www.thetimes.com/world/article/mona-lisa-protesters-throw-soup-da-vinci-louvre-paris-bwk0gsxrc
+2025-10-30 14:39:47,193 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:39:47,196 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-01-01_2024-01-31_parsed.json
+2025-10-30 14:39:47,196 - INFO - downloading images for article https://www.thetimes.com/comment/register/article/corrections-and-clarifications-the-sunday-times-2021-nkjww83b6
+2025-10-30 14:39:47,197 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:47,198 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8b111fbf-d88a-48b1-8b5a-7c540c1208fa.png
+2025-10-30 14:39:48,676 - INFO - downloading images for article https://www.thetimes.com/comment/columnists/article/beware-the-wave-of-radical-activist-oaps-jl2nsxhmp
+2025-10-30 14:39:48,678 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:48,684 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fee946bc0-8308-4a27-9a81-5247c3fca80a.png
+2025-10-30 14:39:51,015 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F193d14fb-033a-4909-ba1d-cf6040b6d793.jpg
+2025-10-30 14:39:52,528 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F98ff1770-69ef-11ee-815f-31c5e4390927.jpg
+2025-10-30 14:39:54,017 - INFO - downloading images for article https://www.thetimes.com/world/article/mona-lisa-protesters-throw-soup-da-vinci-louvre-paris-bwk0gsxrc
+2025-10-30 14:39:54,019 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:39:54,023 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7c84b071-47c3-42ee-a05e-0cdbdcea1ce5.jpg
+2025-10-30 14:39:55,334 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5aa6f039-a41e-4c9e-a9fe-1fcd5add8322.jpg
+2025-10-30 14:39:56,653 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fdf8fc60c-56e0-11ee-aed5-2d6419a1ef3d.jpg
+2025-10-30 14:39:58,339 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8d13d460-7cae-11ee-a813-d9df8913b6c9.jpg
+2025-10-30 14:40:00,087 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F36582f2e-dde7-11ed-9cc2-0f7e26ed83eb.jpg
+2025-10-30 14:40:01,311 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-02-01_2024-02-29_urls.csv
+2025-10-30 14:40:01,311 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:01,380 - INFO - Parsing url: https://www.thetimes.com/uk/article/greta-thunberg-trial-court-oil-protest-london-r9cp8n2tf
+2025-10-30 14:40:01,422 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:01,425 - INFO - Parsing url: https://www.thetimes.com/uk/article/as-the-air-goes-out-of-just-stop-oil-new-tyre-deflaters-hit-the-streets-pv7s6qjvc
+2025-10-30 14:40:01,468 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:01,471 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-02-01_2024-02-29_parsed.json
+2025-10-30 14:40:01,471 - INFO - downloading images for article https://www.thetimes.com/uk/article/greta-thunberg-trial-court-oil-protest-london-r9cp8n2tf
+2025-10-30 14:40:01,471 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:01,472 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F204eac6d-89c4-45c9-87cb-c2b0df653094.jpg
+2025-10-30 14:40:02,909 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F19d89846-af46-4024-a70a-90d20c45de09.jpg
+2025-10-30 14:40:04,353 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe49210ea-cd58-11ed-b20d-41ba9942b7d9.jpg
+2025-10-30 14:40:05,694 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2fabc78e-84a0-11ee-ab78-b8f8e234f1ae.jpg
+2025-10-30 14:40:07,173 - INFO - downloading images for article https://www.thetimes.com/uk/article/as-the-air-goes-out-of-just-stop-oil-new-tyre-deflaters-hit-the-streets-pv7s6qjvc
+2025-10-30 14:40:07,176 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:07,187 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa8795d13-dff6-4a95-804f-cebaee009a8b.jpg
+2025-10-30 14:40:09,528 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8492b4bc-9647-4a13-806d-bce70803e882.jpg
+2025-10-30 14:40:11,096 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2b71c210-b4e2-44eb-911b-869f3ae34a48.jpg
+2025-10-30 14:40:12,813 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ffcb440aa-6ce8-11ee-b0f3-053d83492f27.jpg
+2025-10-30 14:40:14,379 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F435de44a-3560-11ee-a54b-14a9a87cf1a8.jpg
+2025-10-30 14:40:15,916 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8656e900-225e-11ee-9b6f-7186ba87ded7.jpg
+2025-10-30 14:40:17,256 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-03-01_2024-03-31_urls.csv
+2025-10-30 14:40:17,257 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:17,326 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/principled-vandals-extinction-rebellion-just-stop-oil-comment-dpflb6fdp
+2025-10-30 14:40:17,363 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:17,365 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/why-i-wont-stop-hunting-with-hounds-zk8tbcrfx
+2025-10-30 14:40:17,403 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:17,405 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/politics/article/why-i-wont-stop-hunting-with-hounds-zk8tbcrfx
+2025-10-30 14:40:17,406 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-03-01_2024-03-31_parsed.json
+2025-10-30 14:40:17,406 - INFO - downloading images for article https://www.thetimes.com/comment/columnists/article/principled-vandals-extinction-rebellion-just-stop-oil-comment-dpflb6fdp
+2025-10-30 14:40:17,406 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:17,407 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7aa2a788-1da2-488a-82b4-252c9186aa3f.png
+2025-10-30 14:40:18,623 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff83cac81-44ae-445a-abd7-76130d077ac1.jpg
+2025-10-30 14:40:20,072 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa2a45991-9260-4460-b752-09c213ef2c86.png
+2025-10-30 14:40:21,468 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F992b77e7-fafe-4e5b-b284-d864b024eed8.png
+2025-10-30 14:40:22,764 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F992b77e7-fafe-4e5b-b284-d864b024eed8.png
+2025-10-30 14:40:23,830 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-04-01_2024-04-30_urls.csv
+2025-10-30 14:40:23,831 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:23,842 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-04-01_2024-04-30_parsed.json
+2025-10-30 14:40:23,842 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-05-01_2024-05-31_urls.csv
+2025-10-30 14:40:23,843 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:23,860 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:40:23,894 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:23,897 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-05-01_2024-05-31_parsed.json
+2025-10-30 14:40:23,897 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:40:23,897 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:23,898 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg
+2025-10-30 14:40:25,428 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbb54c1fe-38d9-4ebe-9a85-a8b7443f5b2d.jpg
+2025-10-30 14:40:26,977 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F374b48c4-200d-40e6-b9c0-ec1abb5e9d12.jpg
+2025-10-30 14:40:28,229 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4b229418-73f8-40af-a7fa-9fd8c93eac6e.jpg
+2025-10-30 14:40:29,534 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd187b6f2-0143-11ee-a575-61f34e4c266a.jpg
+2025-10-30 14:40:31,306 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F13f2eac4-c84a-4c76-aaca-b6a2d2f39c13.jpg
+2025-10-30 14:40:33,056 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-06-01_2024-06-30_urls.csv
+2025-10-30 14:40:33,057 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:33,159 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/friday-glastonbury-2024-live-latest-news-0nkk0x272
+2025-10-30 14:40:33,228 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:33,234 - INFO - Parsing url: https://www.thetimes.com/life-style/fashion/article/vivienne-westwoods-wardrobe-is-up-for-sale-at-christies-sb7dgfhf5
+2025-10-30 14:40:33,272 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:33,274 - INFO - Parsing url: https://www.thetimes.com/world/europe/article/attacking-art-should-be-criminal-offence-even-if-theres-no-damage-lhf2vhjrq
+2025-10-30 14:40:33,309 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:40:33,312 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-06-01_2024-06-30_parsed.json
+2025-10-30 14:40:33,312 - INFO - downloading images for article https://www.thetimes.com/culture/music/article/friday-glastonbury-2024-live-latest-news-0nkk0x272
+2025-10-30 14:40:33,313 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:40:33,313 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F125f965b-fa2e-4a9b-bfa0-831c4c4c1220.jpg
+2025-10-30 14:40:34,896 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fdd527021-f4fd-4243-a78a-08381b57b687.jpg
+2025-10-30 14:40:36,570 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6df66941-b947-4fba-9e69-aa40c3c47bd3.jpg
+2025-10-30 14:40:38,560 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe420a689-54a1-4dec-ac88-7f8ace0993e0.jpg
+2025-10-30 14:40:39,955 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F531f1fed-5a86-4a1c-b397-9a5c1b5ffec8.jpg
+2025-10-30 14:40:41,477 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F44aa21ae-23d4-4506-9840-e01faadcd0b0.jpg
+2025-10-30 14:40:43,007 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd84f992f-7879-4ea1-9fb9-4f46cbf50ec4.jpg
+2025-10-30 14:40:45,965 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4aa4d958-faeb-479f-8ffb-23d947e1ddcc.jpg
+2025-10-30 14:40:47,552 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff3a96419-1244-4bc8-bad5-1cbc3acfc135.jpg
+2025-10-30 14:40:49,206 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3960af58-7efc-4784-afe3-1e22ea7b8d88.jpg
+2025-10-30 14:40:50,936 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F564c91e7-0aa6-499d-844f-dc857abb0350.jpg
+2025-10-30 14:40:52,580 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb61afe54-ff96-4e5f-94e5-3887b844d8bc.jpg
+2025-10-30 14:40:54,130 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F622e5989-b11e-4474-afba-21b367c84970.jpg
+2025-10-30 14:40:55,739 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F04c04854-c404-471c-950d-b960a13d47f6.jpg
+2025-10-30 14:40:57,310 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0114fe9b-8deb-4017-bf99-a0663fa5b4ee.jpg
+2025-10-30 14:40:58,933 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8fbd15e1-c8b2-49f1-9002-b9fb141b8772.jpg
+2025-10-30 14:41:00,754 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc731bb76-8c3c-41b8-b8a3-7b8bde82d749.jpg
+2025-10-30 14:41:02,396 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0e2ed322-9f36-4d3c-9bcf-93f5a4af05b5.jpg
+2025-10-30 14:41:03,911 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F21292c33-c0bb-4392-9b2f-f7fa5328af48.jpg
+2025-10-30 14:41:05,661 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F26ad8135-8a5c-4ffb-a20d-e79b005232be.jpg
+2025-10-30 14:41:07,394 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fbbab66d8-9186-4f3a-b8a6-467a773a7e0b.jpg
+2025-10-30 14:41:09,059 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5ebe01c2-5adf-45fd-8cb7-8c9eda3afcfd.jpg
+2025-10-30 14:41:10,658 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F571c59c2-728f-4f46-b3bb-3b01fdd61ccc.jpg
+2025-10-30 14:41:12,447 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff0ec9929-08b0-4bd1-bdd7-e4b1357a1d4b.jpg
+2025-10-30 14:41:14,875 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F9cdc6b11-44a1-462e-ba5d-304d74c09207.jpg
+2025-10-30 14:41:16,371 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ffe0e2387-5cfa-4ac7-b21e-1994295c7650.jpg
+2025-10-30 14:41:19,749 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F61615c97-b30d-4772-992b-da5154b40a32.jpg
+2025-10-30 14:41:21,468 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0149d894-7e8c-47dc-ae2a-7ca2be9bd8f4.jpg
+2025-10-30 14:41:23,297 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fab1f4e8b-61a9-4037-9844-4291c9bf5570.jpg
+2025-10-30 14:41:24,899 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8b08acbc-6241-4374-961f-b351a874a5bc.jpg
+2025-10-30 14:41:26,410 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe6c934df-1764-4ed9-aa57-36626c4f69ac.jpg
+2025-10-30 14:41:27,986 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc112046c-bb97-435e-ad56-7564af772b9e.jpg
+2025-10-30 14:41:30,146 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F9e4f919f-4082-475d-87be-0d6861c8e600.jpg
+2025-10-30 14:41:31,974 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8248d2ec-6a87-44d5-9e19-710618dc7267.jpg
+2025-10-30 14:41:33,825 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F10dae631-385e-4849-a566-9bf64db2081e.jpg
+2025-10-30 14:41:35,649 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F64fe5c83-531a-467c-9edd-effc1d5be46f.jpg
+2025-10-30 14:41:37,108 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa5f72e71-3131-4ee1-b6b2-81bf1be1ec69.jpg
+2025-10-30 14:41:38,833 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F48ac8493-9aec-4f37-a5f3-1b07538d9c01.jpg
+2025-10-30 14:41:40,218 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2072b266-4fb7-4e20-bd74-7671a370522d.jpg
+2025-10-30 14:41:41,810 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc5d00bf5-c614-46c7-93e7-b8d84ed1a10f.jpg
+2025-10-30 14:41:43,592 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F75518d62-0f31-40f2-bb49-f92dbf4d46e6.jpg
+2025-10-30 14:41:45,968 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff3f7a9db-39fd-4173-8476-bd5311fa4eab.jpg
+2025-10-30 14:41:47,376 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff3dfc934-5a87-4f94-8ae8-431f082d7cdc.jpg
+2025-10-30 14:41:48,945 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F122d878a-ea61-4577-bf44-af1dcc09a339.jpg
+2025-10-30 14:41:50,510 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F69ece68f-2c8f-4ea8-af10-a799f0befc66.jpg
+2025-10-30 14:41:52,258 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F9de8b06e-cc3d-45a5-9bf5-141d0160da56.jpg
+2025-10-30 14:41:53,609 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd962a9b9-6ba1-4d1b-925b-57717d76184c.jpg
+2025-10-30 14:41:56,416 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F25e2b3e5-be0a-4650-ac1a-35a6258c51c2.jpg
+2025-10-30 14:41:58,432 - INFO - downloading images for article https://www.thetimes.com/life-style/fashion/article/vivienne-westwoods-wardrobe-is-up-for-sale-at-christies-sb7dgfhf5
+2025-10-30 14:41:58,432 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:41:58,434 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1420f7d3-e9dc-460a-99f2-7bad083fea9d.jpg
+2025-10-30 14:41:59,893 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb6cf2f37-eae2-4348-bca6-d63b1a50aaa4.jpg
+2025-10-30 14:42:01,342 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6f3ea6bd-cadd-4780-a7ee-0c47f97cd6f5.jpg
+2025-10-30 14:42:03,179 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F74804ae9-d9f1-4641-8bf9-410819496c9c.jpg
+2025-10-30 14:42:04,524 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8d0b10e4-2c1f-44b8-a22d-84b3b33398b6.jpg
+2025-10-30 14:42:06,199 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd987001c-9e77-4798-a58d-0aaf917e7bee.jpg
+2025-10-30 14:42:07,989 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F16548466-cc89-4f1d-9a7a-498e1f0bd1fe.jpg
+2025-10-30 14:42:09,523 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8ba841fa-886d-11ed-8ebd-06f6e5e80272.jpg
+2025-10-30 14:42:11,881 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc680e1f8-8843-11ed-8ebd-06f6e5e80272.jpg
+2025-10-30 14:42:13,423 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Feb863c7a-87bf-11ed-bb21-8f4d97ec7b02.jpg
+2025-10-30 14:42:14,806 - INFO - downloading images for article https://www.thetimes.com/world/europe/article/attacking-art-should-be-criminal-offence-even-if-theres-no-damage-lhf2vhjrq
+2025-10-30 14:42:14,808 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:14,812 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa0ff0276-f0a1-413b-950d-477bcbf051fc.jpg
+2025-10-30 14:42:16,102 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Faa0dd352-5da6-4657-ad4a-e1d667c9cab6.jpg
+2025-10-30 14:42:17,562 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fcc4fbeac-d161-4f62-a7b7-98888e9e0dca.jpg
+2025-10-30 14:42:18,752 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F11113b9c-a46a-4f23-8056-4b0058479f4f.jpg
+2025-10-30 14:42:20,361 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1be1188e-45e2-4d34-a73f-3c8d25c3fb8a.jpg
+2025-10-30 14:42:21,880 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-07-01_2024-07-31_urls.csv
+2025-10-30 14:42:21,881 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:21,931 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/police-fear-just-stop-oil-jail-sentences-will-spark-more-protests-fzrbs6cp0
+2025-10-30 14:42:22,042 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:22,045 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/mum-safehouse-just-stop-oil-jso-c8q2vb8q8
+2025-10-30 14:42:22,080 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:22,083 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-07-01_2024-07-31_parsed.json
+2025-10-30 14:42:22,083 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/police-fear-just-stop-oil-jail-sentences-will-spark-more-protests-fzrbs6cp0
+2025-10-30 14:42:22,083 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:22,084 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F44ec9ad7-29df-4759-b5e8-e5121218ffdd.jpg
+2025-10-30 14:42:24,159 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F683cd313-fd5e-43a3-ac3d-4b0f65a0a2b5.jpg
+2025-10-30 14:42:25,462 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa0e99c82-19cd-412b-a3d6-ed7a2f29e8ef.jpg
+2025-10-30 14:42:26,878 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7aa69444-5bfb-4722-82dc-7722870bb954.jpg
+2025-10-30 14:42:28,359 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F269f6497-bbf1-4a71-bf32-6f2847eaf683.jpg
+2025-10-30 14:42:29,760 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F683cd313-fd5e-43a3-ac3d-4b0f65a0a2b5.jpg
+2025-10-30 14:42:30,838 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4dbfad50-c700-4970-8dce-c0074396df52.jpg
+2025-10-30 14:42:32,171 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/mum-safehouse-just-stop-oil-jso-c8q2vb8q8
+2025-10-30 14:42:32,171 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:32,172 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0c3e8422-e565-4a22-baa8-11a8f0b19e54.jpg
+2025-10-30 14:42:33,870 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F437f80f0-bfa1-4977-b7fa-bc225eb68d3d.jpg
+2025-10-30 14:42:35,257 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4d79fe67-82c7-4bbd-a1bc-2d3dd45808ac.jpg
+2025-10-30 14:42:37,186 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F07c9d56f-8e00-497f-9c6f-276612384fc1.jpg
+2025-10-30 14:42:38,573 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1fcbc004-ecd8-43bf-8493-9cc366ce4c0a.jpg
+2025-10-30 14:42:40,233 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7f8c1364-d461-4e69-8981-57288f24d906.jpg
+2025-10-30 14:42:41,730 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0058cb19-41e9-42a3-8c6e-bd896b737b70.jpg
+2025-10-30 14:42:42,993 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5d46ca98-80b3-4a16-bbd2-a1d64140e68c.jpg
+2025-10-30 14:42:44,510 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-08-01_2024-08-31_urls.csv
+2025-10-30 14:42:44,512 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:44,535 - INFO - Parsing url: https://www.thetimes.com/world/us-world/article/starbucks-ceo-private-jet-commute-brian-niccol-rjmr59lzm
+2025-10-30 14:42:44,572 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:44,575 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-08-01_2024-08-31_parsed.json
+2025-10-30 14:42:44,575 - INFO - downloading images for article https://www.thetimes.com/world/us-world/article/starbucks-ceo-private-jet-commute-brian-niccol-rjmr59lzm
+2025-10-30 14:42:44,576 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:44,577 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fec4bfc4d-138b-4b84-8b27-ef3ce475ce74.jpg
+2025-10-30 14:42:45,940 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Feba58de8-5368-433a-bcae-0cd02f77cba2.jpg
+2025-10-30 14:42:47,615 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa38c71de-56bf-47c5-aba0-1c6e61d55bdb.jpg
+2025-10-30 14:42:49,316 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fea2cda14-277a-47f6-9532-2623d30627b1.jpg
+2025-10-30 14:42:50,882 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3835a02a-9914-4e3b-b3f0-6c7ac70744f3.jpg
+2025-10-30 14:42:52,526 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-09-01_2024-09-30_urls.csv
+2025-10-30 14:42:52,528 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:52,565 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/dont-jail-activists-over-creative-van-gogh-soup-protest-artists-urge-wk6lw32xc
+2025-10-30 14:42:52,597 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:52,600 - INFO - Parsing url: https://www.thetimes.com/uk/science/article/arctic-wilderness-svalbard-how-changing-dwxxgqbz8
+2025-10-30 14:42:52,636 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:52,639 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/science/article/arctic-wilderness-svalbard-how-changing-dwxxgqbz8
+2025-10-30 14:42:52,639 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-09-01_2024-09-30_parsed.json
+2025-10-30 14:42:52,639 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/dont-jail-activists-over-creative-van-gogh-soup-protest-artists-urge-wk6lw32xc
+2025-10-30 14:42:52,640 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:52,641 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F17a7f2d1-cef8-4242-9f7b-1bd8f421ea63.jpg
+2025-10-30 14:42:53,948 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F905bc62d-d5e9-4916-826f-6a40cfb8074a.jpg
+2025-10-30 14:42:55,593 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fec81f3ae-b4ae-43d3-844b-1f43f3c9fce7.jpg
+2025-10-30 14:42:57,027 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4ece7e96-9324-4a34-85e3-389aa32d68ca.jpg
+2025-10-30 14:42:58,612 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0058cb19-41e9-42a3-8c6e-bd896b737b70.jpg
+2025-10-30 14:42:59,664 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-10-01_2024-10-31_urls.csv
+2025-10-30 14:42:59,665 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:59,709 - INFO - Parsing url: https://www.thetimes.com/uk/article/mcdonalds-and-spy-cops-our-lives-caught-in-a-police-scandal-32bfv7pgt
+2025-10-30 14:42:59,747 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:42:59,750 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-10-01_2024-10-31_parsed.json
+2025-10-30 14:42:59,750 - INFO - downloading images for article https://www.thetimes.com/uk/article/mcdonalds-and-spy-cops-our-lives-caught-in-a-police-scandal-32bfv7pgt
+2025-10-30 14:42:59,750 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:42:59,751 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F334b3c89-a657-4288-9a3e-9ccf555eaf84.jpg
+2025-10-30 14:43:01,065 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F18f53c7e-3e01-4c3a-8e5b-c3bd7099267e.jpg
+2025-10-30 14:43:02,426 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F9263ec01-a6e5-4408-8b7e-f12942e824fa.jpg
+2025-10-30 14:43:03,817 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1087629f-f01f-4883-a70d-8efe76c37d08.jpg
+2025-10-30 14:43:05,300 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F52ccf4a4-0c5f-11ee-bf81-8b99fdf73556.jpg
+2025-10-30 14:43:06,960 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2Fe8908ed4-7dd5-11ec-afe3-4426f55f9ac6.jpg
+2025-10-30 14:43:08,287 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff3ddf512-a214-11eb-949b-ab1b919d4f89.jpg
+2025-10-30 14:43:10,527 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-11-01_2024-11-30_urls.csv
+2025-10-30 14:43:10,529 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:10,558 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/the-battle-to-protect-norways-wild-salmon-from-fish-farms-khk7zt3hr
+2025-10-30 14:43:10,599 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:10,602 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/environment/article/the-battle-to-protect-norways-wild-salmon-from-fish-farms-khk7zt3hr
+2025-10-30 14:43:10,602 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-11-01_2024-11-30_parsed.json
+2025-10-30 14:43:10,602 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2024-12-01_2024-12-31_urls.csv
+2025-10-30 14:43:10,603 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:10,674 - INFO - Parsing url: https://www.thetimes.com/uk/obituaries/article/sir-john-jennings-obituary-chairman-of-shell-during-brent-spar-controversy-pxwnq8t2m
+2025-10-30 14:43:10,708 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:10,709 - INFO - Parsing url: https://www.thetimes.com/topic/extinction-rebellion
+2025-10-30 14:43:10,733 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:10,735 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:43:10,735 - INFO - article dropped, no body text found: https://www.thetimes.com/topic/extinction-rebellion
+2025-10-30 14:43:10,735 - INFO - Parsing url: https://www.thetimes.com/business-money/companies/article/greenpeace-settles-with-shell-over-cousin-greg-lawsuit-q6v82jjrx
+2025-10-30 14:43:10,769 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:10,771 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/inside-dale-vinces-messy-divorce-from-squats-to-yachts-r2lj5sldn
+2025-10-30 14:43:10,810 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:10,813 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2024-12-01_2024-12-31_parsed.json
+2025-10-30 14:43:10,813 - INFO - downloading images for article https://www.thetimes.com/uk/obituaries/article/sir-john-jennings-obituary-chairman-of-shell-during-brent-spar-controversy-pxwnq8t2m
+2025-10-30 14:43:10,813 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:10,814 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F63044381-8dad-4977-9d17-67526cbba08d.jpg
+2025-10-30 14:43:12,085 - INFO - downloading images for article https://www.thetimes.com/business-money/companies/article/greenpeace-settles-with-shell-over-cousin-greg-lawsuit-q6v82jjrx
+2025-10-30 14:43:12,085 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:12,087 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F103a5d1c-2a37-487a-b53e-9a7df33350d9.jpg
+2025-10-30 14:43:13,393 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc622d893-34fa-4f20-ab7c-89b73885ec6f.jpg
+2025-10-30 14:43:14,706 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe68189cd-261d-437e-85d5-2db6bdb601b2.jpg
+2025-10-30 14:43:15,906 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F941aff67-dd4b-452e-8544-41b4ded6b234.jpg
+2025-10-30 14:43:17,587 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F26a8f2a1-1b03-4675-a6a2-ebab42a95799.jpg
+2025-10-30 14:43:19,402 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd7dfd527-d026-4c34-849c-fbdbcbb8cbe3.jpg
+2025-10-30 14:43:21,000 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/inside-dale-vinces-messy-divorce-from-squats-to-yachts-r2lj5sldn
+2025-10-30 14:43:21,003 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:21,008 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F538418ce-48e9-4ec7-9c4e-f1950529280b.jpg
+2025-10-30 14:43:22,681 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fadff2507-7678-47fb-83a1-7a33d59cb35e.jpg
+2025-10-30 14:43:24,105 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F156adf8c-6a1d-42fd-b94d-5b4e4ffc35d4.jpg
+2025-10-30 14:43:25,877 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F16637c1e-9bc4-4dca-a56c-cf90bdeb7ab8.jpg
+2025-10-30 14:43:27,458 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1e025729-a4c0-493a-b9fe-2a57824092d9.jpg
+2025-10-30 14:43:28,727 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2635c412-7ecc-4993-b535-701043bcc723.jpg
+2025-10-30 14:43:30,468 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F02d6fc5c-fcc2-43c9-80e3-aca668dc2417.jpg
+2025-10-30 14:43:31,789 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F078a558c-1c1f-41cf-9cfc-2d09b10c7b49.jpg
+2025-10-30 14:43:33,283 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-01-01_2025-01-31_urls.csv
+2025-10-30 14:43:33,284 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:33,513 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/just-stop-oil-pair-deface-charles-darwins-grave-at-westminster-abbey-k8xz9fzcj
+2025-10-30 14:43:33,554 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,556 - INFO - Parsing url: https://www.thetimes.com/business-money/energy/article/court-victory-casts-doubt-on-future-of-north-sea-oil-and-gas-fields-8hhp3p9fh
+2025-10-30 14:43:33,599 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,601 - INFO - Parsing url: https://www.thetimes.com/travel/destinations/north-america-travel/us-travel/the-best-thing-to-do-in-every-us-state-in-2025-6cnm827kp
+2025-10-30 14:43:33,661 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,666 - INFO - article dropped, search terms not present: https://www.thetimes.com/travel/destinations/north-america-travel/us-travel/the-best-thing-to-do-in-every-us-state-in-2025-6cnm827kp
+2025-10-30 14:43:33,667 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/rachel-reeves-speech-live-latest-news-qtflx6kkq
+2025-10-30 14:43:33,722 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,727 - INFO - Parsing url: https://www.thetimes.com/uk/arts/article/neil-young-glastonbury-2025-corporate-turn-off-f272996k6
+2025-10-30 14:43:33,763 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,765 - INFO - Parsing url: https://www.thetimes.com/uk/law/article/labour-donor-dale-vince-says-435m-divorce-bill-is-total-vindication-mmfbpnnss
+2025-10-30 14:43:33,807 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,809 - INFO - Parsing url: https://www.thetimes.com/business-money/companies/article/shell-faces-shareholder-revolt-against-scrapped-climate-targets-dfpmgfv8z
+2025-10-30 14:43:33,839 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:43:33,841 - INFO - article dropped, search terms not present: https://www.thetimes.com/business-money/companies/article/shell-faces-shareholder-revolt-against-scrapped-climate-targets-dfpmgfv8z
+2025-10-30 14:43:33,843 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-01-01_2025-01-31_parsed.json
+2025-10-30 14:43:33,843 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/just-stop-oil-pair-deface-charles-darwins-grave-at-westminster-abbey-k8xz9fzcj
+2025-10-30 14:43:33,844 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:33,845 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6ce66947-6266-4668-81de-fcb0257d5822.jpg
+2025-10-30 14:43:35,298 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa17ee190-84bd-4843-b8d1-84e4efe52f2c.jpg
+2025-10-30 14:43:36,647 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4ece7e96-9324-4a34-85e3-389aa32d68ca.jpg
+2025-10-30 14:43:38,184 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8d13d460-7cae-11ee-a813-d9df8913b6c9.jpg
+2025-10-30 14:43:39,225 - INFO - downloading images for article https://www.thetimes.com/business-money/energy/article/court-victory-casts-doubt-on-future-of-north-sea-oil-and-gas-fields-8hhp3p9fh
+2025-10-30 14:43:39,227 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:39,233 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F28597904-47eb-4a44-8942-6a3411880479.jpg
+2025-10-30 14:43:42,095 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7253743d-f6a2-4cf5-a240-e83e7f810f0c.jpg
+2025-10-30 14:43:43,876 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F84ebb082-070e-45a1-a92a-31ba6ed1a3db.jpg
+2025-10-30 14:43:45,237 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F88298045-9811-4de6-91c8-a5c8ab0183ce.jpg
+2025-10-30 14:43:47,090 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F103a5d1c-2a37-487a-b53e-9a7df33350d9.jpg
+2025-10-30 14:43:48,133 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5430d65b-2a46-43cd-a92c-465e6e427d2e.jpg
+2025-10-30 14:43:49,956 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9e16701a-d569-423d-9425-f1a3a744e5ce.jpg
+2025-10-30 14:43:51,408 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/rachel-reeves-speech-live-latest-news-qtflx6kkq
+2025-10-30 14:43:51,410 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:43:51,415 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F64b7933a-f9ee-4cf7-8be3-e97ad221f9b5.jpg
+2025-10-30 14:43:52,938 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd551effb-69f7-4968-9f4b-d63a0158d98c.jpg
+2025-10-30 14:43:54,564 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ffa841bfe-ed50-4fc5-bd09-f822bd2b6f79.jpg
+2025-10-30 14:43:56,555 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F7e7c9765-3939-4f3e-b834-0fa9973f5472.jpg
+2025-10-30 14:43:58,220 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F02e6ae4e-ff48-446c-bd99-47c0cb7e8cc7.jpg
+2025-10-30 14:43:59,531 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe05d6a20-5ddc-48e7-981a-8ad02577399a.jpg
+2025-10-30 14:44:01,135 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2a0dd24f-baab-4b7e-abb0-5627f5ee45ad.jpg
+2025-10-30 14:44:02,691 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F92fec30d-b84f-4293-8b99-214445b2e5f0.jpg
+2025-10-30 14:44:04,210 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0a1e2b26-1740-4156-a451-7320df35fcdc.jpg
+2025-10-30 14:44:05,796 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa94acba8-bf99-4fb4-9914-4ba05fd6d3b0.jpg
+2025-10-30 14:44:07,458 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F8c6768d7-c6a6-4c42-a58f-fc6ec7bfc98a.jpg
+2025-10-30 14:44:09,087 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6ebd6e84-d1b8-49d7-9165-5eccf51fbcfe.jpg
+2025-10-30 14:44:10,541 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb3bb4eac-e490-412a-bbdc-c9cf71097614.jpg
+2025-10-30 14:44:11,968 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff146e6c9-b001-438b-b827-b3fbffb83cbf.jpg
+2025-10-30 14:44:13,524 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F671771e3-a484-4a22-8067-3eea3e4b75ed.jpg
+2025-10-30 14:44:14,934 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F25bd2950-18a6-49a7-a3f3-201de4074627.jpg
+2025-10-30 14:44:16,242 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2726ca9f-df68-4bc9-aa5c-ef246d6ab9ac.jpg
+2025-10-30 14:44:17,929 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F74d6278c-b6bd-4881-834a-6394819ca5f6.jpg
+2025-10-30 14:44:19,627 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc4f6773a-6bef-4b9e-93b7-379440347fb5.jpg
+2025-10-30 14:44:21,068 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F99dd2438-45dc-472a-b896-eda576c662a8.jpg
+2025-10-30 14:44:22,911 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F4c056906-9b80-4338-9d9b-29b0b2b48049.jpg
+2025-10-30 14:44:24,396 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4a4afb02-86f7-494d-a6f3-5cab391cfdc4.jpg
+2025-10-30 14:44:26,545 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe65a0cef-0823-4fc5-b345-c06b3d6436e3.jpg
+2025-10-30 14:44:27,753 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F30157092-13bb-473d-9d5a-36b9d702b490.jpg
+2025-10-30 14:44:29,233 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F54003ce3-cf3f-42ed-b9c1-3a0bcc8864d6.jpg
+2025-10-30 14:44:30,915 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5508d7f7-4119-42d0-95fc-383d7dbcb7ee.jpg
+2025-10-30 14:44:33,672 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6cb353f3-554e-4610-bfe6-2c3ed6bad396.jpg
+2025-10-30 14:44:36,830 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1c173769-fb4d-4969-a9d5-78964c6cda4f.jpg
+2025-10-30 14:44:38,819 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6c03ff49-323f-4423-9e1f-3a78d1acda7a.jpg
+2025-10-30 14:44:40,565 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0222c68c-8607-4d5b-b6a3-3e501a19374f.jpg
+2025-10-30 14:44:41,924 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd800d5d9-be3b-4adf-afcb-f2ae044305a4.jpg
+2025-10-30 14:44:44,660 - INFO - downloading images for article https://www.thetimes.com/uk/arts/article/neil-young-glastonbury-2025-corporate-turn-off-f272996k6
+2025-10-30 14:44:44,662 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:44:44,669 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F909fd8b3-bb23-436e-bb6a-283d2382022b.jpg
+2025-10-30 14:44:46,212 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ffd80af5a-da02-4327-9b78-d8a63d8b1483.jpg
+2025-10-30 14:44:47,727 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6c154bf1-7e25-416d-832d-7903649c0a4f.jpg
+2025-10-30 14:44:49,694 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F3cc59b68-a35d-43ca-bb2c-3bc9b3ac2590.jpg
+2025-10-30 14:44:51,403 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc2591aab-b109-42f6-a7f6-f0564c7af74f.jpg
+2025-10-30 14:44:54,377 - INFO - downloading images for article https://www.thetimes.com/uk/law/article/labour-donor-dale-vince-says-435m-divorce-bill-is-total-vindication-mmfbpnnss
+2025-10-30 14:44:54,378 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:44:54,380 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F1febf6db-c33c-4dbe-9344-b232b9ad1d54.jpg
+2025-10-30 14:44:56,134 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F38cdabdd-c1d1-4759-8867-48a7718ffb2e.jpg
+2025-10-30 14:44:57,796 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F538418ce-48e9-4ec7-9c4e-f1950529280b.jpg
+2025-10-30 14:44:59,051 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd6b8cede-8724-4089-be56-333460cb850a.jpg
+2025-10-30 14:45:00,896 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-02-01_2025-02-28_urls.csv
+2025-10-30 14:45:00,897 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:01,167 - INFO - Parsing url: https://www.thetimes.com/profile/will-lloyd?page=2
+2025-10-30 14:45:01,305 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,307 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:45:01,307 - INFO - article dropped, no body text found: https://www.thetimes.com/profile/will-lloyd?page=2
+2025-10-30 14:45:01,307 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/the-carbon-noose-is-tightening-can-labour-keep-voters-onside-80wl8lwt0
+2025-10-30 14:45:01,343 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,346 - INFO - article dropped, search terms not present: https://www.thetimes.com/comment/columnists/article/the-carbon-noose-is-tightening-can-labour-keep-voters-onside-80wl8lwt0
+2025-10-30 14:45:01,346 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-02-1
+2025-10-30 14:45:01,473 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,478 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:45:01,478 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-02-1
+2025-10-30 14:45:01,478 - INFO - Parsing url: https://www.thetimes.com/business-money/energy/article/shell-restarts-production-at-penguins-north-sea-oil-field-mdd5z9mrg
+2025-10-30 14:45:01,511 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,513 - INFO - article dropped, search terms not present: https://www.thetimes.com/business-money/energy/article/shell-restarts-production-at-penguins-north-sea-oil-field-mdd5z9mrg
+2025-10-30 14:45:01,513 - INFO - Parsing url: https://www.thetimes.com/uk/obituaries/article/pete-wilkinson-obituary-greenpeace-uks-first-director-90zwlbtq2
+2025-10-30 14:45:01,545 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,547 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/tony-juniper-natural-england-developments-planning-reform-mjt7dg7rx
+2025-10-30 14:45:01,583 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,585 - INFO - Parsing url: https://www.thetimes.com/business-money/companies/article/meet-the-activists-who-are-the-most-feared-investors-xpfgqxkr2
+2025-10-30 14:45:01,617 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:01,619 - INFO - article dropped, search terms not present: https://www.thetimes.com/business-money/companies/article/meet-the-activists-who-are-the-most-feared-investors-xpfgqxkr2
+2025-10-30 14:45:01,628 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-02-01_2025-02-28_parsed.json
+2025-10-30 14:45:01,629 - INFO - downloading images for article https://www.thetimes.com/uk/obituaries/article/pete-wilkinson-obituary-greenpeace-uks-first-director-90zwlbtq2
+2025-10-30 14:45:01,630 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:01,633 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9499b06e-baae-4791-9551-9664beb2d3fb.jpg
+2025-10-30 14:45:04,450 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6358edc3-9844-419e-af55-768a1ba14a4b.jpg
+2025-10-30 14:45:06,006 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F17cdd4d9-3fe5-4e24-9891-edacbb0bf18f.jpg
+2025-10-30 14:45:07,395 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe0a9d92e-6918-42b2-99f8-cdcec84a3433.jpg
+2025-10-30 14:45:08,966 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/tony-juniper-natural-england-developments-planning-reform-mjt7dg7rx
+2025-10-30 14:45:08,967 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:08,970 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe4e07814-44a0-4b42-b546-336958456513.jpg
+2025-10-30 14:45:10,900 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1d361586-131b-4354-8854-009a991afea0.jpg
+2025-10-30 14:45:12,910 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fde7412c8-4662-48fd-9210-b1ca136433d5.jpg
+2025-10-30 14:45:14,827 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7d27e98b-c23b-45e7-bece-4e176e8e31fd.jpg
+2025-10-30 14:45:16,562 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fec5e50b3-d43a-418f-acdb-2a06d9dec50b.jpg
+2025-10-30 14:45:18,496 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2c2dcc37-3341-40e7-b9ae-58f07b96a4b6.jpg
+2025-10-30 14:45:19,920 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-03-01_2025-03-31_urls.csv
+2025-10-30 14:45:19,922 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:20,226 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/we-can-barely-make-steel-any-more-so-extra-weapons-might-be-a-stretch-drlldh5sh
+2025-10-30 14:45:20,292 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,294 - INFO - article dropped, search terms not present: https://www.thetimes.com/comment/columnists/article/we-can-barely-make-steel-any-more-so-extra-weapons-might-be-a-stretch-drlldh5sh
+2025-10-30 14:45:20,294 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/ministers-must-act-now-to-save-the-north-sea-d2qsj2hzt
+2025-10-30 14:45:20,328 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,330 - INFO - article dropped, search terms not present: https://www.thetimes.com/comment/columnists/article/ministers-must-act-now-to-save-the-north-sea-d2qsj2hzt
+2025-10-30 14:45:20,330 - INFO - Parsing url: https://www.thetimes.com/us/news-today/article/greenpeace-lawsuit-trial-dakota-pipeline-0x0zj2d37
+2025-10-30 14:45:20,361 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,363 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/undercover-met-police-officers-exposed-itv-j6rpjb3tr
+2025-10-30 14:45:20,402 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,404 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/just-stop-oil-news-jso-wrnn62jks
+2025-10-30 14:45:20,460 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,463 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/the-weather-station-review-glasgow-gshzscgvl
+2025-10-30 14:45:20,505 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,508 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/just-stop-oil-end-direct-protest-action-mjrrwl0s5
+2025-10-30 14:45:20,545 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,547 - INFO - Parsing url: https://www.thetimes.com/topic/north-dakota
+2025-10-30 14:45:20,570 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,572 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:45:20,573 - INFO - article dropped, no body text found: https://www.thetimes.com/topic/north-dakota
+2025-10-30 14:45:20,573 - INFO - Parsing url: https://www.thetimes.com/us/news-today/article/greenpeace-defamation-lawsuit-verdict-h8snt8g3r
+2025-10-30 14:45:20,613 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:45:20,618 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-03-01_2025-03-31_parsed.json
+2025-10-30 14:45:20,618 - INFO - downloading images for article https://www.thetimes.com/us/news-today/article/greenpeace-lawsuit-trial-dakota-pipeline-0x0zj2d37
+2025-10-30 14:45:20,621 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:20,622 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3b26d467-194a-4bae-a18d-4b06f297f4fa.jpg
+2025-10-30 14:45:22,097 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F26528005-f9e6-4a5f-be55-a6e97c97e424.jpg
+2025-10-30 14:45:23,641 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F12fed790-d029-4fa2-abb3-96227df35f37.jpg
+2025-10-30 14:45:25,480 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7f5925ec-51e5-457e-aa08-e17ebb4715e9.jpg
+2025-10-30 14:45:26,755 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/undercover-met-police-officers-exposed-itv-j6rpjb3tr
+2025-10-30 14:45:26,757 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:26,762 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F54624fee-52d5-4d44-9972-b5b637321c5f.jpg
+2025-10-30 14:45:28,800 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F22e2a42d-a616-4946-a355-b876546b6e97.jpg
+2025-10-30 14:45:30,412 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F088b3831-d906-42be-a0ac-e3fb6510db88.jpg
+2025-10-30 14:45:32,343 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa4a3c082-a697-4f02-aef2-66d3e902ddf1.jpg
+2025-10-30 14:45:34,192 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb9135945-a8ed-46e3-81d4-ae50b402edc8.jpg
+2025-10-30 14:45:36,208 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe1731aa6-2986-42fb-ba70-286ad10022f4.jpg
+2025-10-30 14:45:37,951 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6ba86daa-8d5f-4719-8b93-92a2e15ca358.jpg
+2025-10-30 14:45:39,527 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff3ddf512-a214-11eb-949b-ab1b919d4f89.jpg
+2025-10-30 14:45:41,260 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6ca19262-2ab3-11eb-aca7-1c9add2102c6.jpg
+2025-10-30 14:45:42,584 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0c6dbb60-22c4-11eb-a410-c62ccdb041f3.jpg
+2025-10-30 14:45:44,376 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/just-stop-oil-news-jso-wrnn62jks
+2025-10-30 14:45:44,378 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:44,384 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F33e741dd-7c0a-4cf9-b6ff-805d3eec4c1b.jpg
+2025-10-30 14:45:46,044 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd4809d2e-58b5-49e6-8011-09b0adc2c6f1.jpg
+2025-10-30 14:45:47,921 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe91fbcab-1d17-4e08-aede-e2b6f71e26f8.jpg
+2025-10-30 14:45:49,574 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F90a41175-3e9e-49e9-a561-e8ae63269c0e.jpg
+2025-10-30 14:45:50,878 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ffe9c91ed-cec1-4bae-8d29-a291768da899.jpg
+2025-10-30 14:45:52,953 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ff1b1ab03-aed2-483c-a2c5-3dbb0e7de7e8.jpg
+2025-10-30 14:45:54,435 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F0e9d42bc-1398-488c-a612-7e0c98828a14.jpg
+2025-10-30 14:45:55,982 - INFO - downloading images for article https://www.thetimes.com/culture/music/article/the-weather-station-review-glasgow-gshzscgvl
+2025-10-30 14:45:55,984 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:45:55,988 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe9abfc46-43ff-44c1-b64d-373b6787525a.jpg
+2025-10-30 14:45:58,268 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F5317339d-c82a-4434-8af5-a4bb9df91b04.jpg
+2025-10-30 14:46:00,375 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F01261f3e-a47a-11ec-a9dd-14c997a643ea.jpg
+2025-10-30 14:46:02,550 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F40d33cd4-ab69-11ec-b5dd-c16e85f55725.jpg
+2025-10-30 14:46:05,453 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/just-stop-oil-end-direct-protest-action-mjrrwl0s5
+2025-10-30 14:46:05,455 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:05,461 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdf9640bf-8b31-4dff-802c-b1fe0765219f.jpg
+2025-10-30 14:46:07,025 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe60da254-84c9-48e3-a3c5-a714d8d654b3.jpg
+2025-10-30 14:46:08,859 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F2e420dd8-e1b5-4375-887e-a7dc4dc7a0a3.jpg
+2025-10-30 14:46:10,116 - INFO - downloading images for article https://www.thetimes.com/us/news-today/article/greenpeace-defamation-lawsuit-verdict-h8snt8g3r
+2025-10-30 14:46:10,116 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:10,117 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9263d4f4-ece7-4bca-9120-7ae5283bfcac.jpg
+2025-10-30 14:46:12,117 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fac1a6bce-f6d6-4fae-913b-3592822cb6c5.jpg
+2025-10-30 14:46:13,515 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F016683f0-819c-4deb-8e5c-6459050b06d7.jpg
+2025-10-30 14:46:14,888 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fca72fb2c-7b5e-4231-a5cf-70357e4febc8.jpg
+2025-10-30 14:46:16,351 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdf748ce2-faa6-459a-b604-d744893d5b43.jpg
+2025-10-30 14:46:17,748 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fed2fc6a7-e401-40de-9beb-33b76e41cbef.jpg
+2025-10-30 14:46:19,216 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F740d7f77-157a-47aa-b8c6-a114c3d3ba36.jpg
+2025-10-30 14:46:20,715 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F86975911-a6f9-4769-986c-b8e5650d0eac.jpg
+2025-10-30 14:46:22,043 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4a060a3a-84f9-4c30-82ba-393f56271d7e.jpg
+2025-10-30 14:46:23,723 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-04-01_2025-04-30_urls.csv
+2025-10-30 14:46:23,725 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:23,833 - INFO - Parsing url: https://www.thetimes.com/profile/adam-vaughan?page=6
+2025-10-30 14:46:23,877 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:23,879 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:46:23,879 - INFO - article dropped, no body text found: https://www.thetimes.com/profile/adam-vaughan?page=6
+2025-10-30 14:46:23,879 - INFO - Parsing url: https://www.thetimes.com/profile/harriet-alexander
+2025-10-30 14:46:23,904 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:23,906 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:46:23,906 - INFO - article dropped, no body text found: https://www.thetimes.com/profile/harriet-alexander
+2025-10-30 14:46:23,906 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/theres-no-vegan-stir-fry-a-just-stop-oil-mum-on-life-in-prison-06n9ctx72
+2025-10-30 14:46:23,944 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:23,946 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/m25-protester-roger-hallam-jail-media-interest-zzjgrpgrt
+2025-10-30 14:46:23,981 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:23,983 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-04-01_2025-04-30_parsed.json
+2025-10-30 14:46:23,983 - INFO - downloading images for article https://www.thetimes.com/uk/environment/article/theres-no-vegan-stir-fry-a-just-stop-oil-mum-on-life-in-prison-06n9ctx72
+2025-10-30 14:46:23,984 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:23,985 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe1f5d45a-5656-4149-b490-d8ba1ef4d8cf.jpg
+2025-10-30 14:46:26,711 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc1b49b1d-f7fd-413b-b729-d9e1aa9743c2.jpg
+2025-10-30 14:46:29,845 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fcee1faf3-e295-499c-9c7d-ef552f239a4a.jpg
+2025-10-30 14:46:32,975 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbd4fe53c-fd07-492b-a17d-3d65ac9333d7.jpg
+2025-10-30 14:46:34,608 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2469653e-44d9-4671-8c1c-9731c025c938.jpg
+2025-10-30 14:46:36,911 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F92f864d2-5f53-4f22-a73e-7cd5515ac131.jpg
+2025-10-30 14:46:38,086 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc4684738-c0ba-460f-81ba-79f03edc6bb3.jpg
+2025-10-30 14:46:39,304 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdf9640bf-8b31-4dff-802c-b1fe0765219f.jpg
+2025-10-30 14:46:40,449 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/m25-protester-roger-hallam-jail-media-interest-zzjgrpgrt
+2025-10-30 14:46:40,451 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:40,456 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F47713d79-53d1-48da-81f1-defcf68b6358.jpg
+2025-10-30 14:46:44,851 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ffc9640b7-2a7e-4b24-b51f-3cf7c1e7713d.jpg
+2025-10-30 14:46:46,465 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd0053980-ae8e-4a11-a1c2-5da805763024.jpg
+2025-10-30 14:46:47,806 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F33e741dd-7c0a-4cf9-b6ff-805d3eec4c1b.jpg
+2025-10-30 14:46:49,108 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdf9640bf-8b31-4dff-802c-b1fe0765219f.jpg
+2025-10-30 14:46:50,202 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-05-01_2025-05-31_urls.csv
+2025-10-30 14:46:50,204 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:50,257 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-05-4
+2025-10-30 14:46:50,331 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,338 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:46:50,338 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-05-4
+2025-10-30 14:46:50,338 - INFO - Parsing url: https://www.thetimes.com/life-style/property-home/article/gen-z-teapot-trend-revival-best-nt7k6ttkz
+2025-10-30 14:46:50,452 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,456 - INFO - article dropped, search terms not present: https://www.thetimes.com/life-style/property-home/article/gen-z-teapot-trend-revival-best-nt7k6ttkz
+2025-10-30 14:46:50,457 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-05-01_2025-05-31_parsed.json
+2025-10-30 14:46:50,464 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-06-01_2025-06-30_urls.csv
+2025-10-30 14:46:50,464 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:50,762 - INFO - Parsing url: https://www.thetimes.com/world/europe/article/jeff-bezos-forced-to-move-wedding-party-after-protests-in-venice-j6qqp3t2j
+2025-10-30 14:46:50,829 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,831 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/palestine-action-damage-bj0r7t97x
+2025-10-30 14:46:50,863 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,865 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/glastonbury-festival-greenpeace-how-to-beat-facial-recognition-protests-0v2c8cjl6
+2025-10-30 14:46:50,897 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,899 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/palestine-action-vandalism-xrcnlpdgh
+2025-10-30 14:46:50,930 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,932 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/youth-demand-undercover-jrsqqq0rz
+2025-10-30 14:46:50,964 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:50,966 - INFO - Parsing url: https://www.thetimes.com/uk/defence/article/nato-summit-trump-latest-news-live-starmer-sbsjm7gxt
+2025-10-30 14:46:51,024 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:51,030 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/defence/article/nato-summit-trump-latest-news-live-starmer-sbsjm7gxt
+2025-10-30 14:46:51,030 - INFO - Parsing url: https://www.thetimes.com/culture/music/article/glastonbury-2025-live-latest-news-r078q0rr3
+2025-10-30 14:46:51,103 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:51,114 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/ed-miliband-oil-and-gas-north-sea-vx6ln9r6w
+2025-10-30 14:46:51,151 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:51,153 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/miliband-to-rewrite-green-rules-to-allow-north-sea-drilling-8g2tdvgqx
+2025-10-30 14:46:51,189 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:46:51,195 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-06-01_2025-06-30_parsed.json
+2025-10-30 14:46:51,195 - INFO - downloading images for article https://www.thetimes.com/world/europe/article/jeff-bezos-forced-to-move-wedding-party-after-protests-in-venice-j6qqp3t2j
+2025-10-30 14:46:51,196 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:46:51,197 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7b91818b-b0c0-4136-ab09-cc0181a92d7c.jpg
+2025-10-30 14:46:53,289 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5b4aaced-bccd-4ef2-b094-9570431a871c.jpg
+2025-10-30 14:46:55,091 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8242f6e8-f131-48dd-868c-a84281223741.jpg
+2025-10-30 14:46:57,281 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc1debee7-6a19-487a-a108-9496ec0bcf17.jpg
+2025-10-30 14:46:58,704 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fed3159be-85a6-428b-b99d-5d4879ec3a64.jpg
+2025-10-30 14:47:00,323 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/palestine-action-damage-bj0r7t97x
+2025-10-30 14:47:00,325 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:47:00,329 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2a77bbb4-94db-4b01-8b02-a612e49cd26b.jpg
+2025-10-30 14:47:01,741 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff9dbf5fc-8f22-4301-869d-d00cb8a09d11.jpg
+2025-10-30 14:47:03,479 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc233648f-cdd7-4aa9-8b76-e5934412e7de.jpg
+2025-10-30 14:47:04,872 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F59af2264-6571-4aed-ae5e-7a5320a8ef8c.jpg
+2025-10-30 14:47:06,151 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5106b9b0-47d3-489a-a7fb-7f53c0b8865a.jpg
+2025-10-30 14:47:07,488 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf114e74-2634-465f-93c3-0625469d4b02.jpg
+2025-10-30 14:47:09,741 - INFO - downloading images for article https://www.thetimes.com/culture/music/article/glastonbury-festival-greenpeace-how-to-beat-facial-recognition-protests-0v2c8cjl6
+2025-10-30 14:47:09,743 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:47:09,747 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fecc3351f-6be4-476b-97f3-7cd283360a87.jpg
+2025-10-30 14:47:11,631 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb23cb3d4-f016-478f-ac32-fbec39ce3e4c.jpg
+2025-10-30 14:47:13,326 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0616b24f-282f-4074-8994-f966027673ed.jpg
+2025-10-30 14:47:14,985 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5606fc26-17b5-43df-80d8-8e9e8b63bccd.jpg
+2025-10-30 14:47:16,721 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F88b85a57-f0b7-4ef9-91c0-ebaa1005ebee.jpg
+2025-10-30 14:47:18,237 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9e216795-9241-47be-a800-b14ef903fc2d.jpg
+2025-10-30 14:47:20,385 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F88dd04ac-b888-41bc-90f1-be207e4f925d.jpg
+2025-10-30 14:47:21,988 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe63a19dd-bfc8-4bfe-abd9-56612be8bdb6.jpg
+2025-10-30 14:47:23,419 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/palestine-action-vandalism-xrcnlpdgh
+2025-10-30 14:47:23,420 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:47:23,421 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F58421ac1-8b9c-4dfb-b4bc-c61925e3617c.jpg
+2025-10-30 14:47:25,173 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F203698a1-4dcf-4976-8c8b-16db43ead514.jpg
+2025-10-30 14:47:26,492 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6996a40c-4dc7-4cb1-bcbe-ec50f3e78347.jpg
+2025-10-30 14:47:28,060 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F396bc229-3820-4da3-a6f9-4ae527e65cad.jpg
+2025-10-30 14:47:30,028 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa520b493-7d63-459a-96ac-9e07f1aace58.jpg
+2025-10-30 14:47:32,106 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F33e741dd-7c0a-4cf9-b6ff-805d3eec4c1b.jpg
+2025-10-30 14:47:33,410 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/youth-demand-undercover-jrsqqq0rz
+2025-10-30 14:47:33,412 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:47:33,417 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff8a8d450-6c28-40b7-bccd-e1732444b02e.jpg
+2025-10-30 14:47:35,241 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F09a8f583-ee8d-456e-ab7e-6a14558bac77.jpg
+2025-10-30 14:47:37,223 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F13152da6-5a88-4c14-9255-e65cdc07c928.jpg
+2025-10-30 14:47:38,903 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F94c63879-20f7-490e-82f5-576362eb0f53.jpg
+2025-10-30 14:47:40,576 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe1f5d45a-5656-4149-b490-d8ba1ef4d8cf.jpg
+2025-10-30 14:47:42,845 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F47713d79-53d1-48da-81f1-defcf68b6358.jpg
+2025-10-30 14:47:46,295 - INFO - downloading images for article https://www.thetimes.com/culture/music/article/glastonbury-2025-live-latest-news-r078q0rr3
+2025-10-30 14:47:46,297 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:47:46,301 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc2bf0739-d6ef-4f3f-9dce-f1814a696a5c.jpg
+2025-10-30 14:47:47,965 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5908a3f1-8bf9-4c4d-be91-16d7c170206f.jpg
+2025-10-30 14:47:49,917 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fadb8eefd-a86f-421f-a245-6b20a70217c8.jpg
+2025-10-30 14:47:52,175 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1bcb53a2-da36-4b11-b240-3d0a3d6b3108.jpg
+2025-10-30 14:47:53,851 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8726c404-5f33-4663-bf3d-fd9ea6d7ff82.jpg
+2025-10-30 14:47:55,474 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbd84aefd-b4ae-4a5c-9293-2eaaae9e322a.jpg
+2025-10-30 14:47:57,220 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F27a5a3dc-9803-4d9e-afaa-b7e49aff4de0.png
+2025-10-30 14:47:58,593 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F11f90354-7aec-405f-86e5-86ddf7d10f56.jpg
+2025-10-30 14:48:00,176 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F90b8b846-5d00-4727-9584-f536dffc916c.jpg
+2025-10-30 14:48:01,580 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1a336add-92b3-4430-b97e-0c8498a4a494.jpg
+2025-10-30 14:48:02,854 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1855047d-c593-4cb6-b52e-2f46f135879d.jpg
+2025-10-30 14:48:04,679 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F24228ddd-7829-4566-8a3f-b92101fa6493.jpg
+2025-10-30 14:48:06,041 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ffbca127e-db33-4352-b1f0-0b4840818a76.jpg
+2025-10-30 14:48:07,704 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3091bcf8-12ea-4887-88ab-36edcc71935d.jpg
+2025-10-30 14:48:09,491 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8472ecbe-bf00-4dc7-85c3-239f5c526896.jpg
+2025-10-30 14:48:11,265 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3a3370fa-615f-42f6-abc2-1d07466034da.jpg
+2025-10-30 14:48:13,064 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7a2bc45e-7d23-4c78-8a59-3cafb9f88663.jpg
+2025-10-30 14:48:16,114 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3dd7d7db-3328-4b83-b10a-685846d6fcde.jpg
+2025-10-30 14:48:17,693 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd7208c5a-89ce-4918-8104-cdcf7287facf.jpg
+2025-10-30 14:48:19,050 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1eff5bcc-ee8d-4fde-8a39-a02f1e890d43.jpg
+2025-10-30 14:48:20,526 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F080bc5e4-8b94-4335-9264-38e7d63d57b0.jpg
+2025-10-30 14:48:22,416 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff25ad91a-50c1-49aa-871e-b9ee564a7f01.jpg
+2025-10-30 14:48:23,636 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F688a5034-a466-41d9-bca9-b3c122c92853.jpg
+2025-10-30 14:48:27,265 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbaaae2c2-c8ed-40a5-921d-c32c0f5971ae.jpg
+2025-10-30 14:48:28,694 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F018f420d-b334-4f23-9db4-2251d6c2eca6.jpg
+2025-10-30 14:48:30,611 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa8da57c3-39d1-4da5-8132-c7b0b2a23ec1.jpg
+2025-10-30 14:48:33,127 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F63188983-b82b-4f8b-a94d-599f5e2b53be.jpg
+2025-10-30 14:48:34,732 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8da32ca0-571f-43a8-879f-a2889b9ad577.jpg
+2025-10-30 14:48:36,134 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F36eeb033-aef2-499c-b89e-3a5985b67bb6.jpg
+2025-10-30 14:48:37,549 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F06bd8200-1ed0-41c6-8672-3f680ee81a10.jpg
+2025-10-30 14:48:39,916 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbff6b934-ea4f-43e6-8f1d-bb0ba2b6642e.jpg
+2025-10-30 14:48:41,349 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbeb0ec2c-b797-4529-b186-f62df9652499.png
+2025-10-30 14:48:42,906 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6f6455fa-583f-43f3-abc0-ae70033727f6.jpg
+2025-10-30 14:48:44,379 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F16ca2a35-0a4b-48bc-bdaa-413aa9f306fe.jpg
+2025-10-30 14:48:45,947 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc9127c35-2503-48a1-8f7b-12efae426866.jpg
+2025-10-30 14:48:47,700 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff2732ef6-9ea8-4f7c-85a5-ec9325da29a5.jpg
+2025-10-30 14:48:49,136 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7ec39864-0d7f-472b-95f5-fd98121d5bbf.jpg
+2025-10-30 14:48:52,537 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe251c41b-191a-42fa-b549-43bb2c0de2b0.jpg
+2025-10-30 14:48:54,466 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3d46103f-5658-4ee4-89ec-482415f5d461.jpg
+2025-10-30 14:48:55,990 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F622f3b3f-a4bb-4985-9631-34c74c41eec8.jpg
+2025-10-30 14:48:58,232 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F91ce6486-dd79-46d1-806e-15b57742391b.jpg
+2025-10-30 14:49:01,383 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9c14a0f8-32c4-4779-bca4-bc864bff41f2.jpg
+2025-10-30 14:49:04,455 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8c771104-b9c0-498f-83ca-67cef7bc8520.jpg
+2025-10-30 14:49:07,798 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F042320c2-11bf-4895-b923-fe8a5142144a.jpg
+2025-10-30 14:49:09,608 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd518f0f6-db52-4ade-a851-b8c967084f57.jpg
+2025-10-30 14:49:11,325 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff0c647dc-c2f6-44fa-bcc8-37b33de5b0ec.jpg
+2025-10-30 14:49:14,248 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F173f4036-e0c8-4065-9dbb-2551e2b0dcbc.jpg
+2025-10-30 14:49:15,817 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd0cf9239-825f-4917-9f58-917dd0eb00d9.jpg
+2025-10-30 14:49:17,490 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2d90d605-7404-4387-98d5-80d65ea50f44.png
+2025-10-30 14:49:18,897 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6dd30fee-ca3d-4133-86ea-f049989f28f3.jpg
+2025-10-30 14:49:20,305 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F35935fef-9f13-4d14-b414-ca76f213991f.jpg
+2025-10-30 14:49:22,026 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fca82df8b-eb37-407e-9482-5a78984d69d7.jpg
+2025-10-30 14:49:24,415 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf061799-9906-4f25-97e1-78f0297fee52.jpg
+2025-10-30 14:49:25,850 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F435e5f18-0ea6-4b69-99c5-02308aad6f01.jpg
+2025-10-30 14:49:27,274 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F740aadf0-2407-4e41-acbc-d49af22637c9.jpg
+2025-10-30 14:49:28,688 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2251318b-baa0-44a2-b831-b44cbc869c9f.jpg
+2025-10-30 14:49:30,259 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3bdac047-f5df-4c29-bfa8-625b33a40424.jpg
+2025-10-30 14:49:33,230 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fda8d0b5e-b4f0-4de6-906b-e57ea9d9668a.jpg
+2025-10-30 14:49:34,927 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fce1abb3d-827b-42e1-be5c-f13dceec7a25.jpg
+2025-10-30 14:49:36,829 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2bcae02e-db00-41c6-8054-8cf14e1b7aa8.jpg
+2025-10-30 14:49:39,136 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F33226903-fca8-4ce8-8e30-4cf49b14b215.jpg
+2025-10-30 14:49:41,994 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8d05925e-5530-418e-a18b-c4e34d724d67.png
+2025-10-30 14:49:43,634 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4ab70147-39c0-4dab-952f-a72605912cf3.jpg
+2025-10-30 14:49:45,054 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F041f3e90-dc83-40bd-ae5b-5b272ae57c5a.jpg
+2025-10-30 14:49:46,521 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ffc4dfc2d-e732-4666-80a0-e8519c9d1412.jpg
+2025-10-30 14:49:47,839 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F22405b27-a828-4382-a0d5-8b9c8897c73b.jpg
+2025-10-30 14:49:49,577 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf890cc4-3d4b-42ca-bb52-e11ee9437a9d.jpg
+2025-10-30 14:49:51,262 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F97775864-2ab9-4536-861d-97fef333e906.jpg
+2025-10-30 14:49:52,832 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd2fdfa9f-4923-4347-a758-8437b394a45e.jpg
+2025-10-30 14:49:55,635 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0eddbcec-e753-41aa-9447-99dc6a7e9253.jpg
+2025-10-30 14:49:57,137 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd05717e5-a9c5-451a-9b49-6771253266d6.jpg
+2025-10-30 14:49:59,575 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1b3b62ad-c139-4b01-82e7-9f2a031a11bc.jpg
+2025-10-30 14:50:01,254 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F77fb7522-91fe-4aa2-a55d-822f41d06a2c.jpg
+2025-10-30 14:50:03,158 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F26625dff-73c8-402f-b96e-bd483311a841.jpg
+2025-10-30 14:50:05,334 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5bcddcd7-4773-4341-8cc9-a3d9b120e1f5.jpg
+2025-10-30 14:50:08,653 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd1c32452-37dc-4a90-a9e6-8d5203e9fe0a.jpg
+2025-10-30 14:50:10,814 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4b5be4f4-29aa-4b0e-bb2f-dcf9b167d898.jpg
+2025-10-30 14:50:13,361 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5849bb3d-03f8-480e-a990-0bc2c5d2a118.jpg
+2025-10-30 14:50:14,592 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F011ccc05-7924-4fb6-bb35-f24e9e7ac506.jpg
+2025-10-30 14:50:16,651 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F05c245ef-23fb-472f-b3b7-044bc79566c1.jpg
+2025-10-30 14:50:18,280 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/ed-miliband-oil-and-gas-north-sea-vx6ln9r6w
+2025-10-30 14:50:18,282 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:18,288 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F20820075-e03c-49b4-93f3-e8f5233d62dd.jpg
+2025-10-30 14:50:19,649 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F49b86a63-f67f-47b4-87ca-9a8e3e9c3c3e.jpg
+2025-10-30 14:50:21,421 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2889d603-fc63-41de-afc1-017b37258b9f.jpg
+2025-10-30 14:50:22,868 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F502c82e2-6a9e-4ebe-ac5b-909c3ca4b4a1.jpg
+2025-10-30 14:50:24,379 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F031785cd-e95f-4230-83ba-3b0f4f9af6b2.jpg
+2025-10-30 14:50:26,877 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fc4684738-c0ba-460f-81ba-79f03edc6bb3.jpg
+2025-10-30 14:50:27,971 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/miliband-to-rewrite-green-rules-to-allow-north-sea-drilling-8g2tdvgqx
+2025-10-30 14:50:27,973 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:27,980 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe6855592-672e-4e3c-8668-b48567c8c5cd.jpg
+2025-10-30 14:50:31,185 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd7a8d262-4701-4f89-8399-61d0907ae3d5.jpg
+2025-10-30 14:50:33,828 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe336291b-7689-4700-9e4a-ae015675c2c5.jpg
+2025-10-30 14:50:35,872 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fcced18df-55a5-4ad7-b803-87a45c472615.jpeg
+2025-10-30 14:50:37,605 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8cc6bae1-e709-4453-9524-594b5422c5da.jpg
+2025-10-30 14:50:39,156 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-07-01_2025-07-31_urls.csv
+2025-10-30 14:50:39,158 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:39,374 - INFO - Parsing url: https://www.thetimes.com/culture/books/article/anti-catastrophe-league-pioneers-visionaries-quest-save-world-tom-ough-review-bqz6pzmhw
+2025-10-30 14:50:39,440 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,443 - INFO - Parsing url: https://www.thetimes.com/uk/law/article/un-climate-ruling-ushers-in-fresh-hopes-of-accountability-3rjbjp67s
+2025-10-30 14:50:39,473 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,475 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/tatler-palestine-action-georgie-robertson-h8p3mjrq9
+2025-10-30 14:50:39,502 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,505 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-07-4
+2025-10-30 14:50:39,568 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,575 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:50:39,575 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-07-4
+2025-10-30 14:50:39,575 - INFO - Parsing url: https://www.thetimes.com/comment/the-times-view/article/palestine-action-terror-status-too-far-5fn0m8xv9
+2025-10-30 14:50:39,611 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,613 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/turnberry-golf-course-scotland-trump-g85xd857z
+2025-10-30 14:50:39,711 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,713 - INFO - Parsing url: https://www.thetimes.com/uk/scotland/article/police-trump-visit-95r8tf7pd
+2025-10-30 14:50:39,751 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,753 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/scotland/article/police-trump-visit-95r8tf7pd
+2025-10-30 14:50:39,753 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-07-2
+2025-10-30 14:50:39,809 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:50:39,814 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:50:39,814 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-07-2
+2025-10-30 14:50:39,816 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-07-01_2025-07-31_parsed.json
+2025-10-30 14:50:39,816 - INFO - downloading images for article https://www.thetimes.com/culture/books/article/anti-catastrophe-league-pioneers-visionaries-quest-save-world-tom-ough-review-bqz6pzmhw
+2025-10-30 14:50:39,817 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:39,818 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3c0a5da8-df19-4047-a75d-f1695dcaf2fd.jpg
+2025-10-30 14:50:41,269 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F35f334b4-743c-42cf-9ce0-70da09b3ca16.jpg
+2025-10-30 14:50:42,425 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7a366540-25bb-495c-8df1-dbad3c218514.jpg
+2025-10-30 14:50:44,669 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb07174cf-8950-49b3-8e54-6e720b39f2d6.jpg
+2025-10-30 14:50:46,441 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2ad5bf18-689f-4c16-8aad-e5f4eee8a19f.jpg
+2025-10-30 14:50:49,750 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Ffc2a7f90-30e2-4e3b-9161-2afa66188978.jpg
+2025-10-30 14:50:51,343 - INFO - downloading images for article https://www.thetimes.com/uk/law/article/un-climate-ruling-ushers-in-fresh-hopes-of-accountability-3rjbjp67s
+2025-10-30 14:50:51,345 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:51,349 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1bf79f47-65a6-4c7f-b160-3db2e816f0fa.jpg
+2025-10-30 14:50:54,481 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5c2b5a36-e0de-4125-b365-efebbecd1048.jpg
+2025-10-30 14:50:56,534 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F20820075-e03c-49b4-93f3-e8f5233d62dd.jpg
+2025-10-30 14:50:57,776 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/tatler-palestine-action-georgie-robertson-h8p3mjrq9
+2025-10-30 14:50:57,778 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:50:57,782 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6a420ca7-c5cf-498d-b5ab-10fc69d0f77c.jpg
+2025-10-30 14:50:59,179 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F86b9cc43-daae-47d0-a265-ef1cdc525606.jpg
+2025-10-30 14:51:00,604 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fab58f6c1-952e-44d5-8586-421dc7273961.jpg
+2025-10-30 14:51:02,036 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe734eaa0-fe11-4537-9038-3595d9851919.jpg
+2025-10-30 14:51:03,243 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fcf4c3312-b9fc-4240-8bf1-11b9da9622b7.jpg
+2025-10-30 14:51:04,976 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc6fcfdf0-7a61-4410-b9d7-70874112622f.jpg
+2025-10-30 14:51:06,494 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9a418875-6e7c-40ff-99fc-61d2013c9ab7.jpg
+2025-10-30 14:51:10,150 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf1fca2b-7c05-4fe1-b41e-b63c10f093f1.jpg
+2025-10-30 14:51:11,497 - INFO - downloading images for article https://www.thetimes.com/comment/the-times-view/article/palestine-action-terror-status-too-far-5fn0m8xv9
+2025-10-30 14:51:11,499 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:11,503 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6c2aac4b-45fc-43a1-b82d-3d3a84d1dfab.jpg
+2025-10-30 14:51:12,803 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf1fca2b-7c05-4fe1-b41e-b63c10f093f1.jpg
+2025-10-30 14:51:13,981 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F06b41ab0-59d9-4be4-acba-ae79e6bd9d14.jpg
+2025-10-30 14:51:17,884 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F445d78e3-a577-4ec3-8e8c-9e51ce75d7a5.jpg
+2025-10-30 14:51:20,269 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/turnberry-golf-course-scotland-trump-g85xd857z
+2025-10-30 14:51:20,269 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:20,270 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9ae0c34b-677c-4497-b453-03bfba5b98dd.jpg
+2025-10-30 14:51:22,188 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F35bfb9a0-30d6-48ba-8f49-1fea5c3395d5.jpg
+2025-10-30 14:51:25,845 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6cb1f106-dc3d-4734-bd9b-78c63ec36739.jpg
+2025-10-30 14:51:28,110 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F26f335cb-6504-4a74-9c5d-da2662bd7dfb.jpg
+2025-10-30 14:51:29,397 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F04a812a4-6d5c-454f-a08b-84ed413fb55c.jpg
+2025-10-30 14:51:30,940 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F27848642-3e18-4e6d-8971-2d677e9b77b0.jpg
+2025-10-30 14:51:32,456 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4fb5331f-56f2-4cec-82f9-232fe027978d.jpg
+2025-10-30 14:51:33,742 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd5ce314b-9790-48ab-b4ee-f4085f92dbb5.jpg
+2025-10-30 14:51:34,943 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9cb0fd4c-6a91-4987-ab3f-56572d7ee2f4.jpg
+2025-10-30 14:51:36,905 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-08-01_2025-08-31_urls.csv
+2025-10-30 14:51:36,906 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:37,156 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/89-year-old-arrested-palestine-action-j72sm9v63
+2025-10-30 14:51:37,230 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,232 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-08-2
+2025-10-30 14:51:37,284 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,289 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:51:37,289 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-08-2
+2025-10-30 14:51:37,289 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-08-1
+2025-10-30 14:51:37,338 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,342 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:51:37,342 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-08-1
+2025-10-30 14:51:37,342 - INFO - Parsing url: https://www.thetimes.com/uk/technology-uk/article/death-googling-new-ai-mode-comes-next-ck7cbzgmt
+2025-10-30 14:51:37,382 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,384 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/technology-uk/article/death-googling-new-ai-mode-comes-next-ck7cbzgmt
+2025-10-30 14:51:37,384 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/climate-group-threatens-sustained-sabotage-against-major-banks-fj0ssxgwn
+2025-10-30 14:51:37,418 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,420 - INFO - Parsing url: https://www.thetimes.com/uk/crime/article/a-history-of-palestine-action-from-birth-to-ban-zjmbnvzp8
+2025-10-30 14:51:37,459 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,462 - INFO - Parsing url: https://www.thetimes.com/profile/michael-glackin
+2025-10-30 14:51:37,497 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,499 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:51:37,499 - INFO - article dropped, no body text found: https://www.thetimes.com/profile/michael-glackin
+2025-10-30 14:51:37,499 - INFO - Parsing url: https://www.thetimes.com/profile/max-hastings
+2025-10-30 14:51:37,519 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,522 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:51:37,522 - INFO - article dropped, no body text found: https://www.thetimes.com/profile/max-hastings
+2025-10-30 14:51:37,522 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/shoplifting-strategy-shops-crimewave-c9590dkk0
+2025-10-30 14:51:37,558 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:51:37,560 - INFO - article dropped, search terms not present: https://www.thetimes.com/comment/columnists/article/shoplifting-strategy-shops-crimewave-c9590dkk0
+2025-10-30 14:51:37,561 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-08-01_2025-08-31_parsed.json
+2025-10-30 14:51:37,561 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/89-year-old-arrested-palestine-action-j72sm9v63
+2025-10-30 14:51:37,561 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:37,562 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3a1e0f27-3272-4106-9734-432363beb044.jpg
+2025-10-30 14:51:39,575 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4e34ba42-ed98-416a-82f9-7e47c45e342d.jpg
+2025-10-30 14:51:41,307 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2d70c585-25e7-49ff-87fa-20b8799cc6bc.jpg
+2025-10-30 14:51:43,006 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5478d24f-4e3f-4a1b-9d68-9db2a1ce488d.jpg
+2025-10-30 14:51:46,523 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F630595dd-84a6-4d62-af0d-2c706a358c2b.jpg
+2025-10-30 14:51:47,952 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2282827f-bd74-46b2-bb31-8f34c3418d0d.jpg
+2025-10-30 14:51:49,563 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fcd355d79-f980-4695-94a2-258976646052.jpg
+2025-10-30 14:51:51,162 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/climate-group-threatens-sustained-sabotage-against-major-banks-fj0ssxgwn
+2025-10-30 14:51:51,163 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:51,167 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F539af215-73ac-49d2-8809-8837a39304c5.jpg
+2025-10-30 14:51:52,438 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F908406c0-346d-426b-9275-f9a7f6112080.jpg
+2025-10-30 14:51:53,674 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F33e741dd-7c0a-4cf9-b6ff-805d3eec4c1b.jpg
+2025-10-30 14:51:55,002 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F42e88bb4-03b1-4cc3-8d38-0b9f982c22b9.jpg
+2025-10-30 14:51:57,055 - INFO - downloading images for article https://www.thetimes.com/uk/crime/article/a-history-of-palestine-action-from-birth-to-ban-zjmbnvzp8
+2025-10-30 14:51:57,056 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:51:57,060 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb3aa5696-c8d9-4e70-927c-6b5d9b5a433e.jpg
+2025-10-30 14:51:58,544 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F793ebcf5-4dc9-4c80-86b7-11f7dc9fff3a.jpg
+2025-10-30 14:52:00,223 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F05f9dc7f-2c86-42d2-84d3-e28cf8342d84.gif
+2025-10-30 14:52:02,608 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe546144c-0305-4347-a832-e309bc631b1f.gif
+2025-10-30 14:52:04,689 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F95696ecd-15be-4301-9bb3-9673eea5989a.jpg
+2025-10-30 14:52:06,434 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7d6acb8b-83e9-4b19-aa19-7fe8999c114a.jpg
+2025-10-30 14:52:07,674 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe213b91f-2f17-4e21-a11e-923e7fa744da.jpg
+2025-10-30 14:52:09,086 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5f2d4034-03e0-447a-868a-4fce9abaca6b.jpg
+2025-10-30 14:52:10,481 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fde7c991f-aeea-4287-a0c1-0e79abb66f49.jpg
+2025-10-30 14:52:11,771 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F200d4bde-72cc-4e1e-b999-4954ec958aad.gif
+2025-10-30 14:52:13,971 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4879671f-35f0-4852-b689-e3d0ea5659f4.jpg
+2025-10-30 14:52:15,469 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbf1fca2b-7c05-4fe1-b41e-b63c10f093f1.jpg
+2025-10-30 14:52:16,624 - INFO - scraping urls from file: ../google_scraping/article_urls/The-Times/thetimes.com_2025-09-01_2025-09-30_urls.csv
+2025-10-30 14:52:16,626 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:52:16,837 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/why-trump-visit-protest-israel-ukraine-8n8r0l2sm
+2025-10-30 14:52:16,902 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:16,904 - INFO - Parsing url: https://www.thetimes.com/html-sitemap/2025-09-3
+2025-10-30 14:52:16,955 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:16,960 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-10-30 14:52:16,960 - INFO - article dropped, no body text found: https://www.thetimes.com/html-sitemap/2025-09-3
+2025-10-30 14:52:16,960 - INFO - Parsing url: https://www.thetimes.com/uk/photography-uk/article/a-misty-sunrise-in-surrey-and-other-news-in-pictures-8wdpj9rfp
+2025-10-30 14:52:17,063 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,067 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/photography-uk/article/a-misty-sunrise-in-surrey-and-other-news-in-pictures-8wdpj9rfp
+2025-10-30 14:52:17,067 - INFO - Parsing url: https://www.thetimes.com/comment/columnists/article/climate-cultists-rising-scepticism-warnings-ff900klzv
+2025-10-30 14:52:17,101 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,103 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/trump-uk-visit-news-melania-banquet-charles-latest-news-j78gz9mcv
+2025-10-30 14:52:17,173 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,181 - INFO - Parsing url: https://www.thetimes.com/uk/politics/article/zack-polanski-interview-green-party-leader-c655rhqbx
+2025-10-30 14:52:17,210 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,212 - INFO - Parsing url: https://www.thetimes.com/comment/register/article/corrections-and-clarifications-the-times-x9nbft5tq
+2025-10-30 14:52:17,266 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,269 - INFO - Parsing url: https://www.thetimes.com/uk/environment/article/british-museum-fossil-fuel-ties-ethics-mhrgjmw3b
+2025-10-30 14:52:17,304 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:52:17,306 - INFO - article dropped, search terms not present: https://www.thetimes.com/uk/environment/article/british-museum-fossil-fuel-ties-ethics-mhrgjmw3b
+2025-10-30 14:52:17,308 - INFO - downloading images for file article_contents/The-Times/thetimes.com_2025-09-01_2025-09-30_parsed.json
+2025-10-30 14:52:17,308 - INFO - downloading images for article https://www.thetimes.com/comment/columnists/article/why-trump-visit-protest-israel-ukraine-8n8r0l2sm
+2025-10-30 14:52:17,308 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:52:17,309 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F33534daa-931a-47c5-a326-930ec136ee91.png
+2025-10-30 14:52:18,503 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F03b142b4-3e5c-4cde-b200-acb25acfea30.jpg
+2025-10-30 14:52:19,795 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F03b142b4-3e5c-4cde-b200-acb25acfea30.jpg
+2025-10-30 14:52:20,844 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F03b142b4-3e5c-4cde-b200-acb25acfea30.jpg
+2025-10-30 14:52:21,922 - INFO - downloading images for article https://www.thetimes.com/comment/columnists/article/climate-cultists-rising-scepticism-warnings-ff900klzv
+2025-10-30 14:52:21,923 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:52:21,928 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F13c12eab-eace-4ed7-b44f-fa81fa6e9532.png
+2025-10-30 14:52:23,099 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F545192a4-8667-4586-8c48-c3a2a26da740.png
+2025-10-30 14:52:24,466 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F99bda012-bf92-4fb0-b5b6-479a4860b44e.jpg
+2025-10-30 14:52:33,557 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F545192a4-8667-4586-8c48-c3a2a26da740.png
+2025-10-30 14:52:34,629 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/trump-uk-visit-news-melania-banquet-charles-latest-news-j78gz9mcv
+2025-10-30 14:52:34,631 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:52:34,635 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1c33564b-31db-4218-a50d-0b9b86bf849c.jpg
+2025-10-30 14:52:36,321 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F888d73de-231d-47ea-80b4-3f19bc7f90de.jpg
+2025-10-30 14:52:38,334 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2fea9a97-2f7b-4dae-b3fc-4a6274c28fbc.jpg
+2025-10-30 14:52:40,044 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1c33564b-31db-4218-a50d-0b9b86bf849c.jpg
+2025-10-30 14:52:41,508 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1c7a1a78-30ee-4230-a9c3-066fc3135b15.jpg
+2025-10-30 14:52:43,236 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1563fdd1-339d-4704-97dc-d5e981581efb.jpg
+2025-10-30 14:52:46,999 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F28d511bb-0f0d-4401-a9ce-4fbc56dc4256.jpg
+2025-10-30 14:52:48,769 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb5216293-a6aa-404f-b9ed-ef1aa444b098.jpg
+2025-10-30 14:52:50,319 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8b26f9dc-27dd-47c4-89f6-b19bfe4fc28f.jpg
+2025-10-30 14:52:56,650 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9b7fc3c6-b4f0-48b4-abbf-5da33e512898.jpg
+2025-10-30 14:52:58,869 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2520aa61-4d04-4f5f-968e-cb7a30acf49b.jpg
+2025-10-30 14:53:01,104 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F983c658a-32a8-4949-b22c-b334ca54a7fa.jpg
+2025-10-30 14:53:03,859 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fff72a18d-3d70-4745-86b5-18d1750cdb1e.jpg
+2025-10-30 14:53:05,330 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F92690fad-1087-4246-913b-1ab887a957f2.jpg
+2025-10-30 14:53:06,813 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F1688119c-a7a4-4b9c-8c6a-43b22544310a.png
+2025-10-30 14:53:09,670 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8e3a4f93-33f8-4253-a488-167962ccd8db.jpg
+2025-10-30 14:53:10,859 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fda682de6-c4be-489f-ace2-8727b75068ff.jpg
+2025-10-30 14:53:12,491 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7c397fa4-d509-4909-949a-f68af1b6ee8c.jpg
+2025-10-30 14:53:14,057 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3b560f02-712e-4545-a781-0901af2f1c61.jpg
+2025-10-30 14:53:15,651 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdd361706-4ec1-4dfa-a621-f190eb1a6b1a.jpg
+2025-10-30 14:53:17,213 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa2ef14b4-50c0-4020-af45-5420e1294711.jpg
+2025-10-30 14:53:32,341 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F588c961e-88db-4a2a-a1c2-5361c7c67923.jpg
+2025-10-30 14:53:33,584 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa0e7e4a0-0990-41ac-96de-9e8e6d6eb5b3.jpg
+2025-10-30 14:53:36,409 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F10cbceb2-8e30-45c4-af05-1fece7979fcd.jpg
+2025-10-30 14:53:37,906 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fae3e9695-29f7-447c-93c2-3f3017dc61aa.jpg
+2025-10-30 14:53:40,279 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Feea3a050-7e4a-4998-a1b4-7641bcfeedb2.jpg
+2025-10-30 14:53:43,003 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa2b12ab2-0f08-4bf8-92d6-2b8f16cba4c2.jpg
+2025-10-30 14:53:44,598 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc0dc898b-1ba2-403b-974c-968cb2072099.jpg
+2025-10-30 14:53:48,333 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0b97cefe-18f0-4d64-ae85-60b2531cda1d.jpg
+2025-10-30 14:53:51,308 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0cf08e1e-dd36-4a3c-bfe0-71c6dfe2452d.jpg
+2025-10-30 14:53:53,396 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2ab49451-2408-4d4f-a26f-ff86c60c75c5.jpg
+2025-10-30 14:53:55,083 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F7aeae80c-85df-4f6d-b93e-8164e476db3b.jpg
+2025-10-30 14:53:56,592 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F6b92959f-eb5a-4d15-862e-4b4d8d45c12d.png
+2025-10-30 14:53:59,267 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe1d24a6f-a85b-45fb-9523-7338f73d8adc.jpg
+2025-10-30 14:54:01,039 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F47a16bf7-cfec-4d51-81a4-650d93f6e6e9.jpg
+2025-10-30 14:54:03,658 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9ed58e1e-c7cd-4563-b44b-0bbe72e0e1ef.jpg
+2025-10-30 14:54:04,977 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F702748fc-b880-42d8-a827-1694f71202a3.jpg
+2025-10-30 14:54:06,240 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F90c3dd0c-8fa5-404b-85ab-9ee8d238c6f4.jpg
+2025-10-30 14:54:07,387 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F16ff6497-412e-487e-a08a-c9d5584f9664.jpg
+2025-10-30 14:54:08,805 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbd2f2ea3-ab19-4961-bd73-c48748371568.jpg
+2025-10-30 14:54:10,238 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe24b1ccc-8d92-49e4-b0cd-d2d215b9a31f.jpg
+2025-10-30 14:54:12,116 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F993c0abe-3bf6-4091-92b6-18e32d82ce50.jpg
+2025-10-30 14:54:14,944 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2a8d9dbf-36b8-47eb-bef0-c31b6175967e.jpg
+2025-10-30 14:54:17,401 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa3e30081-1b36-4592-ae33-5136846ef15c.jpg
+2025-10-30 14:54:18,774 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd80d0dda-1671-4af0-a73a-8516d72148be.jpg
+2025-10-30 14:54:20,509 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ff4145239-9498-4cb4-8775-58cbbf6e7e45.jpg
+2025-10-30 14:54:22,163 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fa75854ca-22f9-41df-8964-6b81cf29c745.jpg
+2025-10-30 14:54:23,598 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8d24358d-d720-43bf-9f98-bfb25f6937e6.jpg
+2025-10-30 14:54:25,039 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F998d1fc9-ee29-42a8-a8cf-f06481d14324.jpg
+2025-10-30 14:54:28,893 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb350d1c2-7482-4e23-8dc4-be3c75aed0ac.jpg
+2025-10-30 14:54:31,182 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F39871f9a-7ed3-4330-8e39-046529160940.jpg
+2025-10-30 14:54:32,697 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fdb22e772-7c9e-4898-89bb-f4bc0fa274a8.jpg
+2025-10-30 14:54:36,529 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3011d969-7a65-4bfd-be59-ceb8f7024329.jpg
+2025-10-30 14:54:38,259 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe93e039a-98d1-4a05-9ae0-5cbdf0a8fc3a.jpg
+2025-10-30 14:54:40,256 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F55576b25-dd17-439f-87f3-f9f6b2dd440a.jpg
+2025-10-30 14:54:42,210 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F04c941dc-422a-43ff-b33a-bffba3f0cc49.jpg
+2025-10-30 14:54:44,019 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F174339f0-1cbb-466d-b44a-21e25e17ecda.jpg
+2025-10-30 14:54:46,115 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fcac134e2-6373-49c5-ba7e-b7a2b75f9114.jpg
+2025-10-30 14:54:48,502 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F5276c68f-36ce-45cc-9363-b64d69ad3b2f.jpg
+2025-10-30 14:54:51,930 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F07578c4c-d5ce-46f4-9ba4-8a7d186df738.jpg
+2025-10-30 14:54:55,645 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3e5659d3-b14f-408b-8ecf-2e99d2d082c4.jpg
+2025-10-30 14:54:58,180 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F4c3f5734-232d-49d9-8e19-4d38d20c3006.jpg
+2025-10-30 14:55:00,733 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fb65fe260-32db-45dd-954a-b974883e693b.jpg
+2025-10-30 14:55:02,795 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc724e0bd-3211-4dbd-b8cb-19ed35159ccd.jpg
+2025-10-30 14:55:04,879 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fbc1f8a89-406c-43bb-8039-cb75a5910b3c.jpg
+2025-10-30 14:55:06,135 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9bd287ff-c0d8-423f-b038-228a38c18698.jpg
+2025-10-30 14:55:08,817 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0d7f4454-30ab-4506-b50e-5f6e5275dce8.jpg
+2025-10-30 14:55:10,533 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F03b142b4-3e5c-4cde-b200-acb25acfea30.jpg
+2025-10-30 14:55:11,601 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F54386a1a-2adb-419b-bc51-0ebedbe3c2da.jpg
+2025-10-30 14:55:13,449 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F0bfdc30c-613a-4d27-9a5b-fbf699ea2796.jpg
+2025-10-30 14:55:15,137 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F904c666c-3bd5-410f-82e0-b044b645b3b3.jpg
+2025-10-30 14:55:17,169 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F17f88f13-b09c-42ef-a711-b0667a37bf59.jpg
+2025-10-30 14:55:18,856 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F608eda0e-24b4-4b24-b9af-e87f1332913e.jpg
+2025-10-30 14:55:20,913 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F603239a2-29cd-4ab7-851d-00ebc8e0e5ac.jpg
+2025-10-30 14:55:22,809 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc22864c4-5ce0-496a-8762-47184c8106a5.jpg
+2025-10-30 14:55:25,053 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F725f67b4-796d-46db-ad8b-441369a8db54.jpg
+2025-10-30 14:55:26,656 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F8e3a4f93-33f8-4253-a488-167962ccd8db.jpg
+2025-10-30 14:55:27,775 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fc069ac5f-cb7a-401d-b34b-0f6b1f1031e9.jpg
+2025-10-30 14:55:29,293 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3c4beadf-04bf-43f2-938b-58558ac4922e.jpg
+2025-10-30 14:55:30,726 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fd40ca31b-1cf6-4fbc-a07e-c43193b61f02.jpg
+2025-10-30 14:55:32,415 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F2dc65a1c-b1e6-419a-a94d-76d520a9668e.jpg
+2025-10-30 14:55:33,805 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F23fd55eb-3292-49f7-850e-4fcac2edd668.jpg
+2025-10-30 14:55:36,611 - INFO - downloading images for article https://www.thetimes.com/uk/politics/article/zack-polanski-interview-green-party-leader-c655rhqbx
+2025-10-30 14:55:36,613 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:55:36,620 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F3fc2838d-634e-4cc1-ae2e-58bbc41ddb71.jpg
+2025-10-30 14:55:38,283 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F29237801-30d8-413d-a447-f216f0b9a476.jpg
+2025-10-30 14:55:39,909 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F31ce13f1-0c4a-4c55-9f7a-950a390b9e7d.jpg
+2025-10-30 14:55:41,615 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Ffc40b916-0a5f-416a-a37c-f266a6ed37b1.jpg
+2025-10-30 14:55:43,390 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F9bbb5297-7178-474b-9be5-4656053702d0.jpg
+2025-10-30 14:55:45,024 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2F40a66f75-e6a3-418f-829a-5da041d10315.png
+2025-10-30 14:55:46,531 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fe57aa715-baa8-4938-b60e-944877c473c9.jpg
+2025-10-30 14:55:48,553 - INFO - downloading images for article https://www.thetimes.com/comment/register/article/corrections-and-clarifications-the-times-x9nbft5tq
+2025-10-30 14:55:48,553 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:55:48,555 - INFO - downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6c2aac4b-45fc-43a1-b82d-3d3a84d1dfab.jpg

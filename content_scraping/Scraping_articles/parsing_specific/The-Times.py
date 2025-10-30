@@ -76,12 +76,7 @@ def extract(html_content, parsed_attr):
             pictures = page.findAll("picture")
             image_caption = []
             
-            print(f"\nfound {len(pictures)} pictures:\n")
-            
             for picture in pictures:
-            
-                print("\nfound a picture:\n")
-                print(picture)
             
                 img = picture.find("img")
                 
