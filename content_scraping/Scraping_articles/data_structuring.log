@@ -130,3 +130,45 @@
 2025-10-21 16:37:34,930 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
 2025-10-21 16:37:36,487 - INFO - removed image due to bad caption: The Times & The Sunday Times
 2025-10-21 16:37:36,493 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp
+2025-10-30 13:45:59,247 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:45:59,247 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 13:45:59,909 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 13:48:32,638 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:48:32,639 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 13:48:34,192 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 13:49:16,037 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:49:16,037 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 13:49:16,602 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 13:55:37,249 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:55:37,249 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 13:55:38,911 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F41fcdba9-b2e5-4ac4-9a12-72e1f7187a20.jpg; already present as first_image.webp
+2025-10-30 13:56:28,692 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:56:28,692 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 13:56:29,485 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 13:59:58,812 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 13:59:58,812 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 14:00:00,208 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 14:01:20,450 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:01:20,450 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 14:01:21,075 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-10-30 14:04:42,083 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:04:42,083 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-10-30 14:04:44,156 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:04:44,160 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F41fcdba9-b2e5-4ac4-9a12-72e1f7187a20.jpg; already present as first_image.webp
+2025-10-30 14:05:32,283 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:05:32,283 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:05:33,770 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:05:33,775 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp
+2025-10-30 14:17:18,835 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:17:18,835 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:17:20,896 - INFO - image parsing unsuccessful due to name 'picture' is not defined
+2025-10-30 14:18:41,312 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:18:41,312 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:18:41,855 - INFO - image parsing unsuccessful due to name 'figures' is not defined
+2025-10-30 14:19:16,224 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:19:16,224 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:19:16,742 - INFO - image parsing unsuccessful due to name 'figure' is not defined
+2025-10-30 14:19:28,314 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-10-30 14:19:28,315 - INFO - Fetching URL: https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7
+2025-10-30 14:19:28,888 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-10-30 14:19:28,893 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F6bea5676-0339-407f-8eeb-920b349f86c0.jpg; already present as first_image.webp

@@ -28,7 +28,7 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     #changed (e.g. content was now succesfully downloaded; article will continue to be dropped)
     
     #download images from image urls
-    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
+    scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=True)
     #note: redo=False means we do not re-download any images that would have the same name (same image
     #number in an article with the same source-date-title id)
 

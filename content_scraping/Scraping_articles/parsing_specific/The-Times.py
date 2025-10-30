@@ -73,12 +73,17 @@ def extract(html_content, parsed_attr):
     
         try:
         
-            figures = page.findAll(["figure", "picture"])
+            pictures = page.findAll("picture")
             image_caption = []
             
-            for figure in figures:
+            print(f"\nfound {len(pictures)} pictures:\n")
             
-                img = figure.find("img")
+            for picture in pictures:
+            
+                print("\nfound a picture:\n")
+                print(picture)
+            
+                img = picture.find("img")
                 
                 if img:
                 
@@ -88,19 +93,27 @@ def extract(html_content, parsed_attr):
                     image_src_large = get_biggest_src_fromimg(img)
                     
                     #try to get a caption
-                    caption_el = figure.find("figcaption")
-                    if caption_el:
-                        caption = caption_el.text.strip()
+                    figure_parent = picture.find_parent("figure")
+                    if figure_parent:
+                        #some pictures are inside a figure tag;
+                        #caption will be in there
+                        caption_el = figure_parent.find("figcaption")
+                        if caption_el:
+                            caption = caption_el.text.strip()
                     elif img.has_attr("alt"):
+                        #when picture is not inside a figure tag,
+                        #then its alt text is typically identical to its
+                        #caption
                         caption = img.get('alt').strip()
                     else:
                         caption = None
                         
                     #skip non-photos whose captions appear in a list of bad captions
-                    caplower = caption.lower()
-                    if caplower in badcaps_Times:
-                        logging.info(f"removed image due to bad caption: {caption}")
-                        continue
+                    if caption:
+                        caplower = caption.lower()
+                        if caplower in badcaps_Times:
+                            logging.info(f"removed image due to bad caption: {caption}")
+                            continue
                     
                     #store image caption and links to its standard and big size files
                     image_caption.append({"caption": caption, "url": img_src,
