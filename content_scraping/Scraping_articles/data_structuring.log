@@ -1,0 +1,15 @@
+2025-11-03 13:31:45,300 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-11-03 13:31:45,300 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-11-03 13:31:45,884 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-11-03 13:31:45,888 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F41fcdba9-b2e5-4ac4-9a12-72e1f7187a20.jpg; already present as first_image.webp
+2025-11-03 13:33:41,233 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-11-03 13:33:41,234 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-11-03 13:33:41,746 - INFO - image parsing unsuccessful due to name 'img' is not defined
+2025-11-03 13:34:14,295 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-11-03 13:34:14,295 - INFO - Fetching URL: https://www.thetimes.com/business-money/economics/article/climate-activists-glue-50-barclays-branches-shut-sxnk3g60v
+2025-11-03 13:34:15,828 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-11-03 13:34:15,832 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2F41fcdba9-b2e5-4ac4-9a12-72e1f7187a20.jpg; already present as first_image.webp
+2025-11-03 13:37:23,177 - INFO - Successfully retrieved session from session_The-Times.pickle
+2025-11-03 13:37:23,177 - INFO - Fetching URL: https://www.thetimes.com/world/europe/article/attacking-art-should-be-criminal-offence-even-if-theres-no-damage-lhf2vhjrq
+2025-11-03 13:37:23,709 - INFO - removed image due to bad caption: The Times & The Sunday Times
+2025-11-03 13:37:23,713 - INFO - Not re-downloading file at https://www.thetimes.com/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fa0ff0276-f0a1-413b-950d-477bcbf051fc.jpg; already present as first_image.webp

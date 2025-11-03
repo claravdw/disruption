@@ -15,7 +15,7 @@ import pprint
 
 ##set up task
 
-url = "https://www.thetimes.com/uk/environment/article/arrested-in-our-80s-over-magna-carta-meet-just-stop-oils-pensioners-r2qhz9mn7"
+url = "https://www.thetimes.com/world/europe/article/attacking-art-should-be-criminal-offence-even-if-theres-no-damage-lhf2vhjrq"
 newspaper = "The-Times"
 parsed_attr = ["title", "subtitle", "text", "image", "author", "date"]
 debug_mode = True

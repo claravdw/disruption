@@ -143,7 +143,6 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
                 if url in content_dict_for_ids and "id" in content_dict_for_ids[url]:
                     parsed_content["id"] = content_dict_for_ids[url]["id"]
             
-            if not redo or not keep_ids:
             #keep only articles for which we found a title and body text
             if not parsed_content["text"]:
                 dropped_content_dict[url] = add_issue_to_dict(parsed_content, "no body text found", url)
@@ -162,8 +161,8 @@ def main_parse_content(paper_name, html_content_dict, parsed_file, dropped_file,
             parsed_content_dict[url] = parsed_content
 
     #write to json files
-    ds.from_dict_to_file(parsed_content_dict, parsed_file +  "_TEST")
-    ds.from_dict_to_file(dropped_content_dict, dropped_file +  "_TEST")
+    ds.from_dict_to_file(parsed_content_dict, parsed_file)
+    ds.from_dict_to_file(dropped_content_dict, dropped_file)
     
     return(parsed_content_dict)
 

@@ -123,7 +123,7 @@ def get_biggest_src_fromimg(img_tag):
     """
 
     if not img_tag or not img_tag.has_attr("srcset"):
-        return None
+        return img_tag.get('src')
     
     srcset = img_tag["srcset"]
     sources = [entry.strip().split(" ") for entry in srcset.split(",")]
