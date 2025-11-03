@@ -49,14 +49,14 @@ def extract(html_content, parsed_attr):
         try:
             ul = page.find("ul", {"class":"mol-bullets-with-font"})
             
-            subtitles = []
             if ul:
+                subtitles = []
                 bullets = ul.findAll("li")
                 for bullet in bullets:
                     subtitles.append(bullet.text.strip())
-            subtitles = ". ".join(subtitles) + "."
+                subtitles = ". ".join(subtitles) + "."
                     
-            attr_dict["subtitle"] = subtitles 
+                attr_dict["subtitle"] = subtitles 
             
         except Exception as e:
             logging.info(f"subtitle parsing unsuccessful due to {e}")
