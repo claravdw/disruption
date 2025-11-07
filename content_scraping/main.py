@@ -11,7 +11,7 @@ import data_structuring as ds
 
 def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_attr, image_folder):
     """This function creates csv files containing the html contents of each page, and the parsed contents (text, author etc.) at the locations
-    specified in the paramters.
+    specified in the parameters.
     Parameters:
     - newspaper: str, name of the newspaper you want to scrape; should match a script name in Scraping_specific folder
     - folder_html: where the unparsed, raw html contents of the URL should be stored

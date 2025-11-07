@@ -5,6 +5,9 @@ import re
 import query as qu
 
 def extract_url_from_page(browser):
+
+    """This function tries to extract all the URLs from a page, e.g. a google results page."""
+
     try:
         links = browser.find_elements(By.TAG_NAME, 'a')
         Urls=[]
@@ -14,8 +17,12 @@ def extract_url_from_page(browser):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+ 
+ 
+def filter_url(url, href_list):
+
+    """This function takes a list of URLs (href_list) and filters it on starting with the newspaper domain name (url)."""
     
-def filter_url(url,href_list):
     urls=[]
     for href in href_list:
         #check if the url starts with the newspaper website url
@@ -23,9 +30,12 @@ def filter_url(url,href_list):
             urls.append(href)
     return urls
 
-def scraper(url,query_list,start_date,end_date,browser):
+
+def scraper(url, query_list, start_date, end_date, browser):
+
     """This function scrapes the title, date, and URL of a Google search. To initiate the search, please provide the domain of the site you wish to scrape, 
     a list of search terms, and  specify the start and end dates using the format yyyy-mm-dd."""
+    
     browser.implicitly_wait(2)
     search_url=qu.make_query(url,query_list,start_date,end_date)
     browser.get(search_url)

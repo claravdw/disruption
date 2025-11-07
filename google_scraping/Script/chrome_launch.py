@@ -1,5 +1,4 @@
 
-
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -8,13 +7,17 @@ import chromedriver_autoinstaller
 
 
 def chrome_launch():
-    # Installer automatiquement le ChromeDriver
+
+    """This function installs ChromeDriver, launches a non-headless Chrome webdriver in Python,
+    and returns it"""
+
+    # automatically install ChromeDriver
     chromedriver_autoinstaller.install()
 
-    # Obtenir le chemin du ChromeDriver à l'aide de ChromeDriverManager
+    # get path to ChromeDriver using ChromeDriverManager
     chrome_driver_path = ChromeDriverManager().install()
 
-    # Créer un objet Service avec le chemin du ChromeDriver
+    # create a Service object using the path to ChromeDriver
     service = Service(executable_path=chrome_driver_path)
 
     chrome_options = webdriver.ChromeOptions()

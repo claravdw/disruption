@@ -9,6 +9,18 @@ import query as qu #script to form a URL that is a google.com search query
 import chrome_launch as cl
 import data_structuring as ds
 
+"""
+This script takes one or more newspaper websites, one or more search strings, and a date range.
+It will (1) split the date range up into months, (2) search Google using each of the search
+strings, (3) scrape the URLs from the results, (4) combines and de-duplicates them (within
+and across months), and (5) writes them to month-by-month csv files.
+
+The script opens a non-headless Selenium Chrome webdriver, because it is necessary for a human
+to solve the captchas that Google throws.
+
+csv files are stored in the article_urls folder, in a subfolder named after the newspaper.
+"""
+
 
 def main(paper_name, paper_url, search_terms, start_date, end_date, browser, url_folder):
 
@@ -82,7 +94,8 @@ if __name__ == '__main__':
                   "ITV":"itv.com/news"
                   }
 
-    #dict of lists of search terms to use, one list at a time
+    #dict of lists of search terms to use, one list at a time. Resulting URLs will then be combined and de-duplicated,
+    #keeping any URL that was turned up by any of the search queries without repeating any (within and across months).
     search_terms = {"XR_JSO": ["Extinction Rebellion","Just Stop Oil"], #one of these
                     "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration OR disruption OR blockade)"]} #one each of these
                     
