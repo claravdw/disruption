@@ -1,13 +1,12 @@
 import time
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraper'))
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Script'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'google_scraper'))
 
 import scraper as scrap #script to scrape pages of Google results for URLs
 import query as qu #script to form a URL that is a google.com search query
-import chrome_launch as cl
-import data_structuring as ds
+import chrome_launch as cl #script to install and launch ChromeDriver
+import data_structuring as ds #script to turn list of urls into csv
 
 """
 This script takes one or more newspaper websites, one or more search strings, and a date range.
