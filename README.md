@@ -44,7 +44,7 @@ You can now proceed to use the scraping code. If you find that the scraped conte
 
 ### (2) Parsing
 
-The script `scraping_articles/parsing_general_functions.py`contains functions for parsing article contents.  Its main function is `main_parse_content()`. It will call a specialized parsing module, depending on the newspaper. It will then use the `extract()`function from that module to take an article's html and tries to retrieve the title, subtitle, body text, images (captions and urls), author, and date.
+The script `scraping_articles/parsing_general_functions.py`contains functions for parsing article contents.  Its main function is `main_parse_content()`. It will call a specialized parsing script, depending on the newspaper. It will then use the `extract()`function from that script to take an article's html and tries to retrieve the title, subtitle, body text, images (captions and urls), author, and date.
 
 It produces two dictionaries, which it also writes to json files: one for the items that were parsed successfully, and one for items that were parsed but dropped (e.g. because there was no body text or search terms were not found in the text). The dictionaries have one entry per article, with the key being an article ID created from the outlet name, date, and first words of the article title. 
 
@@ -62,4 +62,6 @@ For the articles that were parsed successfully and not dropped, we download all 
 
 * `article_presence_check.py`: after scraping, checks whether the urls retrieved from Google ended up as successfully parsed urls, dropped urls, or neither
 
-* `logging_config.py`: sets up a logger which, when called, makes sure all logs (of level INFO and up) are written to a file named `scraping.log`
+* `newspaper_names`: contains the standardized names of all the news sources included in this module. These names are used, e.g., as the names of directories containing the newspaper's data, and of the newspaper-specific parsing scripts.
+
+* `logging_config.py`: sets up a logger which, when called, makes sure all logs (of level INFO and up) are written to a file named `scraping.log`.
