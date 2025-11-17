@@ -53,7 +53,7 @@ def scraper(url, query_list, start_date, end_date, browser):
             time.sleep(2)
             next_page.click()
         except Exception as e:
-            print(f'no next page due to {e}')
+            #print(f'no next page due to {e}')
             break
     urls=filter_url(url,urls)
     #print("urls: ", urls)

@@ -6,17 +6,17 @@ To run a module, run `main.py` in its main directory.
 
 ## Module 1: Google URL scraping
 
-Directory: google_scraping
+Directory: `google_scraping`
 
 This module takes one or more newspaper websites, one or more search strings, and a date range. It will search Google using the search strings using month-by-month date ranges, scrape the URLs from the results, combine and de-duplicate them, and write them to month-by-month csv files for each newspaper.
 
-The script opens a non-headless Selenium Chrome webdriver, because it is necessary for a human to solve the captchas that Google throws.
+The script opens a non-headless Chrome browser, because it is necessary for a human to solve the captchas that Google throws.
 
 csv files are stored in the article_urls folder, in a subfolder named after the newspaper.
 
 ## Module 2: Content scraping
 
-Directory: content_scraping
+Directory: `content_scraping`
 
 This module takes one or more newspapers and does three things: (1) scrape the contents of the urls obtained from Google for that newspaper, (2) parse the contents based on newspaper-specific parsing scripts, and (3) download the images (article photos) found in that parsed content. Running its `main.py`script will do all three, with options to re-do (or not) the steps for articles that have already been scraped, parsed and image-downloaded.
 

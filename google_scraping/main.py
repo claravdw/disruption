@@ -1,11 +1,11 @@
 import time
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'google_scraper'))
+from selenium import webdriver
 
+sys.path.append(os.path.join(os.path.dirname(__file__), 'google_scraper'))
 import scraper as scrap #script to scrape pages of Google results for URLs
 import query as qu #script to form a URL that is a google.com search query
-import chrome_launch as cl #script to install and launch ChromeDriver
 import data_structuring as ds #script to turn list of urls into csv
 
 """
@@ -81,8 +81,9 @@ def scrape_and_write(search_terms, start_date, period_end, all_period_urls, brow
 
 if __name__ == '__main__':
 
-    #list of newspaper websites to search, one at a time. Keys must match names of newspaper-specific parsing scripts in
-    #content_scraping/Parsing_specific folder.
+    #list of newspaper websites to search, one at a time. Keys should match names of newspaper-specific parsing scripts in
+    #content_scraping/Parsing_specific folder, so that these urls can be parsed by the correct script.
+
     paper_urls = {"BBC":"bbc.com",
                   "The-Guardian":"theguardian.com",
                   "Daily-Mail":"dailymail.co.uk",
@@ -99,10 +100,10 @@ if __name__ == '__main__':
                     "Greenpeace": ["Greenpeace AND (protest OR activists OR demonstration OR disruption OR blockade)"]} #one each of these
                     
     #set start and end date in format yyyy-mm-dd; end day will be included in the search
-    start_date = "2025-09-01"
+    start_date = "2023-10-01"
     end_date = "2025-09-30"
     
-    browser = cl.chrome_launch()
+    browser = webdriver.Chrome() #cl.chrome_launch()
 
     #loop over urls and search terms
     for paper_name, paper_url in paper_urls.items():
