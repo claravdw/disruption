@@ -1,15 +1,18 @@
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles'))
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Scraping_articles','Data_structuring'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'scraping_articles'))
+sys.path.append(os.path.join(os.path.dirname(__file__), 'scraping_articles','data_structuring'))
 
 import pandas as pd
-import scraping_general_function as scrap
-import parsing_general_function as pars
-import data_structuring as ds
+import scraping_general_functions as scrap
+import parsing_general_functions as pars
+import data_structuring_functions as ds
+
+from logging_config import setup_logger #import our custom logger
+setup_logger()
 
 
-def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_attr, image_folder):
+def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_attr, image_folder, searchterms):
     """This function creates csv files containing the html contents of each page, and the parsed contents (text, author etc.) at the locations
     specified in the parameters.
     Parameters:
@@ -23,11 +26,11 @@ def main(newspaper: str, url_file, html_file, parsed_file, dropped_file, parsed_
     #note: redo=False means we still download any *new* urls that appeared in the url list
     
     #parsing the html content of all scraped urls
-    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, redo=True, keep_ids=True)
+    parsed_content_dict = pars.main_parse_content(newspaper, html_content_dict, parsed_file, dropped_file, parsed_attr, searchterms, redo=True, keep_ids=True)
     #note: redo=False means we do not re-parse any urls that have been previously parsed, even if the html has
     #changed (e.g. content was now succesfully downloaded; article will continue to be dropped).
     #note: keep_ids=True is relevant if redo=True. It means we re-parse but do not change the article's ids, which we might do if 
-    #e.g. the parsed title, parsed data, or id generating code were to change
+    #e.g. the parsed title, parsed date, or id generating code were to change.
     
     #download images from image urls
     scrap.main_download_pics(newspaper, parsed_content_dict, parsed_file, image_folder, redo=False)
@@ -38,19 +41,23 @@ if __name__ == '__main__':
 
     #names of the newspapers; must match folder names in google_scaping/article_urls folder,
     #and paper-specfic parsing scripts in the folder Scraping_specific
-    newspapers = [#"BBC",
-                  #"The-Guardian",
+    newspapers = ["BBC",
+                  "The-Guardian",
                   "Daily-Mail",
-                  #"Sky", 
-                  #"Metro",
-                  #"Sun",
-                  #"Telegraph",
-                  #"The-Times",
-                  #"Mirror",
-                  #"ITV"
+                  "Sky", 
+                  "Metro",
+                  "Sun",
+                  "Telegraph",
+                  "The-Times",
+                  "Mirror",
+                  "ITV"
                   ]
     #note: Telegraph articles were not scraped successfully with this script; they were scraped
     #by Iraklis using Web Archive. They will not be re-scraped by main_scrape_html.
+    
+    #terms to search for in the parsed articles; if absent, the article will
+    #be stored in a separate, "dropped" results file
+    searchterms = ["Extinction Rebellion", "Just Stop Oil", "Greenpeace"]
 
     for newspaper in newspapers:
 
@@ -63,7 +70,7 @@ if __name__ == '__main__':
         parsed_folder = f"article_contents/{newspaper}"
         image_folder = f"article_images/{newspaper}"
         
-        for url_file in url_files[-24:]:
+        for url_file in url_files:
         
             print("Scraping and parsing urls in newspaper-month file", url_file)
     
@@ -79,8 +86,8 @@ if __name__ == '__main__':
     
             main(newspaper, url_file, html_file, parsed_file, dropped_file,
                  parsed_attr=["title", "subtitle", "text", "image", "author", "date"],
-                 image_folder=image_folder)
+                 image_folder=image_folder, searchterms=searchterms)
         
-            #break #FOR DEBUGGING, only try first url file
+            #break #FOR DEBUGGING, uncomment to only try first url file
         
-        #break #FOR DEBUGGING, only try first newspaper
+        #break #FOR DEBUGGING, uncomment to only try first newspaper
