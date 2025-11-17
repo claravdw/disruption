@@ -104,7 +104,7 @@ def extract(html_content, parsed_attr):
                              continue
                              
                          #skip non-photos whose captions are very short and include red flag words
-                         capwords = caption.lower().split()
+                         capwords = caplower.split()
                          if capwords < 5 and any(bw in caplower for bw in badphrases_BBC):
                              logging.info(f"removed image due to bad phrase in caption: {caption_text}")
                              continue

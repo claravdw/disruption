@@ -1,0 +1,132 @@
+2025-11-17 15:06:01,467 - INFO - scraping urls from file: ../google_scraping/article_urls/BBC/bbc.com_2020-09-01_2020-09-30_urls.csv
+2025-11-17 15:06:04,802 - INFO - Parsing url: https://www.bbc.com/news/stories-53640382
+2025-11-17 15:06:04,827 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,828 - INFO - Parsing url: https://www.bbc.com/news/uk-england-54038591
+2025-11-17 15:06:04,846 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:04,847 - INFO - Parsing url: https://www.bbc.com/news/science-environment-54347878
+2025-11-17 15:06:04,897 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,898 - INFO - Parsing url: https://www.bbc.com/culture/article/20200924-utopia-and-the-power-of-the-conspiracy-thriller
+2025-11-17 15:06:04,922 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,923 - INFO - Parsing url: https://www.bbc.com/cymrufyw/53988562
+2025-11-17 15:06:04,937 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,938 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:04,938 - INFO - date conversion unsuccessful due to time data '1 Medi 2020' does not match format '%d %B %Y'
+2025-11-17 15:06:04,938 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-11-17 15:06:04,938 - INFO - Parsing url: https://www.bbc.com/news/uk-54103163
+2025-11-17 15:06:04,953 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:04,954 - INFO - Parsing url: https://www.bbc.com/news/uk-england-norfolk-54162239
+2025-11-17 15:06:04,972 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,973 - INFO - Parsing url: https://www.bbc.com/news/uk-england-london-54021889
+2025-11-17 15:06:04,985 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:04,986 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:04,987 - INFO - Parsing url: https://www.bbc.com/news/uk-england-53987662
+2025-11-17 15:06:05,002 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:05,002 - INFO - Parsing url: https://www.bbc.com/news/live/uk-england-derbyshire-53932775?page=5
+2025-11-17 15:06:05,021 - INFO - image parsing unsuccessful due to 'NoneType' object has no attribute 'lower'
+2025-11-17 15:06:05,023 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:05,024 - INFO - date parsing unsuccessful due to 'NoneType' object has no attribute 'text'
+2025-11-17 15:06:05,024 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-11-17 15:06:05,024 - INFO - article dropped, no body text found: https://www.bbc.com/news/live/uk-england-derbyshire-53932775?page=5
+2025-11-17 15:06:05,024 - INFO - Parsing url: https://www.bbc.com/news/entertainment-arts-54317603
+2025-11-17 15:06:05,039 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:06:05,048 - INFO - downloading images for file article_contents/BBC/bbc.com_2020-09-01_2020-09-30_parsed.json
+2025-11-17 15:06:05,048 - INFO - downloading images for article https://www.bbc.com/news/stories-53640382
+2025-11-17 15:06:05,049 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,049 - INFO - downloading images for article https://www.bbc.com/news/uk-england-54038591
+2025-11-17 15:06:05,049 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,053 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/1306F/production/_114253977_40616da4-9f41-47b3-9cba-72b56f95c418.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img1.webp
+2025-11-17 15:06:05,057 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/BF27/production/_114253984_mediaitem114253980.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img2.webp
+2025-11-17 15:06:05,059 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/17E8F/production/_114253979_e83dbb93-c6df-4e85-b673-51d48b73cd1f.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img3.webp
+2025-11-17 15:06:05,062 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/173B3/production/_114255159_capture.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img4.webp
+2025-11-17 15:06:05,064 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/6EB9/production/_114254382_capture.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img5.webp
+2025-11-17 15:06:05,066 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/17E17/production/_114251879_7896ee08-d205-41f2-a3f4-7570c1238561.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img6.webp
+2025-11-17 15:06:05,066 - INFO - downloading images for article https://www.bbc.com/news/science-environment-54347878
+2025-11-17 15:06:05,066 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,066 - INFO - downloading images for article https://www.bbc.com/culture/article/20200924-utopia-and-the-power-of-the-conspiracy-thriller
+2025-11-17 15:06:05,066 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,066 - INFO - downloading images for article https://www.bbc.com/cymrufyw/53988562
+2025-11-17 15:06:05,066 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,066 - INFO - downloading images for article https://www.bbc.com/news/uk-54103163
+2025-11-17 15:06:05,066 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,068 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/F1D7/production/_114311916_zionlights.png.webp; already present as BBC_2020-09-10_Extinction-Rebellion-Nuclear_img1.webp
+2025-11-17 15:06:05,070 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/FDFD/production/_114312056_hi063243717.jpg.webp; already present as BBC_2020-09-10_Extinction-Rebellion-Nuclear_img2.webp
+2025-11-17 15:06:05,070 - INFO - downloading images for article https://www.bbc.com/news/uk-england-norfolk-54162239
+2025-11-17 15:06:05,070 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,070 - INFO - downloading images for article https://www.bbc.com/news/uk-england-london-54021889
+2025-11-17 15:06:05,070 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,070 - INFO - downloading images for article https://www.bbc.com/news/uk-england-53987662
+2025-11-17 15:06:05,070 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:06:05,072 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/115BB/production/_114199017_gettyimages-1228296932.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img1.webp
+2025-11-17 15:06:05,074 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/0833/production/_114199020_another.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img2.webp
+2025-11-17 15:06:05,075 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/2F43/production/_114199021_london.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img3.webp
+2025-11-17 15:06:05,076 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/2ECB/production/_114197911_westminster.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img4.webp
+2025-11-17 15:06:05,078 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/8DB7/production/_114197263_xr_jude_jagger.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img5.webp
+2025-11-17 15:06:05,079 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/13C53/production/_114197908_titianic.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img6.webp
+2025-11-17 15:06:05,079 - INFO - downloading images for article https://www.bbc.com/news/entertainment-arts-54317603
+2025-11-17 15:06:05,079 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:21,744 - INFO - scraping urls from file: ../google_scraping/article_urls/BBC/bbc.com_2020-09-01_2020-09-30_urls.csv
+2025-11-17 15:11:25,137 - INFO - Parsing url: https://www.bbc.com/news/stories-53640382
+2025-11-17 15:11:25,164 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,166 - INFO - Parsing url: https://www.bbc.com/news/uk-england-54038591
+2025-11-17 15:11:25,183 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,183 - INFO - Parsing url: https://www.bbc.com/news/science-environment-54347878
+2025-11-17 15:11:25,232 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,233 - INFO - Parsing url: https://www.bbc.com/culture/article/20200924-utopia-and-the-power-of-the-conspiracy-thriller
+2025-11-17 15:11:25,257 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,258 - INFO - Parsing url: https://www.bbc.com/cymrufyw/53988562
+2025-11-17 15:11:25,271 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,272 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,272 - INFO - date conversion unsuccessful due to time data '1 Medi 2020' does not match format '%d %B %Y'
+2025-11-17 15:11:25,272 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-11-17 15:11:25,272 - INFO - Parsing url: https://www.bbc.com/news/uk-54103163
+2025-11-17 15:11:25,287 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,287 - INFO - Parsing url: https://www.bbc.com/news/uk-england-norfolk-54162239
+2025-11-17 15:11:25,304 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,305 - INFO - Parsing url: https://www.bbc.com/news/uk-england-london-54021889
+2025-11-17 15:11:25,316 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,317 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,317 - INFO - Parsing url: https://www.bbc.com/news/uk-england-53987662
+2025-11-17 15:11:25,331 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,331 - INFO - Parsing url: https://www.bbc.com/news/live/uk-england-derbyshire-53932775?page=5
+2025-11-17 15:11:25,349 - INFO - image parsing unsuccessful due to '<' not supported between instances of 'list' and 'int'
+2025-11-17 15:11:25,351 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,351 - INFO - date parsing unsuccessful due to 'NoneType' object has no attribute 'text'
+2025-11-17 15:11:25,351 - INFO - date to string conversion for json unsuccessful due to 'NoneType' object has no attribute 'strftime'
+2025-11-17 15:11:25,352 - INFO - article dropped, no body text found: https://www.bbc.com/news/live/uk-england-derbyshire-53932775?page=5
+2025-11-17 15:11:25,352 - INFO - Parsing url: https://www.bbc.com/news/entertainment-arts-54317603
+2025-11-17 15:11:25,366 - INFO - author parsing unsuccessful due to 'NoneType' object has no attribute 'find'
+2025-11-17 15:11:25,367 - INFO - downloading images for file article_contents/BBC/bbc.com_2020-09-01_2020-09-30_parsed.json
+2025-11-17 15:11:25,367 - INFO - downloading images for article https://www.bbc.com/news/stories-53640382
+2025-11-17 15:11:25,368 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,368 - INFO - downloading images for article https://www.bbc.com/news/uk-england-54038591
+2025-11-17 15:11:25,368 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,369 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/1306F/production/_114253977_40616da4-9f41-47b3-9cba-72b56f95c418.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img1.webp
+2025-11-17 15:11:25,370 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/BF27/production/_114253984_mediaitem114253980.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img2.webp
+2025-11-17 15:11:25,371 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/17E8F/production/_114253979_e83dbb93-c6df-4e85-b673-51d48b73cd1f.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img3.webp
+2025-11-17 15:11:25,373 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/173B3/production/_114255159_capture.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img4.webp
+2025-11-17 15:11:25,374 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/6EB9/production/_114254382_capture.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img5.webp
+2025-11-17 15:11:25,375 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/17E17/production/_114251879_7896ee08-d205-41f2-a3f4-7570c1238561.jpg.webp; already present as BBC_2020-09-05_Extinction-Rebellion-protesters_img6.webp
+2025-11-17 15:11:25,375 - INFO - downloading images for article https://www.bbc.com/news/science-environment-54347878
+2025-11-17 15:11:25,375 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,375 - INFO - downloading images for article https://www.bbc.com/culture/article/20200924-utopia-and-the-power-of-the-conspiracy-thriller
+2025-11-17 15:11:25,375 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,375 - INFO - downloading images for article https://www.bbc.com/cymrufyw/53988562
+2025-11-17 15:11:25,375 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,375 - INFO - downloading images for article https://www.bbc.com/news/uk-54103163
+2025-11-17 15:11:25,375 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,377 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/F1D7/production/_114311916_zionlights.png.webp; already present as BBC_2020-09-10_Extinction-Rebellion-Nuclear_img1.webp
+2025-11-17 15:11:25,378 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/FDFD/production/_114312056_hi063243717.jpg.webp; already present as BBC_2020-09-10_Extinction-Rebellion-Nuclear_img2.webp
+2025-11-17 15:11:25,378 - INFO - downloading images for article https://www.bbc.com/news/uk-england-norfolk-54162239
+2025-11-17 15:11:25,378 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,378 - INFO - downloading images for article https://www.bbc.com/news/uk-england-london-54021889
+2025-11-17 15:11:25,378 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,378 - INFO - downloading images for article https://www.bbc.com/news/uk-england-53987662
+2025-11-17 15:11:25,378 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
+2025-11-17 15:11:25,379 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/115BB/production/_114199017_gettyimages-1228296932.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img1.webp
+2025-11-17 15:11:25,380 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/0833/production/_114199020_another.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img2.webp
+2025-11-17 15:11:25,382 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/2F43/production/_114199021_london.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img3.webp
+2025-11-17 15:11:25,383 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/2ECB/production/_114197911_westminster.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img4.webp
+2025-11-17 15:11:25,384 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/8DB7/production/_114197263_xr_jude_jagger.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img5.webp
+2025-11-17 15:11:25,385 - INFO - Not re-downloading file at https://ichef.bbci.co.uk/news/480/cpsprodpb/13C53/production/_114197908_titianic.jpg.webp; already present as BBC_2020-09-01_Arrests-as-Extinction_img6.webp
+2025-11-17 15:11:25,385 - INFO - downloading images for article https://www.bbc.com/news/entertainment-arts-54317603
+2025-11-17 15:11:25,385 - WARNING - Could not retrieve BBC due to: [Errno 2] No such file or directory: '/home/clara/Documents/disruption/content_scraping/scraping_articles/../saved_sessions/session_BBC.pickle'
